@@ -1,0 +1,13 @@
+# History files
+.Rhistory
+
+# Session Data files
+.RData
+.Ruserdata
+
+# RStudio files
+.Rproj.user
+
+# Quarto files
+/.quarto/
+/_book/

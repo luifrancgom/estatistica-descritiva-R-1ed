@@ -1,0 +1,84 @@
+project:
+  type: book
+  output-dir: _book
+  preview:
+    browser: true
+    navigate: true
+    
+lang: pt-BR
+
+book:
+  title: Estatística descritiva (1ed)
+  subtitle: Apostilas de aula com exemplos em R
+  author:
+    -  name: Djuri Vieira
+    -  name: Luis Francisco Gómez López
+  date: 2023-12-19
+  date-format: iso
+  output-file: estatistica_descritiva_1ed
+  cover-image: images/cover.png
+  sharing: [twitter, linkedin, facebook]
+  edition: 1
+  favicon: images/cover.png
+  language: pt-BR
+  reader-mode: true
+  search: 
+    location: sidebar
+    type: textbox
+    limit: 20
+  sidebar: 
+    logo: images/cover.png
+    tools:
+      - icon: github
+        menu:
+          - href: https://github.com/
+            text: Código-fonte
+            target: _blank
+            rel: noopener noreferrer
+          - href: https://github.com/
+            text: Relatar um bug
+            target: _blank
+            rel: noopener noreferrer
+    style: floating
+    border: true
+    alignment: left
+  page-navigation: true
+  back-to-top-navigation: true
+  page-footer:
+    right: |
+      <span class="faux-block"> Designed with {{< fa heart >}} and {{< fa brain >}} </span>
+      <span class="faux-block">Build with <a href="https://quarto.org/" target="_blank" rel="noopener noreferrer">Quarto</a></span>
+  chapters:
+    - index.qmd
+    - preface.qmd
+    - part: statistics_and_data.qmd
+      chapters: 
+        - overview.qmd
+        - data.qmd
+    - part: data_visualization.qmd
+    - part: summary_statistics.qmd
+      chapters: 
+        - central_tendency.qmd
+        - position.qmd
+        - spread.qmd
+        - shape.qmd
+    - part: probability.qmd
+    - part: random_variables.qmd
+      chapters: 
+        - discrete_probability_distributions.qmd
+        - continuous_probability_distributions.qmd
+    - references.qmd
+  appendices:
+    - getting_started_with_r.qmd
+
+bibliography: references/estatistica_descritiva_1ed.bib
+cls: references/apa_7ed.csl
+
+format:
+  html:
+    theme: 
+      light: cosmo
+      dark: darkly
+    css: css/styles.css
+
+editor: visual
