@@ -1,7 +1,10 @@
 project:
+  title: estatistica-descritiva-R-1ed
   type: book
   output-dir: _book
   preview:
+    port: 3000
+    host: 127.0.0.1
     browser: true
     navigate: true
     
@@ -20,34 +23,30 @@ book:
   sharing: [twitter, linkedin, facebook]
   edition: 1
   favicon: images/cover.png
-  language: pt-BR
+  site-url: https://luifrancgom.github.io/estatistica-descritiva-R-1ed/
+  repo-url: https://github.com/luifrancgom/estatistica-descritiva-R-1ed
+  repo-branch: main
+  issue-url: https://github.com/luifrancgom/estatistica-descritiva-R-1ed/issues
+  repo-actions: [source, issue, edit]
   reader-mode: true
+  language: pt-BR
   search: 
     location: sidebar
     type: textbox
     limit: 20
   sidebar: 
     logo: images/cover.png
-    tools:
-      - icon: github
-        menu:
-          - href: https://github.com/
-            text: Código-fonte
-            target: _blank
-            rel: noopener noreferrer
-          - href: https://github.com/
-            text: Relatar um bug
-            target: _blank
-            rel: noopener noreferrer
     style: floating
     border: true
     alignment: left
   page-navigation: true
   back-to-top-navigation: true
   page-footer:
+    left: |
+      <span class="faux-block">[Visualize o código-fonte no {{< fa brands github >}} GitHub]({{< var url.repo >}})</span>
     right: |
-      <span class="faux-block"> Designed with {{< fa heart >}} and {{< fa brain >}} </span>
-      <span class="faux-block">Build with <a href="https://quarto.org/" target="_blank" rel="noopener noreferrer">Quarto</a></span>
+      <span class="faux-block">Desenhado com {{< fa heart >}} e {{< fa brain >}} </span>
+      <span class="faux-block">Construído com [Quarto]({{< var url.quarto >}})</span>
   chapters:
     - index.qmd
     - preface.qmd
