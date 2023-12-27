@@ -11,3 +11,6 @@
 # Quarto files
 /.quarto/
 /_book/
+
+# OS X
+.DS_STORE
