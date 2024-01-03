@@ -21,6 +21,7 @@ book:
   output-file: estatistica_descritiva_1ed
   cover-image: images/cover.png
   sharing: [twitter, linkedin, facebook]
+  downloads: pdf
   edition: 1
   favicon: images/cover.png
   site-url: https://luifrancgom.github.io/estatistica-descritiva-R-1ed/
@@ -79,5 +80,7 @@ format:
       light: cosmo
       dark: darkly
     css: css/styles.css
+  pdf: 
+    documentclass: book
 
 editor: visual
