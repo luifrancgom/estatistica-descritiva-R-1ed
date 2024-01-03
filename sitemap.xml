@@ -1,67 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/index.html</loc>
+    <lastmod>2024-01-03T02:31:07.669Z</lastmod>
+  </url>
+  <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/preface.html</loc>
-    <lastmod>2023-12-27T13:22:50.550Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.673Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/statistics_and_data.html</loc>
-    <lastmod>2023-12-27T13:22:50.554Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.681Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/overview.html</loc>
-    <lastmod>2023-12-27T13:22:50.558Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.689Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/data.html</loc>
-    <lastmod>2023-12-27T13:22:50.562Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.693Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/data_visualization.html</loc>
-    <lastmod>2023-12-27T13:22:50.570Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.697Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/summary_statistics.html</loc>
-    <lastmod>2023-12-27T13:22:50.574Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.701Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/central_tendency.html</loc>
-    <lastmod>2023-12-27T13:22:50.578Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.709Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/position.html</loc>
-    <lastmod>2023-12-27T13:22:50.582Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.713Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/spread.html</loc>
-    <lastmod>2023-12-27T13:22:50.586Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.717Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/shape.html</loc>
-    <lastmod>2023-12-27T13:22:50.590Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.721Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/probability.html</loc>
-    <lastmod>2023-12-27T13:22:50.594Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.729Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/random_variables.html</loc>
-    <lastmod>2023-12-27T13:22:50.598Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.733Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/discrete_probability_distributions.html</loc>
-    <lastmod>2023-12-27T13:22:50.606Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.737Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/continuous_probability_distributions.html</loc>
-    <lastmod>2023-12-27T13:22:50.610Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.741Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/references.html</loc>
-    <lastmod>2023-12-27T13:22:50.614Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.745Z</lastmod>
   </url>
   <url>
     <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/getting_started_with_r.html</loc>
-    <lastmod>2023-12-27T13:22:50.618Z</lastmod>
+    <lastmod>2024-01-03T02:31:07.749Z</lastmod>
+  </url>
+  <url>
+    <loc>https://luifrancgom.github.io/estatistica-descritiva-R-1ed/estatistica_descritiva_1ed.pdf</loc>
+    <lastmod>2024-01-03T02:31:07.449Z</lastmod>
   </url>
 </urlset>

@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -103,6 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <a href="./">Estatística descritiva (1ed)</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./estatistica_descritiva_1ed.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -317,8 +337,14 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="bem-vindos" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="bem-vindos">Bem-vindos</h2><p><img src="images/cover.png" title="Estatística descritiva (1ed)" class="quarto-cover-image img-fluid"></p>
+<p><span class="citation" data-cites="anderson_statistics_2020">(<a href="references.html#ref-anderson_statistics_2020" role="doc-biblioref">Anderson 2020</a>)</span></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-anderson_statistics_2020" class="csl-entry" role="listitem">
+Anderson, David R. 2020. <em>Statistics for business &amp; economics</em>. 14e ed. Boston, MA: Cengage.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
