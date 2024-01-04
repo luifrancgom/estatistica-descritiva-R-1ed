@@ -45,6 +45,7 @@ book:
   page-footer:
     left: |
       <span class="faux-block">[Visualize o código-fonte no {{< fa brands github >}} GitHub]({{< var url.repo >}})</span>
+      <span class="faux-block">Conteúdo licenciado sob [{{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}} Creative Commons CC BY 4.0]({{< var url.license >}})</span>
     right: |
       <span class="faux-block">Desenhado com {{< fa heart >}} e {{< fa brain >}} </span>
       <span class="faux-block">Construído com [Quarto]({{< var url.quarto >}})</span>
