@@ -16,89 +16,89 @@ Ao exercer os Direitos Licenciados (definidos abaixo), Você aceita e concorda e
 
 ### Cláusula 1 – Definições.
 
-a.  **Material Adaptado** significa material sujeito a Direito de Autor e Direitos Similares que é derivado de ou baseado no Material Licenciado e no qual o Material Licenciado é traduzido, alterado, arranjado, transformado, ou de outra forma modificado de uma maneira que requeira permissão com base no Direito de Autor e Direitos Similares detidos pelo Licenciante. Para os fins desta Licença Pública, quando o Material Licenciado seja uma obra musical, performance, ou fonograma, é sempre produzido Material Adaptado quando o Material Licenciado é sincronizado em relação temporal com uma imagem em movimento.
+  a.  **Material Adaptado** significa material sujeito a Direito de Autor e Direitos Similares que é derivado de ou baseado no Material Licenciado e no qual o Material Licenciado é traduzido, alterado, arranjado, transformado, ou de outra forma modificado de uma maneira que requeira permissão com base no Direito de Autor e Direitos Similares detidos pelo Licenciante. Para os fins desta Licença Pública, quando o Material Licenciado seja uma obra musical, performance, ou fonograma, é sempre produzido Material Adaptado quando o Material Licenciado é sincronizado em relação temporal com uma imagem em movimento.
 
-b.  **Licença do Adaptador** significa a licença que Você aplica ao Seu Direito de Autor e Direitos Similares nas Suas contribuições ao Material Adaptado de acordo com os termos e condições desta Licença Pública.
+  b.  **Licença do Adaptador** significa a licença que Você aplica ao Seu Direito de Autor e Direitos Similares nas Suas contribuições ao Material Adaptado de acordo com os termos e condições desta Licença Pública.
 
-c.  **Direito de Autor e Direitos Similares** significa direito de autor e/ou direitos similares estreitamente relacionados com o direito de autor, incluindo, mas não se limitando a, direitos de execução, radiodifusão, fixação de sons, e Direitos Sui Generis sobre Bases de Dados, independentemente de como sejam classificados ou categorizados. Para os fins desta Licença Pública, os direitos especificados na Cláusula 2(b)(1)-(2) não são Direito de Autor e Direitos Similares.
+  c.  **Direito de Autor e Direitos Similares** significa direito de autor e/ou direitos similares estreitamente relacionados com o direito de autor, incluindo, mas não se limitando a, direitos de execução, radiodifusão, fixação de sons, e Direitos Sui Generis sobre Bases de Dados, independentemente de como sejam classificados ou categorizados. Para os fins desta Licença Pública, os direitos especificados na Cláusula 2(b)(1)-(2) não são Direito de Autor e Direitos Similares.
 
-d.  **Medidas Eficazes de Caráter Tecnológico** significam aquelas medidas que, na ausência de direito para tanto, não podem ser contornadas em jurisdições cumprindo obrigações sob o Artigo 11 do Tratado da OMPI de Direito de Autor adotado em 20 de dezembro de 1996, e/ou acordos internacionais similares.
+  d.  **Medidas Eficazes de Caráter Tecnológico** significam aquelas medidas que, na ausência de direito para tanto, não podem ser contornadas em jurisdições cumprindo obrigações sob o Artigo 11 do Tratado da OMPI de Direito de Autor adotado em 20 de dezembro de 1996, e/ou acordos internacionais similares.
 
-e.  **Exceções e Limitações** significam utilização justa (“fair use”), tratamento justo (“fair dealing”), e/ou qualquer outra exceção ou limitação ao Direito de Autor e Direitos Similares que se aplique à Sua utilização do Material Licenciado.
+  e.  **Exceções e Limitações** significam utilização justa (“fair use”), tratamento justo (“fair dealing”), e/ou qualquer outra exceção ou limitação ao Direito de Autor e Direitos Similares que se aplique à Sua utilização do Material Licenciado.
 
-f.  **Material Licenciado** significa o trabalho artístico ou literário, base de dados, ou outro material ao qual o Licenciante aplicou esta Licença Pública.
+  f.  **Material Licenciado** significa o trabalho artístico ou literário, base de dados, ou outro material ao qual o Licenciante aplicou esta Licença Pública.
 
-g.  **Direitos Licenciados** significam os direitos concedidos a Você sujeitos aos termos e condições desta Licença Pública, que são limitados a todos os Direitos de Autor e Direitos Similares que se apliquem à Sua utilização do Material Licenciado e que o Licenciante tem o direito de licenciar.
+  g.  **Direitos Licenciados** significam os direitos concedidos a Você sujeitos aos termos e condições desta Licença Pública, que são limitados a todos os Direitos de Autor e Direitos Similares que se apliquem à Sua utilização do Material Licenciado e que o Licenciante tem o direito de licenciar.
 
-h.  **Licenciante** significa o(s) indivíduo(s) ou entidade(s) concedendo direitos sob esta Licença Pública.
+  h.  **Licenciante** significa o(s) indivíduo(s) ou entidade(s) concedendo direitos sob esta Licença Pública.
 
-i.  **Compartilhar** significa fornecer material ao público por qualquer meio ou processo que requeira permissão sob os Direitos Licenciados, como reprodução, exibição pública, execução pública, distribuição, disseminação, comunicação ou importação, e disponibilizar material ao público, incluindo por vias pelas quais os membros do público possam ter acesso ao material a partir de um local e no momento individualmente escolhidos por eles.
+  i.  **Compartilhar** significa fornecer material ao público por qualquer meio ou processo que requeira permissão sob os Direitos Licenciados, como reprodução, exibição pública, execução pública, distribuição, disseminação, comunicação ou importação, e disponibilizar material ao público, incluindo por vias pelas quais os membros do público possam ter acesso ao material a partir de um local e no momento individualmente escolhidos por eles.
 
-j.  **Direitos Sui Generis sobre Bases de Dados** significam outros direitos, que não o direito de autor e direitos conexos, resultantes da Diretiva 96/9/EC do Parlamento Europeu e do Conselho de 11 de Março de 1996 sobre a proteção legal de bases de dados, conforme emendada e/ou sucedida, bem como outros direitos essencialmente equivalentes em qualquer lugar do mundo.
+  j.  **Direitos Sui Generis sobre Bases de Dados** significam outros direitos, que não o direito de autor e direitos conexos, resultantes da Diretiva 96/9/EC do Parlamento Europeu e do Conselho de 11 de Março de 1996 sobre a proteção legal de bases de dados, conforme emendada e/ou sucedida, bem como outros direitos essencialmente equivalentes em qualquer lugar do mundo.
 
-k.  **Você** significa o indivíduo ou entidade que exerce os Direitos Licenciados sob esta Licença Pública. **Lhe** , **Seu**, **Sua** e **Suas** têm um significado correspondente.
+  k.  **Você** significa o indivíduo ou entidade que exerce os Direitos Licenciados sob esta Licença Pública. **Lhe** , **Seu**, **Sua** e **Suas** têm um significado correspondente.
 
 ### Cláusula 2 – Âmbito.
 
-a.  ***Concessão da licença.***
+a.  **Concessão da licença.**
 
-    1.  De acordo com os termos e condições desta Licença Pública, o Licenciante concede-Lhe, pelo presente, uma licença mundial, isenta de royalties, não sublicenciável, não exclusiva, e irrevogável para exercer os Direitos Licenciados sobre o Material Licenciado para:
+  1.  De acordo com os termos e condições desta Licença Pública, o Licenciante concede-Lhe, pelo presente, uma licença mundial, isenta de royalties, não sublicenciável, não exclusiva, e irrevogável para exercer os Direitos Licenciados sobre o Material Licenciado para:
 
-        A. reproduzir e Compartilhar o Material Licenciado, no todo ou em parte; e
+      A. reproduzir e Compartilhar o Material Licenciado, no todo ou em parte; e
 
-        B. produzir, reproduzir, e Compartilhar Material Adaptado.
+      B. produzir, reproduzir, e Compartilhar Material Adaptado.
 
-    2.  **Exceções e Limitações.** Para evitar dúvidas, quando Exceções e Limitações sejam aplicáveis à Sua utilização, esta Licença Pública não se aplica, e Você não precisa de cumprir com os seus termos e condições.
+  2.  **Exceções e Limitações.** Para evitar dúvidas, quando Exceções e Limitações sejam aplicáveis à Sua utilização, esta Licença Pública não se aplica, e Você não precisa de cumprir com os seus termos e condições.
 
-    3.  **Termo.** O termo desta Licença Pública está especificado na Cláusula 6(a).
+  3.  **Termo.** O termo desta Licença Pública está especificado na Cláusula 6(a).
 
-    4.  **Meios/suportes e formatos; modificações técnicas permitidas.** O Licenciante autoriza Você a exercer os Direitos Licenciados em todos os meios/suportes e formatos conhecidos agora ou criados posteriormente, e a fazer as modificações técnicas necessárias para tanto. O Licenciante cede e/ou concorda em não reivindicar nenhum direito que proíba Você de fazer modificações técnicas necessárias ao exercício dos Direitos Licenciados, incluindo modificações técnicas necessárias para contornar Medidas Eficazes de Caráter Tecnológico. Para os fins desta Licença Pública, fazer simplesmente modificações autorizadas por esta Cláusula 2(a)(4) nunca produz Material Adaptado.
+  4.  **Meios/suportes e formatos; modificações técnicas permitidas.** O Licenciante autoriza Você a exercer os Direitos Licenciados em todos os meios/suportes e formatos conhecidos agora ou criados posteriormente, e a fazer as modificações técnicas necessárias para tanto. O Licenciante cede e/ou concorda em não reivindicar nenhum direito que proíba Você de fazer modificações técnicas necessárias ao exercício dos Direitos Licenciados, incluindo modificações técnicas necessárias para contornar Medidas Eficazes de Caráter Tecnológico. Para os fins desta Licença Pública, fazer simplesmente modificações autorizadas por esta Cláusula 2(a)(4) nunca produz Material Adaptado.
 
-    5.  **Receptores subsequentes.**
+  5.  **Receptores subsequentes.**
 
-        A. **Oferta pelo Licenciante – Material Licenciado.** Cada receptor do Material Licenciado recebe automaticamente uma oferta do Licenciante para exercer os Direitos Licenciados sob os termos e condições desta Licença Pública.
+      A. **Oferta pelo Licenciante – Material Licenciado.** Cada receptor do Material Licenciado recebe automaticamente uma oferta do Licenciante para exercer os Direitos Licenciados sob os termos e condições desta Licença Pública.
 
-        B. **Sem restrições subsequentes.** Você não pode propor ou impor quaisquer termos ou condições, adicionais ou diferentes, ou aplicar quaisquer Medidas Eficazes de Caráter Tecnológico, sobre o Material Licenciado, se tal restringir o exercício dos Direitos Licenciados por qualquer receptor do Material Licenciado.
+      B. **Sem restrições subsequentes.** Você não pode propor ou impor quaisquer termos ou condições, adicionais ou diferentes, ou aplicar quaisquer Medidas Eficazes de Caráter Tecnológico, sobre o Material Licenciado, se tal restringir o exercício dos Direitos Licenciados por qualquer receptor do Material Licenciado.
 
-    6.  **Sem endosso.** Nada nesta Licença Pública constitui ou pode ser entendido como uma permissão para afirmar ou sugerir que Você, ou que a Sua utilização do Material Licenciado, é conectado ao, patrocinado ou endossado pelo, ou tem status oficial concedido pelo, Licenciante ou terceiros designados para receber atribuição como previsto na Cláusula 3(a)(1)(A)(i).
+  6.  **Sem endosso.** Nada nesta Licença Pública constitui ou pode ser entendido como uma permissão para afirmar ou sugerir que Você, ou que a Sua utilização do Material Licenciado, é conectado ao, patrocinado ou endossado pelo, ou tem status oficial concedido pelo, Licenciante ou terceiros designados para receber atribuição como previsto na Cláusula 3(a)(1)(A)(i).
 
-b.  ***Outros direitos.***
+b.  **Outros direitos.**
 
-    1.  Direitos morais, como o direito à integridade, não são licenciados por esta Licença Pública, nem o são os direitos de imagem, privacidade, e/ou outros direitos de personalidade similares; contudo, na medida do possível, o Licenciante renuncia e/ou concorda não exercer quaisquer desses direitos detidos pelo Licenciante, na medida necessária para permitir que Você exerça os Direitos Licenciados, mas não de outra forma.
+  1.  Direitos morais, como o direito à integridade, não são licenciados por esta Licença Pública, nem o são os direitos de imagem, privacidade, e/ou outros direitos de personalidade similares; contudo, na medida do possível, o Licenciante renuncia e/ou concorda não exercer quaisquer desses direitos detidos pelo Licenciante, na medida necessária para permitir que Você exerça os Direitos Licenciados, mas não de outra forma.
 
-    2.  Direitos de patente e marcas não se encontram licenciados sob esta Licença Pública.
+  2.  Direitos de patente e marcas não se encontram licenciados sob esta Licença Pública.
 
-    3.  Na medida do possível, o Licenciante renuncia a qualquer direito de cobrar-Lhe royalties pelo exercício dos Direitos Licenciados, quer diretamente quer por meio de uma entidade de gestão coletiva, sob qualquer regime de licenciamento voluntário ou legal, disponível ou compulsório. Em todos os outros casos, o Licenciante reserva expressamente o direito de arrecadar tais royalties.
+  3.  Na medida do possível, o Licenciante renuncia a qualquer direito de cobrar-Lhe royalties pelo exercício dos Direitos Licenciados, quer diretamente quer por meio de uma entidade de gestão coletiva, sob qualquer regime de licenciamento voluntário ou legal, disponível ou compulsório. Em todos os outros casos, o Licenciante reserva expressamente o direito de arrecadar tais royalties.
 
 ### Cláusula 3 – Condições da Licença.
 
 O Seu exercício dos Direitos Licenciados fica expressamente sujeito às condições seguintes.
 
-a.  ***Atribuição.***
+a.  **Atribuição.**
 
-    1.  Se Você Compartilhar o Material Licenciado (incluindo sob uma forma modificada), Você deve:
+  1.  Se Você Compartilhar o Material Licenciado (incluindo sob uma forma modificada), Você deve:
 
-        A. manter o seguinte, se for fornecido pelo Licenciante com o Material Licenciado:
+      A. manter o seguinte, se for fornecido pelo Licenciante com o Material Licenciado:
 
-        i.  identificação do(s) criador(es) do Material Licenciado e quaisquer outros designados para receber atribuição, de qualquer forma razoável solicitada pelo Licenciante (incluindo por pseudónimo, se designado);
+      i.  identificação do(s) criador(es) do Material Licenciado e quaisquer outros designados para receber atribuição, de qualquer forma razoável solicitada pelo Licenciante (incluindo por pseudónimo, se designado);
 
-        ii. um aviso de direito de autor e direitos conexos;
+      ii. um aviso de direito de autor e direitos conexos;
 
-        iii. um aviso que se refere a esta Licença Pública;
+      iii. um aviso que se refere a esta Licença Pública;
 
-        iv. um aviso que se refere à exclusão de garantias;
+      iv. um aviso que se refere à exclusão de garantias;
 
-        v.  um URI ou um hyperlink para o Material Licenciado na medida razoavelmente exequível;
+      v.  um URI ou um hyperlink para o Material Licenciado na medida razoavelmente exequível;
 
-        B. indicar se Você modificou o Material Licenciado e manter uma indicação de quaisquer modificações prévias; e
+      B. indicar se Você modificou o Material Licenciado e manter uma indicação de quaisquer modificações prévias; e
 
-        C. indicar que o Material Licenciado é licenciado com esta Licença Pública, e incluir o texto de, ou o URI ou o hyperlink para, esta Licença Pública.
+      C. indicar que o Material Licenciado é licenciado com esta Licença Pública, e incluir o texto de, ou o URI ou o hyperlink para, esta Licença Pública.
 
-    2.  Você pode satisfazer as condições da Cláusula 3(a)(1) de qualquer forma razoável, tendo em conta o suporte, os meios e o contexto no qual Você Compartilhar o Material Licenciado. Por exemplo, pode ser razoável satisfazer as condições por via do fornecimento de um URI ou de um hyperlink para um recurso que inclui a informação exigida.
+  2.  Você pode satisfazer as condições da Cláusula 3(a)(1) de qualquer forma razoável, tendo em conta o suporte, os meios e o contexto no qual Você Compartilhar o Material Licenciado. Por exemplo, pode ser razoável satisfazer as condições por via do fornecimento de um URI ou de um hyperlink para um recurso que inclui a informação exigida.
 
-    3.  Se solicitado pelo Licenciante, Você deve remover qualquer parte da informação exigida pela Cláusula 3(a)(1)(A) na medida razoavelmente exequível.
+  3.  Se solicitado pelo Licenciante, Você deve remover qualquer parte da informação exigida pela Cláusula 3(a)(1)(A) na medida razoavelmente exequível.
 
-    4.  Se Você Compartilhar Material Adaptado produzido por Você, a Licença do Adaptador que Você aplicar não deve impedir os receptores do Material Adaptado de cumprirem com esta Licença Pública.
+  4.  Se Você Compartilhar Material Adaptado produzido por Você, a Licença do Adaptador que Você aplicar não deve impedir os receptores do Material Adaptado de cumprirem com esta Licença Pública.
 
 ### Cláusula 4 – Direitos Sui Generis sobre Bases de Dados.
 
@@ -126,11 +126,11 @@ a.  Esta Licença Pública aplica-se durante o termo do Direito de Autor e Direi
 
 b.  Quando o Seu direito de utilizar o Material Licenciado tenha cessado nos termos da Cláusula 6(a), será restabelecido:
 
-    1.  automaticamente a partir da data em que a violação seja sanada, desde que seja sanada dentro de 30 dias a contar da Sua descoberta da violação; ou
+  1.  automaticamente a partir da data em que a violação seja sanada, desde que seja sanada dentro de 30 dias a contar da Sua descoberta da violação; ou
 
-    2.  com o expresso restabelecimento pelo Licenciante.
+  2.  com o expresso restabelecimento pelo Licenciante.
 
-    Para evitar dúvidas, esta Cláusula 6(b) não afeta qualquer direito que o Licenciante possa ter de obter reparação e medidas legais cabíveis pelas Suas violações desta Licença Pública.
+  Para evitar dúvidas, esta Cláusula 6(b) não afeta qualquer direito que o Licenciante possa ter de obter reparação e medidas legais cabíveis pelas Suas violações desta Licença Pública.
 
 c.  Para evitar dúvidas, o Licenciante também poderá disponibilizar o Material Licenciado sob termos ou condições separados ou parar a distribuição do Material Licenciado a qualquer momento; no entanto, tal não cessará esta Licença Pública.
 
