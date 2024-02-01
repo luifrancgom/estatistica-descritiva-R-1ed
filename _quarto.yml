@@ -71,6 +71,7 @@ book:
     - references.qmd
   appendices:
     - getting_started_with_r.qmd
+    - naive_set_theory.qmd
 
 bibliography: references/estatistica_descritiva_1ed.bib
 cls: references/apa_7ed.csl

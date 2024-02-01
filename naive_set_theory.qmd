@@ -1,0 +1,21 @@
+# Teoria ingênua dos conjuntos
+
+A teoria dos conjuntos é um ramo da matemática que lida com coleções chamadas conjuntos. Compreender a teoria dos conjuntos é essencial, pois ela forma a base fundamental da teoria da probabilidade, que por sua vez é crucial para o estudo de estatísticas. No entanto, um entendimento básico da teoria dos conjuntos é suficiente para compreender os princípios essenciais da probabilidade e estatística, evitando a necessidade de usar um formalismo excessivo [^naive_set_theory-1].
+
+[^naive_set_theory-1]: Para uma apresentação detalhada e clara da teoria dos conjuntos, você pode consultar [@halmos_naive_1974]
+
+## Conjuntos
+
+::: {#def-conjunto}
+
+## Conjunto
+
+Um conjunto é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.
+
+:::
+
+Podemos denotar um conjunto usando uma letra arbitrária como $A$ e descrevê-lo listando seus elementos entre chaves. Por exemplo, $A = \{ 1,2 \}$ é o conjunto cujos elementos são os números $1$ e $2$. Com base em @def-conjunto e na notação anterior, é importante fazer as seguintes observações:
+
+-   $A = \{ 1,2 \}$ e $B = \{ 2,1 \}$ são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.
+
+

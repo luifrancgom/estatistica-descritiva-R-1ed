@@ -4,3 +4,8 @@
   display: block;
   padding-bottom: 0.4em;
 }
+
+p {
+  text-align: justify;
+  text-justify: auto;
+}
