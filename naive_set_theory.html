@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Estatística descritiva (1ed) - 4&nbsp; Medidas de posição</title>
+<title>Estatística descritiva (1ed) - Apêndice B — Teoria ingênua dos conjuntos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +50,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./spread.html" rel="next">
-<link href="./central_tendency.html" rel="prev">
+<link href="./getting_started_with_r.html" rel="prev">
 <link href="./images/cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,6 +92,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -86,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summary_statistics.html">Medidas-resumo</a></li><li class="breadcrumb-item"><a href="./position.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Medidas de posição</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./getting_started_with_r.html">Apêndices</a></li><li class="breadcrumb-item"><a href="./naive_set_theory.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Teoria ingênua dos conjuntos</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -203,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./position.html" class="sidebar-item-text sidebar-link active">
+  <a href="./position.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Medidas de posição</span></span></a>
   </div>
 </li>
@@ -271,7 +319,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./naive_set_theory.html" class="sidebar-item-text sidebar-link">
+  <a href="./naive_set_theory.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Teoria ingênua dos conjuntos</span></span></a>
   </div>
 </li>
@@ -283,14 +331,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#conjuntos" id="toc-conjuntos" class="nav-link active" data-scroll-target="#conjuntos"><span class="header-section-number">B.1</span> Conjuntos</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/blob/main/naive_set_theory.qmd" class="toc-action"><i class="bi bi-github"></i>Ver o código fonte</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/edit/main/naive_set_theory.qmd" class="toc-action"><i class="bi empty"></i>Editar essa página</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summary_statistics.html">Medidas-resumo</a></li><li class="breadcrumb-item"><a href="./position.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Medidas de posição</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./getting_started_with_r.html">Apêndices</a></li><li class="breadcrumb-item"><a href="./naive_set_theory.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Teoria ingênua dos conjuntos</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Medidas de posição</span></h1>
+<h1 class="title">Apêndice B — Teoria ingênua dos conjuntos</h1>
 </div>
 
 
@@ -307,8 +361,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>A teoria dos conjuntos é um ramo da matemática que lida com coleções chamadas conjuntos. Compreender a teoria dos conjuntos é essencial, pois ela forma a base fundamental da teoria da probabilidade, que por sua vez é crucial para o estudo de estatísticas. No entanto, um entendimento básico da teoria dos conjuntos é suficiente para compreender os princípios essenciais da probabilidade e estatística, evitando a necessidade de usar um formalismo excessivo <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<section id="conjuntos" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="conjuntos"><span class="header-section-number">B.1</span> Conjuntos</h2>
+<div id="def-conjunto" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição B.1 (Conjunto)</strong></span> Um conjunto é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.</p>
+</div>
+<p>Podemos denotar um conjunto usando uma letra arbitrária como <span class="math inline">\(A\)</span> e descrevê-lo listando seus elementos entre chaves. Por exemplo, <span class="math inline">\(A = \{ 1,2 \}\)</span> é o conjunto cujos elementos são os números <span class="math inline">\(1\)</span> e <span class="math inline">\(2\)</span>. Com base em <a href="#def-conjunto" class="quarto-xref">Definição&nbsp;<span>B.1</span></a> e na notação anterior, é importante fazer as seguintes observações:</p>
+<ul>
+<li><span class="math inline">\(A = \{ 1,2 \}\)</span> e <span class="math inline">\(B = \{ 2,1 \}\)</span> são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.</li>
+</ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-halmos_naive_1974" class="csl-entry" role="listitem">
+Halmos, Paul R. 1974. <em>Naive <span>Set</span> <span>Theory</span></em>. Editado por S. Axler, F. W. Gehring, e K. A. Ribet. Undergraduate <span>Texts</span> em <span>Mathematics</span>. New York, NY: Springer New York. <a href="https://doi.org/10.1007/978-1-4757-1645-0">https://doi.org/10.1007/978-1-4757-1645-0</a>.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Para uma apresentação detalhada e clara da teoria dos conjuntos, você pode consultar <span class="citation" data-cites="halmos_naive_1974">(<a href="references.html#ref-halmos_naive_1974" role="doc-biblioref">Halmos 1974</a>)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -844,14 +920,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./central_tendency.html" class="pagination-link  aria-label=" &lt;span="" de="" tendência="" central&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas de tendência central</span></span>
+      <a href="./getting_started_with_r.html" class="pagination-link  aria-label=" &lt;span="" ao="" r&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introdução ao R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./spread.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>Medidas de dispersão</span>">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Medidas de dispersão</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -862,7 +935,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/blob/main/position.qmd" class="toc-action"><i class="bi bi-github"></i>Ver o código fonte</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/edit/main/position.qmd" class="toc-action"><i class="bi empty"></i>Editar essa página</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/blob/main/naive_set_theory.qmd" class="toc-action"><i class="bi bi-github"></i>Ver o código fonte</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/edit/main/naive_set_theory.qmd" class="toc-action"><i class="bi empty"></i>Editar essa página</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p><span class="faux-block">Desenhado com <i class="fa-solid fa-heart" aria-label="heart"></i> e <i class="fa-solid fa-brain" aria-label="brain"></i> </span> <span class="faux-block">Construído com <a href="https://quarto.org/">Quarto</a></span></p>
 </div>

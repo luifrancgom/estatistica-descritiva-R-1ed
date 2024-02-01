@@ -1,16 +1,55 @@
 [
   {
-    "objectID": "index.html#bem-vindos",
-    "href": "index.html#bem-vindos",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Estatística descritiva (1ed)",
-    "section": "Bem-vindos",
-    "text": "Bem-vindos\n(Anderson 2020)\n\n\n\n\nAnderson, David R. 2020. Statistics for business & economics. 14e ed. Boston, MA: Cengage."
+    "section": "",
+    "text": "Bem-vindos",
+    "crumbs": [
+      "Bem-vindos"
+    ]
   },
   {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Referências",
     "section": "",
-    "text": "Anderson, David R. 2020. Statistics for Business &\nEconomics. 14e ed. Boston, MA: Cengage."
+    "text": "Halmos, Paul R. 1974. Naive Set\nTheory. Edited by S. Axler, F. W. Gehring, and K. A.\nRibet. Undergraduate Texts in Mathematics. New\nYork, NY: Springer New York. https://doi.org/10.1007/978-1-4757-1645-0.",
+    "crumbs": [
+      "Referências"
+    ]
+  },
+  {
+    "objectID": "naive_set_theory.html",
+    "href": "naive_set_theory.html",
+    "title": "Apêndice B — Teoria ingênua dos conjuntos",
+    "section": "",
+    "text": "B.1 Conjuntos\nPodemos denotar um conjunto usando uma letra arbitrária como \\(A\\) e descrevê-lo listando seus elementos entre chaves. Por exemplo, \\(A = \\{ 1,2 \\}\\) é o conjunto cujos elementos são os números \\(1\\) e \\(2\\). Com base em Definição B.1 e na notação anterior, é importante fazer as seguintes observações:",
+    "crumbs": [
+      "Apêndices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Teoria ingênua dos conjuntos</span>"
+    ]
+  },
+  {
+    "objectID": "naive_set_theory.html#conjuntos",
+    "href": "naive_set_theory.html#conjuntos",
+    "title": "Apêndice B — Teoria ingênua dos conjuntos",
+    "section": "",
+    "text": "Definição B.1 (Conjunto) Um conjunto é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.\n\n\n\n\\(A = \\{ 1,2 \\}\\) e \\(B = \\{ 2,1 \\}\\) são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.\n\n\n\n\n\nHalmos, Paul R. 1974. Naive Set Theory. Editado por S. Axler, F. W. Gehring, e K. A. Ribet. Undergraduate Texts em Mathematics. New York, NY: Springer New York. https://doi.org/10.1007/978-1-4757-1645-0.",
+    "crumbs": [
+      "Apêndices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Teoria ingênua dos conjuntos</span>"
+    ]
+  },
+  {
+    "objectID": "naive_set_theory.html#footnotes",
+    "href": "naive_set_theory.html#footnotes",
+    "title": "Apêndice B — Teoria ingênua dos conjuntos",
+    "section": "",
+    "text": "Para uma apresentação detalhada e clara da teoria dos conjuntos, você pode consultar (Halmos 1974)↩︎",
+    "crumbs": [
+      "Apêndices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Teoria ingênua dos conjuntos</span>"
+    ]
   }
 ]
