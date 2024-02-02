@@ -57,6 +57,9 @@ book:
         - overview.qmd
         - data.qmd
     - part: data_visualization.qmd
+      chapters: 
+        - tables.qmd
+        - two_dimensional_plots.qmd
     - part: summary_statistics.qmd
       chapters: 
         - central_tendency.qmd
@@ -64,6 +67,9 @@ book:
         - spread.qmd
         - shape.qmd
     - part: probability.qmd
+      chapters: 
+        - random_experiment_and_probability_space.qmd
+        - interpretations_of_probability.qmd
     - part: random_variables.qmd
       chapters: 
         - discrete_probability_distributions.qmd
