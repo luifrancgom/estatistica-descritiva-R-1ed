@@ -35,7 +35,7 @@
     "href": "naive_set_theory.html#conjuntos",
     "title": "Apêndice B — Teoria ingênua dos conjuntos",
     "section": "",
-    "text": "Definição B.1 (Conjunto) Um conjunto é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.\n\n\n\n\\(A = \\{ 1,2 \\}\\) e \\(B = \\{ 2,1 \\}\\) são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.\n\n\n\n\n\nHalmos, Paul R. 1974. Naive Set Theory. Editado por S. Axler, F. W. Gehring, e K. A. Ribet. Undergraduate Texts em Mathematics. New York, NY: Springer New York. https://doi.org/10.1007/978-1-4757-1645-0.",
+    "text": "Definição B.1 (Conjunto) Um conjunto é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.\n\n\n\n\\(A = \\{ 1, 2 \\}\\) e \\(B = \\{ 2, 1 \\}\\) são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.\n\\(A = \\{ 1, 1, 2, 2 \\}\\)\n\n\n\n\n\nHalmos, Paul R. 1974. Naive Set Theory. Editado por S. Axler, F. W. Gehring, e K. A. Ribet. Undergraduate Texts em Mathematics. New York, NY: Springer New York. https://doi.org/10.1007/978-1-4757-1645-0.",
     "crumbs": [
       "Apêndices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Teoria ingênua dos conjuntos</span>"
