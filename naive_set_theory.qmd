@@ -7,15 +7,13 @@ A teoria dos conjuntos é um ramo da matemática que lida com coleções chamada
 ## Conjuntos
 
 ::: {#def-conjunto}
-
 ## Conjunto
 
 Um conjunto é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.
-
 :::
 
 Podemos denotar um conjunto usando uma letra arbitrária como $A$ e descrevê-lo listando seus elementos entre chaves. Por exemplo, $A = \{ 1,2 \}$ é o conjunto cujos elementos são os números $1$ e $2$. Com base em @def-conjunto e na notação anterior, é importante fazer as seguintes observações:
 
--   $A = \{ 1,2 \}$ e $B = \{ 2,1 \}$ são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.
+-   $A = \{ 1, 2 \}$ e $B = \{ 2, 1 \}$ são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.
 
-
+-   $A = \{ 1, 1, 2, 2 \}$ 
