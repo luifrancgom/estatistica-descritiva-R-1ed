@@ -70,6 +70,9 @@ book:
       chapters: 
         - random_experiment_and_probability_space.qmd
         - interpretations_of_probability.qmd
+        - consequences_of_probability_axioms.qmd
+        - independence_and_conditional_probability.qmd
+        - counting_rules.qmd
     - part: random_variables.qmd
       chapters: 
         - discrete_probability_distributions.qmd
