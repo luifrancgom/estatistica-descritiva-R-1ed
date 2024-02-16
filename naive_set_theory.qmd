@@ -1,12 +1,18 @@
 # Teoria ingênua dos conjuntos
 
+```{r}
+#| echo: false
+source(file = "_common.R")
+```
+
 A teoria dos conjuntos é um ramo da matemática que lida com coleções chamadas conjuntos. Compreender a teoria dos conjuntos é essencial, pois ela forma a base fundamental da teoria da probabilidade, que por sua vez é crucial para o estudo de estatísticas. No entanto, um entendimento básico da teoria dos conjuntos é suficiente para compreender os princípios essenciais da probabilidade e estatística, evitando a necessidade de usar um formalismo excessivo [^naive_set_theory-1].
 
-[^naive_set_theory-1]: Para uma apresentação detalhada e clara da teoria dos conjuntos, você pode consultar [@halmos_naive_1974]
+[^naive_set_theory-1]: Para uma apresentação detalhada e clara da teoria dos conjuntos usando um sistema de axiomas, você pode consultar [@halmos_naive_1974]
 
 ## Conjuntos
 
 ::: {#def-conjunto}
+
 ## Conjunto
 
 Um conjunto é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.
@@ -16,4 +22,53 @@ Podemos denotar um conjunto usando uma letra arbitrária como $A$ e descrevê-lo
 
 -   $A = \{ 1, 2 \}$ e $B = \{ 2, 1 \}$ são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.
 
--   $A = \{ 1, 1, 2, 2 \}$ 
+-   $C = \{ 1, 1, 2, 2 \}$ não está bem definido porque um conjunto contém elementos únicos, onde a especificação correta seria $C = \{ 1, 2 \}$.
+
+-   Existe um conjunto, denotado por $\emptyset = \{ \}$, chamado conjunto vazio, que não possui elementos.
+
+-   É possível que os elementos de um conjunto sejam eles próprios conjuntos. Por exemplo, $D = \{ \{ 1, 2\}, 3 \}$ é um conjunto que contém o conjunto $\{ 1, 2\}$ e o número $3$
+
+O pacote R `sets` pode ser usado para ilustrar as ideias mencionadas acima para entender o conceito de conjunto. Primeiramente, podemos criar dois conjuntos e verificar se os dois conjuntos são iguais:
+
+```{r}
+library(sets)
+A = set(1, 2)
+B = set(2, 1)
+A == B
+```
+
+Também podemos verificar a propriedade de elementos únicos em um conjunto:
+
+```{r}
+C = set(1, 1, 2, 2)
+C
+```
+
+Além disso, podemos criar um conjunto vazio:
+
+```{r}
+empty_set = set()
+empty_set
+```
+
+Por último, podemos definir um conjunto cujos elementos podem ser conjuntos:
+
+```{r}
+D = set(A, 3)
+D
+```
+
+::: {#def-membership-relation}
+
+## Relação de pertença
+
+Se $a$ é um elemento de $A$, escrevemos essa situação como $a \in A$. Caso contrário, escrevemos $a \notin A$
+
+:::
+
+Por exemplo, se $A = \{ 1 , 2 \}$  então $1 \in A$ e $3 \notin A$. Onde no R podemos verificar isso da seguinte maneira:
+
+```{r}
+1 %e% A
+3 %e% A
+```
