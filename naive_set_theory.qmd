@@ -11,14 +11,13 @@ A teoria dos conjuntos é um ramo da matemática que lida com coleções chamada
 
 ## Conjuntos
 
-::: {#def-conjunto}
-
+::: {#def-set}
 ## Conjunto
 
-Um conjunto é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.
+Um **conjunto** é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.
 :::
 
-Podemos denotar um conjunto usando uma letra arbitrária como $A$ e descrevê-lo listando seus elementos entre chaves. Por exemplo, $A = \{ 1,2 \}$ é o conjunto cujos elementos são os números $1$ e $2$. Com base em @def-conjunto e na notação anterior, é importante fazer as seguintes observações:
+Podemos denotar um conjunto usando uma letra arbitrária como $A$ e descrevê-lo listando seus elementos entre chaves. Por exemplo, $A = \{ 1,2 \}$ é o conjunto cujos elementos são os números $1$ e $2$. Com base em @def-set e na notação anterior, é importante fazer as seguintes observações:
 
 -   $A = \{ 1, 2 \}$ e $B = \{ 2, 1 \}$ são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.
 
@@ -32,43 +31,73 @@ O pacote R `sets` pode ser usado para ilustrar as ideias mencionadas acima para 
 
 ```{r}
 library(sets)
-A = set(1, 2)
-B = set(2, 1)
+A <- set(1, 2)
+A
+B <- set(2, 1)
+B
 A == B
 ```
 
 Também podemos verificar a propriedade de elementos únicos em um conjunto:
 
 ```{r}
-C = set(1, 1, 2, 2)
+C <- set(1, 1, 2, 2)
 C
 ```
 
 Além disso, podemos criar um conjunto vazio:
 
 ```{r}
-empty_set = set()
+empty_set <- set()
 empty_set
 ```
 
 Por último, podemos definir um conjunto cujos elementos podem ser conjuntos:
 
 ```{r}
-D = set(A, 3)
+D <- set(A, 3)
 D
 ```
 
 ::: {#def-membership-relation}
-
 ## Relação de pertença
 
-Se $a$ é um elemento de $A$, escrevemos essa situação como $a \in A$. Caso contrário, escrevemos $a \notin A$
-
+Se $a$ é um elemento de $A$, expressamos essa condição como $a \in A$. Caso contrário, expressamos que $a$ não é um elemento de $A$ com $a \notin A$. Na teoria dos conjuntos, $\in$ é conhecido como a relação *"é um elemento de"*.
 :::
 
-Por exemplo, se $A = \{ 1 , 2 \}$  então $1 \in A$ e $3 \notin A$. Onde no R podemos verificar isso da seguinte maneira:
+Por exemplo, se $A = \{ 1 , 2 \}$ então $1 \in A$ e $3 \notin A$.  Em R, podemos verificar se um elemento pertence a um conjunto usando o operador `%e%` do pacote `sets`, que representa a relação $\in$:
 
 ```{r}
 1 %e% A
 3 %e% A
 ```
+
+Às vezes, não é possível listar os elementos de um conjunto porque os elementos são infinitos ou porque não sabemos exatamente quais são. No entanto, se sabemos a propriedade que cada elemento deve ter, podemos usar uma notação matemática conhecida como **notação construtor de conjuntos** para descrever o conjunto. Essa notação é especificada como $\{ x: P(x) \}$, onde $x$ é um elemento genérico com a propriedade $P(x)$. Por exemplo:
+
+-   $E = \{ x: x \text{ é um cachorro} \}$ onde $E$ é o conjunto que contém todos os $x$que são cachorros. Nesse caso, $P(x)$ refere-se a ter a propriedade de ser um cachorro.
+-   $F = \{ x: x > 5 \text{ and } x \in \mathbb{N}\}$ onde $F$ contém todos os números maiores que 5 que são números naturais. Nesse caso, $P(x)$ refere-se a todos os $x$ maiores que 5 e pertencentes aos números naturais.
+
+Infelizmente, o R só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como `sets` não permite representar conjuntos como $E$ ou $F$ no R.
+
+::: {#def-subset}
+## Subconjunto
+
+Um conjunto $A$ é um **subconjunto** de um conjunto $B$ se todos os elementos de $A$ também sejam elementos de $B$. Essa condição pode ser expressa através da notação $A \subseteq B$. Por outro lado, se algum elemento de $A$ não pertencer a $B$, o que pode ser representado por $A \nsubseteq B$. Na teoria dos conjuntos, $\subseteq$ é conhecido como a relação de *"inclusão"*. 
+:::
+
+Por exemplo, se $A = \{ 1 , 2 \}$ e $G = \{ 1, 2, 3\}$ então $A \subseteq G$ porém $G \nsubseteq A$ porque $3 \in G$ e $3 \notin A$. Em R, podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador `<=` do pacote `sets`, que representa a relação $\subseteq$:
+
+```{r}
+G <- set(1, 2, 3)
+G
+A <= G
+G <= A
+```
+
+::: {#def-set-equality}
+## Igualdade de conjuntos
+
+Com base em @def-subset podemos estabelecer uma definição equivalente para a igualdade de conjuntos. Dois conjuntos, $A$ e $B$, são considerados iguais, $A = B$, se e somente se $A \subseteq G$ e $G \subseteq A$. Em outras palavras, ambos os conjuntos devem conter exatamente os mesmos elementos para serem considerados iguais.
+:::
+
+## Operações com conjuntos
