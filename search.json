@@ -24,7 +24,7 @@
     "href": "naive_set_theory.html",
     "title": "Apêndice B — Teoria ingênua dos conjuntos",
     "section": "",
-    "text": "B.1 Conjuntos\nPodemos denotar um conjunto usando uma letra arbitrária como \\(A\\) e descrevê-lo listando seus elementos entre chaves. Por exemplo, \\(A = \\{ 1,2 \\}\\) é o conjunto cujos elementos são os números \\(1\\) e \\(2\\). Com base em Definição B.1 e na notação anterior, é importante fazer as seguintes observações:",
+    "text": "B.1 Conjuntos\nPodemos denotar um conjunto usando uma letra arbitrária como \\(A\\) e descrevê-lo listando seus elementos entre chaves. Por exemplo, \\(A = \\{ 1,2 \\}\\) é o conjunto cujos elementos são os números \\(1\\) e \\(2\\). Com base em Definição B.1 e na notação anterior, é importante fazer as seguintes observações:\nO pacote R sets pode ser usado para ilustrar as ideias mencionadas acima para entender o conceito de conjunto. Primeiramente, podemos criar dois conjuntos e verificar se os dois conjuntos são iguais:\nlibrary(sets)\nA = set(1, 2)\nB = set(2, 1)\nA == B\n#&gt; [1] TRUE\nTambém podemos verificar a propriedade de elementos únicos em um conjunto:\nC = set(1, 1, 2, 2)\nC\n#&gt; {1, 2}\nAlém disso, podemos criar um conjunto vazio:\nempty_set = set()\nempty_set\n#&gt; {}\nPor último, podemos definir um conjunto cujos elementos podem ser conjuntos:\nD = set(A, 3)\nD\n#&gt; {3, {1, 2}}\nPor exemplo, se \\(A = \\{ 1 , 2 \\}\\) então \\(1 \\in A\\) e \\(3 \\notin A\\). Onde no R podemos verificar isso da seguinte maneira:\n1 %e% A\n#&gt; [1] TRUE\n3 %e% A\n#&gt; [1] FALSE",
     "crumbs": [
       "Apêndices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Teoria ingênua dos conjuntos</span>"
@@ -35,7 +35,7 @@
     "href": "naive_set_theory.html#conjuntos",
     "title": "Apêndice B — Teoria ingênua dos conjuntos",
     "section": "",
-    "text": "Definição B.1 (Conjunto) Um conjunto é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.\n\n\n\n\\(A = \\{ 1, 2 \\}\\) e \\(B = \\{ 2, 1 \\}\\) são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.\n\\(A = \\{ 1, 1, 2, 2 \\}\\)\n\n\n\n\n\nHalmos, Paul R. 1974. Naive Set Theory. Editado por S. Axler, F. W. Gehring, e K. A. Ribet. Undergraduate Texts em Mathematics. New York, NY: Springer New York. https://doi.org/10.1007/978-1-4757-1645-0.",
+    "text": "Definição B.1 (Conjunto) Um conjunto é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.\n\n\n\n\\(A = \\{ 1, 2 \\}\\) e \\(B = \\{ 2, 1 \\}\\) são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.\n\\(C = \\{ 1, 1, 2, 2 \\}\\) não está bem definido porque um conjunto contém elementos únicos, onde a especificação correta seria \\(C = \\{ 1, 2 \\}\\).\nExiste um conjunto, denotado por \\(\\emptyset = \\{ \\}\\), chamado conjunto vazio, que não possui elementos.\nÉ possível que os elementos de um conjunto sejam eles próprios conjuntos. Por exemplo, \\(D = \\{ \\{ 1, 2\\}, 3 \\}\\) é um conjunto que contém o conjunto \\(\\{ 1, 2\\}\\) e o número \\(3\\)\n\n\n\n\n\n\n\n\n\n\nDefinição B.2 (Relação de pertença) Se \\(a\\) é um elemento de \\(A\\), escrevemos essa situação como \\(a \\in A\\). Caso contrário, escrevemos \\(a \\notin A\\)\n\n\n\n\n\n\n\nHalmos, Paul R. 1974. Naive Set Theory. Editado por S. Axler, F. W. Gehring, e K. A. Ribet. Undergraduate Texts em Mathematics. New York, NY: Springer New York. https://doi.org/10.1007/978-1-4757-1645-0.",
     "crumbs": [
       "Apêndices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Teoria ingênua dos conjuntos</span>"
@@ -46,7 +46,7 @@
     "href": "naive_set_theory.html#footnotes",
     "title": "Apêndice B — Teoria ingênua dos conjuntos",
     "section": "",
-    "text": "Para uma apresentação detalhada e clara da teoria dos conjuntos, você pode consultar (Halmos 1974)↩︎",
+    "text": "Para uma apresentação detalhada e clara da teoria dos conjuntos usando um sistema de axiomas, você pode consultar (Halmos 1974)↩︎",
     "crumbs": [
       "Apêndices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Teoria ingênua dos conjuntos</span>"

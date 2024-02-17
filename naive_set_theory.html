@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -426,8 +460,46 @@ window.Quarto = {
 <p>Podemos denotar um conjunto usando uma letra arbitrária como <span class="math inline">\(A\)</span> e descrevê-lo listando seus elementos entre chaves. Por exemplo, <span class="math inline">\(A = \{ 1,2 \}\)</span> é o conjunto cujos elementos são os números <span class="math inline">\(1\)</span> e <span class="math inline">\(2\)</span>. Com base em <a href="#def-conjunto" class="quarto-xref">Definição&nbsp;<span>B.1</span></a> e na notação anterior, é importante fazer as seguintes observações:</p>
 <ul>
 <li><p><span class="math inline">\(A = \{ 1, 2 \}\)</span> e <span class="math inline">\(B = \{ 2, 1 \}\)</span> são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.</p></li>
-<li><p><span class="math inline">\(A = \{ 1, 1, 2, 2 \}\)</span></p></li>
+<li><p><span class="math inline">\(C = \{ 1, 1, 2, 2 \}\)</span> não está bem definido porque um conjunto contém elementos únicos, onde a especificação correta seria <span class="math inline">\(C = \{ 1, 2 \}\)</span>.</p></li>
+<li><p>Existe um conjunto, denotado por <span class="math inline">\(\emptyset = \{ \}\)</span>, chamado conjunto vazio, que não possui elementos.</p></li>
+<li><p>É possível que os elementos de um conjunto sejam eles próprios conjuntos. Por exemplo, <span class="math inline">\(D = \{ \{ 1, 2\}, 3 \}\)</span> é um conjunto que contém o conjunto <span class="math inline">\(\{ 1, 2\}\)</span> e o número <span class="math inline">\(3\)</span></p></li>
 </ul>
+<p>O pacote R <code>sets</code> pode ser usado para ilustrar as ideias mencionadas acima para entender o conceito de conjunto. Primeiramente, podemos criar dois conjuntos e verificar se os dois conjuntos são iguais:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sets)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">set</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>B <span class="ot">=</span> <span class="fu">set</span>(<span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>A <span class="sc">==</span> B</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Também podemos verificar a propriedade de elementos únicos em um conjunto:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>C <span class="ot">=</span> <span class="fu">set</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>C</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {1, 2}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Além disso, podemos criar um conjunto vazio:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>empty_set <span class="ot">=</span> <span class="fu">set</span>()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>empty_set</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Por último, podemos definir um conjunto cujos elementos podem ser conjuntos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>D <span class="ot">=</span> <span class="fu">set</span>(A, <span class="dv">3</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>D</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {3, {1, 2}}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="def-membership-relation" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição B.2 (Relação de pertença)</strong></span> Se <span class="math inline">\(a\)</span> é um elemento de <span class="math inline">\(A\)</span>, escrevemos essa situação como <span class="math inline">\(a \in A\)</span>. Caso contrário, escrevemos <span class="math inline">\(a \notin A\)</span></p>
+</div>
+<p>Por exemplo, se <span class="math inline">\(A = \{ 1 , 2 \}\)</span> então <span class="math inline">\(1 \in A\)</span> e <span class="math inline">\(3 \notin A\)</span>. Onde no R podemos verificar isso da seguinte maneira:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">%e%</span> A</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">%e%</span> A</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] FALSE</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -439,7 +511,7 @@ Halmos, Paul R. 1974. <em>Naive <span>Set</span> <span>Theory</span></em>. Edita
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Para uma apresentação detalhada e clara da teoria dos conjuntos, você pode consultar <span class="citation" data-cites="halmos_naive_1974">(<a href="references.html#ref-halmos_naive_1974" role="doc-biblioref">Halmos 1974</a>)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Para uma apresentação detalhada e clara da teoria dos conjuntos usando um sistema de axiomas, você pode consultar <span class="citation" data-cites="halmos_naive_1974">(<a href="references.html#ref-halmos_naive_1974" role="doc-biblioref">Halmos 1974</a>)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -977,7 +1049,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./getting_started_with_r.html" class="pagination-link  aria-label=" &lt;span="" ao="" r&lt;="" span&gt;"="">
+      <a href="./getting_started_with_r.html" class="pagination-link" aria-label="Introdução ao R">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introdução ao R</span></span>
       </a>          
   </div>
