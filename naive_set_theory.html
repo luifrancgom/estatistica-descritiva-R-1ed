@@ -426,6 +426,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#conjuntos" id="toc-conjuntos" class="nav-link active" data-scroll-target="#conjuntos"><span class="header-section-number">B.1</span> Conjuntos</a></li>
+  <li><a href="#operações-com-conjuntos" id="toc-operações-com-conjuntos" class="nav-link" data-scroll-target="#operações-com-conjuntos"><span class="header-section-number">B.2</span> Operações com conjuntos</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/blob/main/naive_set_theory.qmd" class="toc-action"><i class="bi bi-github"></i>Ver o código fonte</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/edit/main/naive_set_theory.qmd" class="toc-action"><i class="bi empty"></i>Editar essa página</a></li></ul></div></nav>
     </div>
@@ -454,10 +455,10 @@ window.Quarto = {
 <p>A teoria dos conjuntos é um ramo da matemática que lida com coleções chamadas conjuntos. Compreender a teoria dos conjuntos é essencial, pois ela forma a base fundamental da teoria da probabilidade, que por sua vez é crucial para o estudo de estatísticas. No entanto, um entendimento básico da teoria dos conjuntos é suficiente para compreender os princípios essenciais da probabilidade e estatística, evitando a necessidade de usar um formalismo excessivo <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <section id="conjuntos" class="level2" data-number="B.1">
 <h2 data-number="B.1" class="anchored" data-anchor-id="conjuntos"><span class="header-section-number">B.1</span> Conjuntos</h2>
-<div id="def-conjunto" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição B.1 (Conjunto)</strong></span> Um conjunto é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.</p>
+<div id="def-set" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição B.1 (Conjunto)</strong></span> Um <strong>conjunto</strong> é uma coleção não ordenada de elementos únicos, ou pode ser uma coleção vazia, sem nenhum elemento.</p>
 </div>
-<p>Podemos denotar um conjunto usando uma letra arbitrária como <span class="math inline">\(A\)</span> e descrevê-lo listando seus elementos entre chaves. Por exemplo, <span class="math inline">\(A = \{ 1,2 \}\)</span> é o conjunto cujos elementos são os números <span class="math inline">\(1\)</span> e <span class="math inline">\(2\)</span>. Com base em <a href="#def-conjunto" class="quarto-xref">Definição&nbsp;<span>B.1</span></a> e na notação anterior, é importante fazer as seguintes observações:</p>
+<p>Podemos denotar um conjunto usando uma letra arbitrária como <span class="math inline">\(A\)</span> e descrevê-lo listando seus elementos entre chaves. Por exemplo, <span class="math inline">\(A = \{ 1,2 \}\)</span> é o conjunto cujos elementos são os números <span class="math inline">\(1\)</span> e <span class="math inline">\(2\)</span>. Com base em <a href="#def-set" class="quarto-xref">Definição&nbsp;<span>B.1</span></a> e na notação anterior, é importante fazer as seguintes observações:</p>
 <ul>
 <li><p><span class="math inline">\(A = \{ 1, 2 \}\)</span> e <span class="math inline">\(B = \{ 2, 1 \}\)</span> são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.</p></li>
 <li><p><span class="math inline">\(C = \{ 1, 1, 2, 2 \}\)</span> não está bem definido porque um conjunto contém elementos únicos, onde a especificação correta seria <span class="math inline">\(C = \{ 1, 2 \}\)</span>.</p></li>
@@ -467,39 +468,68 @@ window.Quarto = {
 <p>O pacote R <code>sets</code> pode ser usado para ilustrar as ideias mencionadas acima para entender o conceito de conjunto. Primeiramente, podemos criar dois conjuntos e verificar se os dois conjuntos são iguais:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sets)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">set</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>B <span class="ot">=</span> <span class="fu">set</span>(<span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>A <span class="sc">==</span> B</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">set</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>A</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {1, 2}</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">set</span>(<span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>B</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {1, 2}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>A <span class="sc">==</span> B</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Também podemos verificar a propriedade de elementos únicos em um conjunto:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>C <span class="ot">=</span> <span class="fu">set</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>C <span class="ot">&lt;-</span> <span class="fu">set</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>C</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {1, 2}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Além disso, podemos criar um conjunto vazio:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>empty_set <span class="ot">=</span> <span class="fu">set</span>()</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>empty_set <span class="ot">&lt;-</span> <span class="fu">set</span>()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>empty_set</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Por último, podemos definir um conjunto cujos elementos podem ser conjuntos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>D <span class="ot">=</span> <span class="fu">set</span>(A, <span class="dv">3</span>)</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">set</span>(A, <span class="dv">3</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>D</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {3, {1, 2}}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="def-membership-relation" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição B.2 (Relação de pertença)</strong></span> Se <span class="math inline">\(a\)</span> é um elemento de <span class="math inline">\(A\)</span>, escrevemos essa situação como <span class="math inline">\(a \in A\)</span>. Caso contrário, escrevemos <span class="math inline">\(a \notin A\)</span></p>
+<p><span class="theorem-title"><strong>Definição B.2 (Relação de pertença)</strong></span> Se <span class="math inline">\(a\)</span> é um elemento de <span class="math inline">\(A\)</span>, expressamos essa condição como <span class="math inline">\(a \in A\)</span>. Caso contrário, expressamos que <span class="math inline">\(a\)</span> não é um elemento de <span class="math inline">\(A\)</span> com <span class="math inline">\(a \notin A\)</span>. Na teoria dos conjuntos, <span class="math inline">\(\in\)</span> é conhecido como a relação <em>“é um elemento de”</em>.</p>
 </div>
-<p>Por exemplo, se <span class="math inline">\(A = \{ 1 , 2 \}\)</span> então <span class="math inline">\(1 \in A\)</span> e <span class="math inline">\(3 \notin A\)</span>. Onde no R podemos verificar isso da seguinte maneira:</p>
+<p>Por exemplo, se <span class="math inline">\(A = \{ 1 , 2 \}\)</span> então <span class="math inline">\(1 \in A\)</span> e <span class="math inline">\(3 \notin A\)</span>. Em R, podemos verificar se um elemento pertence a um conjunto usando o operador <code>%e%</code> do pacote <code>sets</code>, que representa a relação <span class="math inline">\(\in\)</span>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">%e%</span> A</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">%e%</span> A</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] FALSE</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Às vezes, não é possível listar os elementos de um conjunto porque os elementos são infinitos ou porque não sabemos exatamente quais são. No entanto, se sabemos a propriedade que cada elemento deve ter, podemos usar uma notação matemática conhecida como <strong>notação construtor de conjuntos</strong> para descrever o conjunto. Essa notação é especificada como <span class="math inline">\(\{ x: P(x) \}\)</span>, onde <span class="math inline">\(x\)</span> é um elemento genérico com a propriedade <span class="math inline">\(P(x)\)</span>. Por exemplo:</p>
+<ul>
+<li><span class="math inline">\(E = \{ x: x \text{ é um cachorro} \}\)</span> onde <span class="math inline">\(E\)</span> é o conjunto que contém todos os <span class="math inline">\(x\)</span>que são cachorros. Nesse caso, <span class="math inline">\(P(x)\)</span> refere-se a ter a propriedade de ser um cachorro.</li>
+<li><span class="math inline">\(F = \{ x: x &gt; 5 \text{ and } x \in \mathbb{N}\}\)</span> onde <span class="math inline">\(F\)</span> contém todos os números maiores que 5 que são números naturais. Nesse caso, <span class="math inline">\(P(x)\)</span> refere-se a todos os <span class="math inline">\(x\)</span> maiores que 5 e pertencentes aos números naturais.</li>
+</ul>
+<p>Infelizmente, o R só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como <code>sets</code> não permite representar conjuntos como <span class="math inline">\(E\)</span> ou <span class="math inline">\(F\)</span> no R.</p>
+<div id="def-subset" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição B.3 (Subconjunto)</strong></span> Um conjunto <span class="math inline">\(A\)</span> é um <strong>subconjunto</strong> de um conjunto <span class="math inline">\(B\)</span> se todos os elementos de <span class="math inline">\(A\)</span> também sejam elementos de <span class="math inline">\(B\)</span>. Essa condição pode ser expressa através da notação <span class="math inline">\(A \subseteq B\)</span>. Por outro lado, se algum elemento de <span class="math inline">\(A\)</span> não pertencer a <span class="math inline">\(B\)</span>, o que pode ser representado por <span class="math inline">\(A \nsubseteq B\)</span>. Na teoria dos conjuntos, <span class="math inline">\(\subseteq\)</span> é conhecido como a relação de <em>“inclusão”</em>.</p>
+</div>
+<p>Por exemplo, se <span class="math inline">\(A = \{ 1 , 2 \}\)</span> e <span class="math inline">\(G = \{ 1, 2, 3\}\)</span> então <span class="math inline">\(A \subseteq G\)</span> porém <span class="math inline">\(G \nsubseteq A\)</span> porque <span class="math inline">\(3 \in G\)</span> e <span class="math inline">\(3 \notin A\)</span>. Em R, podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador <code>&lt;=</code> do pacote <code>sets</code>, que representa a relação <span class="math inline">\(\subseteq\)</span>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>G <span class="ot">&lt;-</span> <span class="fu">set</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>G</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {1, 2, 3}</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>A <span class="sc">&lt;=</span> G</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>G <span class="sc">&lt;=</span> A</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] FALSE</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="def-set-equality" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição B.4 (Igualdade de conjuntos)</strong></span> Com base em <a href="#def-subset" class="quarto-xref">Definição&nbsp;<span>B.3</span></a> podemos estabelecer uma definição equivalente para a igualdade de conjuntos. Dois conjuntos, <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, são considerados iguais, <span class="math inline">\(A = B\)</span>, se e somente se <span class="math inline">\(A \subseteq G\)</span> e <span class="math inline">\(G \subseteq A\)</span>. Em outras palavras, ambos os conjuntos devem conter exatamente os mesmos elementos para serem considerados iguais.</p>
+</div>
+</section>
+<section id="operações-com-conjuntos" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="operações-com-conjuntos"><span class="header-section-number">B.2</span> Operações com conjuntos</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
