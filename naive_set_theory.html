@@ -427,6 +427,7 @@ window.Quarto = {
   <ul>
   <li><a href="#conjuntos" id="toc-conjuntos" class="nav-link active" data-scroll-target="#conjuntos"><span class="header-section-number">B.1</span> Conjuntos</a></li>
   <li><a href="#operações-com-conjuntos" id="toc-operações-com-conjuntos" class="nav-link" data-scroll-target="#operações-com-conjuntos"><span class="header-section-number">B.2</span> Operações com conjuntos</a></li>
+  <li><a href="#o-conjunto-vazio-e-o-conjunto-potência" id="toc-o-conjunto-vazio-e-o-conjunto-potência" class="nav-link" data-scroll-target="#o-conjunto-vazio-e-o-conjunto-potência"><span class="header-section-number">B.3</span> O conjunto vazio e o conjunto potência</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/blob/main/naive_set_theory.qmd" class="toc-action"><i class="bi bi-github"></i>Ver o código fonte</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/edit/main/naive_set_theory.qmd" class="toc-action"><i class="bi empty"></i>Editar essa página</a></li></ul></div></nav>
     </div>
@@ -507,8 +508,8 @@ window.Quarto = {
 </div>
 <p>Às vezes, não é possível listar os elementos de um conjunto porque os elementos são infinitos ou porque não sabemos exatamente quais são. No entanto, se sabemos a propriedade que cada elemento deve ter, podemos usar uma notação matemática conhecida como <strong>notação construtor de conjuntos</strong> para descrever o conjunto. Essa notação é especificada como <span class="math inline">\(\{ x: P(x) \}\)</span>, onde <span class="math inline">\(x\)</span> é um elemento genérico com a propriedade <span class="math inline">\(P(x)\)</span>. Por exemplo:</p>
 <ul>
-<li><span class="math inline">\(E = \{ x: x \text{ é um cachorro} \}\)</span> onde <span class="math inline">\(E\)</span> é o conjunto que contém todos os <span class="math inline">\(x\)</span>que são cachorros. Nesse caso, <span class="math inline">\(P(x)\)</span> refere-se a ter a propriedade de ser um cachorro.</li>
-<li><span class="math inline">\(F = \{ x: x &gt; 5 \text{ and } x \in \mathbb{N}\}\)</span> onde <span class="math inline">\(F\)</span> contém todos os números maiores que 5 que são números naturais. Nesse caso, <span class="math inline">\(P(x)\)</span> refere-se a todos os <span class="math inline">\(x\)</span> maiores que 5 e pertencentes aos números naturais.</li>
+<li><span class="math inline">\(E = \{ x: x \text{ é um cachorro} \}\)</span> onde <span class="math inline">\(E\)</span> é o conjunto que contém todos os <span class="math inline">\(x\)</span> que são cachorros. Nesse caso, <span class="math inline">\(P(x)\)</span> refere-se a ter a propriedade de ser um cachorro.</li>
+<li><span class="math inline">\(F = \{ x: x &gt; 5 \text{ and } x \in \mathbb{N}\}\)</span> onde <span class="math inline">\(F\)</span> contém todos os números maiores que <span class="math inline">\(5\)</span> que são números naturais. Nesse caso, <span class="math inline">\(P(x)\)</span> refere-se a todos os <span class="math inline">\(x\)</span> maiores que <span class="math inline">\(5\)</span> e pertencentes aos números naturais.</li>
 </ul>
 <p>Infelizmente, o R só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como <code>sets</code> não permite representar conjuntos como <span class="math inline">\(E\)</span> ou <span class="math inline">\(F\)</span> no R.</p>
 <div id="def-subset" class="theorem definition">
@@ -530,6 +531,49 @@ window.Quarto = {
 </section>
 <section id="operações-com-conjuntos" class="level2" data-number="B.2">
 <h2 data-number="B.2" class="anchored" data-anchor-id="operações-com-conjuntos"><span class="header-section-number">B.2</span> Operações com conjuntos</h2>
+<div id="def-union" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição B.5 (União de conjuntos)</strong></span> A união de dois conjuntos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, denotada por <span class="math inline">\(A \cup B\)</span>, é o conjunto de todos os elementos que estão em <span class="math inline">\(A\)</span> <strong>ou</strong> em <span class="math inline">\(B\)</span>. <span class="math inline">\(A \cup B\)</span> também é um conjunto e pode ser definido usando notação construtor de conjuntos como <span class="math inline">\(A \cup B = \{x: x \in A \textbf{ ou }  x \in B \}\)</span></p>
+</div>
+<p>Por exemplo, se <span class="math inline">\(A = \{ 1, 2 \}\)</span> e <span class="math inline">\(H = \{ 2, 3 \}\)</span>, então <span class="math inline">\(A \cup H = \{ 1, 2, 3 \}\)</span>. Em R, utilizando o pacote <code>sets</code>, o operador <code>|</code> é utilizado para representar a união, <span class="math inline">\(\cup\)</span>, de dois conjuntos da seguinte maneira:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="fu">set</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>A <span class="sc">|</span> H</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {1, 2, 3}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="def-intersection" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição B.6 (Interseção de conjuntos)</strong></span> A interseção de dois conjuntos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, denotada por <span class="math inline">\(A \cap B\)</span>, é o conjunto de todos os elementos que estão em <span class="math inline">\(A\)</span> <strong>e</strong> em <span class="math inline">\(B\)</span>. <span class="math inline">\(A \cap B\)</span> também é um conjunto e pode ser definido usando notação construtor de conjuntos como <span class="math inline">\(A \cap B = \{ x: x \in A \textbf{ e } x \in B \}\)</span>.</p>
+</div>
+<p>Por exemplo, se <span class="math inline">\(A = \{ 1, 2 \}\)</span> e <span class="math inline">\(H = \{ 2, 3 \}\)</span>, então <span class="math inline">\(A \cap H = \{ 2 \}\)</span>. Em R, utilizando o pacote <code>sets</code>, o operador <code>&amp;</code> é utilizado para representar a interseção, <span class="math inline">\(\cap\)</span>, de dois conjuntos da seguinte maneira:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">&amp;</span> H</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {2}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="def-difference" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição B.7 (Diferença de conjuntos)</strong></span> A diferença de dois conjuntos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, denotada por <span class="math inline">\(A \setminus B\)</span>, é o conjunto de todos os elementos que pertencem a <span class="math inline">\(A\)</span>, mas não a <span class="math inline">\(B\)</span>. <span class="math inline">\(A \setminus B\)</span> também é um conjunto e pode ser definido usando notação construtor de conjuntos como <span class="math inline">\(A \setminus B = \{ x: x \in A \text{ e } x \notin B \}\)</span>.</p>
+</div>
+<p>Por exemplo, se <span class="math inline">\(A = \{ 1, 2 \}\)</span> e <span class="math inline">\(H = \{ 2, 3 \}\)</span>, então <span class="math inline">\(A \setminus H = \{ 1 \}\)</span> e <span class="math inline">\(H \setminus A = \{ 3 \}\)</span>. Em R, utilizando o pacote <code>sets</code>, o operador <code>-</code> é utilizado para representar a diferença, <span class="math inline">\(\setminus\)</span>, de dois conjuntos da seguinte maneira:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">-</span> H</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {1}</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>H <span class="sc">-</span> A</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {3}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="def-complement" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição B.8 (Complemento de um conjunto)</strong></span> Se <span class="math inline">\(A\)</span> e <span class="math inline">\(\Omega\)</span> são conjuntos, onde <span class="math inline">\(A \subseteq \Omega\)</span>, o complemento de <span class="math inline">\(A\)</span>, denotado por <span class="math inline">\(A^c\)</span>, é o conjunto <span class="math inline">\(\Omega \setminus A\)</span>. Ou seja, <span class="math inline">\(\Omega \setminus A = \{ x: x \in \Omega \text{ e } x \notin A \}\)</span>.</p>
+</div>
+<p>Por exemplo, se <span class="math inline">\(A = \{ 1, 2 \}\)</span> e <span class="math inline">\(\Omega = \{ 1, 2, 3, 4 \}\)</span>, então <span class="math inline">\(\Omega \setminus A = \{ 3, 4 \}\)</span>. Em R, utilizando o pacote <code>sets</code>, podemos determinar <span class="math inline">\(A^c\)</span> da seguinte maneira:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>omega <span class="ot">&lt;-</span> <span class="fu">set</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>omega</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {1, 2, 3, 4}</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>A <span class="sc">&lt;=</span> omega</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>omega <span class="sc">-</span> A</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {3, 4}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="o-conjunto-vazio-e-o-conjunto-potência" class="level2" data-number="B.3">
+<h2 data-number="B.3" class="anchored" data-anchor-id="o-conjunto-vazio-e-o-conjunto-potência"><span class="header-section-number">B.3</span> O conjunto vazio e o conjunto potência</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
