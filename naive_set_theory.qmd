@@ -7,7 +7,7 @@ source(file = "_common.R")
 
 A teoria dos conjuntos é um ramo da matemática que lida com coleções chamadas conjuntos. Compreender a teoria dos conjuntos é essencial, pois ela forma a base fundamental da teoria da probabilidade, que por sua vez é crucial para o estudo de estatísticas. No entanto, um entendimento básico da teoria dos conjuntos é suficiente para compreender os princípios essenciais da probabilidade e estatística, evitando a necessidade de usar um formalismo excessivo [^naive_set_theory-1].
 
-[^naive_set_theory-1]: Para uma apresentação detalhada e clara da teoria dos conjuntos usando um sistema de axiomas, você pode consultar [@halmos_naive_1974]
+[^naive_set_theory-1]: Para uma apresentação detalhada e clara da teoria dos conjuntos usando um sistema de axiomas, você pode consultar [@halmos_teoria_2001]
 
 ## Conjuntos
 
@@ -23,7 +23,7 @@ Podemos denotar um conjunto usando uma letra arbitrária como $A$ e descrevê-lo
 
 -   $C = \{ 1, 1, 2, 2 \}$ não está bem definido porque um conjunto contém elementos únicos, onde a especificação correta seria $C = \{ 1, 2 \}$.
 
--   Existe um conjunto, denotado por $\emptyset = \{ \}$, chamado conjunto vazio, que não possui elementos.
+-   Existe um conjunto, denotado por $\emptyset = \{ \}$, chamado **conjunto vazio**, que não possui elementos.
 
 -   É possível que os elementos de um conjunto sejam eles próprios conjuntos. Por exemplo, $D = \{ \{ 1, 2\}, 3 \}$ é um conjunto que contém o conjunto $\{ 1, 2\}$ e o número $3$
 
@@ -48,8 +48,8 @@ C
 Além disso, podemos criar um conjunto vazio:
 
 ```{r}
-empty_set <- set()
-empty_set
+vazio <- set()
+vazio
 ```
 
 Por último, podemos definir um conjunto cujos elementos podem ser conjuntos:
@@ -82,10 +82,10 @@ Infelizmente, o R só pode manipular objetos que podem ser representados como n�
 ::: {#def-subset}
 ## Subconjunto
 
-Um conjunto $A$ é um **subconjunto** de um conjunto $B$ se todos os elementos de $A$ também sejam elementos de $B$. Essa condição pode ser expressa através da notação $A \subseteq B$. Por outro lado, se algum elemento de $A$ não pertencer a $B$, o que pode ser representado por $A \nsubseteq B$. Na teoria dos conjuntos, $\subseteq$ é conhecido como a relação de *"inclusão"*.
+Um conjunto $A$ é um **subconjunto** de um conjunto $B$ se todos os elementos de $A$ também sejam elementos de $B$. Essa condição pode ser expressa através da notação $A \subseteq B$. Por outro lado, se existir um elemento que pertença a $A$, mas não pertença a $B$, representamos essa situação como $A \nsubseteq B$. Na teoria dos conjuntos, $\subseteq$ é conhecido como a relação de *"inclusão"*.
 :::
 
-Por exemplo, se $A = \{ 1 , 2 \}$ e $G = \{ 1, 2, 3\}$ então $A \subseteq G$ porém $G \nsubseteq A$ porque $3 \in G$ e $3 \notin A$. Em R, podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador `<=` do pacote `sets`, que representa a relação $\subseteq$:
+Por exemplo, se $A = \{ 1 , 2 \}$ e $G = \{ 1, 2, 3\}$ então $A \subseteq G$ porque $1 \in A$, $1 \in G$, $2 \in A$ e $2 \in G$. No entanto, $G \nsubseteq A$ porque $3 \in G$ e $3 \notin A$. Em R, podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador `<=` do pacote `sets`, que representa a relação $\subseteq$:
 
 ```{r}
 G <- set(1, 2, 3)
@@ -105,7 +105,7 @@ Com base em @def-subset podemos estabelecer uma definição equivalente para a i
 ::: {#def-union}
 ## União de conjuntos
 
-A união de dois conjuntos $A$ e $B$, denotada por $A \cup B$, é o conjunto de todos os elementos que estão em $A$ **ou** em $B$. $A \cup B$ também é um conjunto e pode ser definido usando notação construtor de conjuntos como $A \cup B = \{x: x \in A \textbf{ ou }  x \in B \}$
+A união de dois conjuntos $A$ e $B$, denotada por $A \cup B$, é o conjunto de todos os elementos que estão em $A$ **ou** em $B$. $A \cup B$ também é um conjunto e pode ser definido usando notação construtor de conjuntos como $A \cup B = \{x: x \in A \textbf{ ou } x \in B \}$
 :::
 
 Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \cup H = \{ 1, 2, 3 \}$. Em R, utilizando o pacote `sets`, o operador `|` é utilizado para representar a união, $\cup$, de dois conjuntos da seguinte maneira:
@@ -156,3 +156,38 @@ omega - A
 ```
 
 ## O conjunto vazio e o conjunto potência
+
+O conjunto vazio, $\emptyset$, tem certas características que podem parecer contraintuitivas. Em primeiro lugar, só pode haver um conjunto vazio porque quaisquer dois conjuntos que não contenham nenhum elemento são idênticos. Conforme declarado na @def-set-equality, conjuntos são considerados iguais se eles têm os mesmos elementos. Como ambos os conjuntos vazios não contêm elementos, eles são considerados o mesmo conjunto.
+
+Outra propriedade aparentemente contraintuitiva é que o conjunto vazio é um subconjunto de todos os conjuntos. Se temos um conjunto $A$, e afirmamos que o conjunto vazio não é um subconjunto de $A$, denotado por $\emptyset \subseteq A$, então, de acordo com a @def-subset, deve existir um elemento que pertença a $\emptyset$, mas não a $A$. No entanto, como o conjunto vazio não tem nenhum elemento, é impossível que um elemento pertença a $\emptyset$. Portanto, a única maneira de evitar uma contradição é aceitar que o conjunto vazio é um subconjunto de todos os conjuntos, denotado por $\emptyset \subseteq A$.
+
+Podemos resumir os resultados acima da seguinte maneira:
+
+::: {#thm-empty-set-uniqueness}
+## Unicidade do conjunto vazio
+
+Só existe um conjunto vazio. Em outras palavras, se $\emptyset$ e $\emptyset^{'}$ são ambos conjuntos vazios, então $\emptyset$ é igual a $\emptyset^{'}$, $\emptyset = \emptyset^{'}$.
+
+:::
+
+::: {#thm-empty-set-subset}
+## Propriedade de subconjunto do conjunto vazio
+
+O conjunto vazio é um subconjunto de todos os conjuntos. Para qualquer conjunto $A$, o conjunto vazio, $\emptyset$, é um subconjunto de $A$, $\emptyset \subseteq A$.
+
+:::
+
+Há também um conjunto chamado **conjunto das potências**. O conjunto das potências de um conjunto $A$, denotado como $\mathcal{P}(A)$, é um conjunto que contém todos os subconjuntos de $A$. Podemos defini-lo como:
+
+::: {#def-power-set}
+## Conjunto das potências
+
+Se $A$ é um conjunto, então o conjunto que contém todos os subconjuntos de $A$, denotado como $\mathcal{P}(A)$, é definido como $\mathcal{P}(A) = \{ B: B \subseteq A \}$.
+:::
+
+Por exemplo, se $A = \{ 1, 2 \}$ então $\mathcal{P}(A) = \{ \emptyset, \{ 1 \}, \{ 2 \}, A \} = \{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1,2 \} \}$ porque $\emptyset \subseteq A$ pelo @thm-empty-set-subset, $\{ 1 \} \subseteq A$, $\{ 2 \} \subseteq A$ e $A = \{ 1, 2 \} \subseteq A$. Em R, podemos construir o conjunto das potências de um conjunto $A$, $\mathcal{P}(A)$, como `2^A` utilizando o pacote `sets` da seguinte maneira:
+
+```{r}
+potencia_A <- 2^A
+potencia_A
+```
