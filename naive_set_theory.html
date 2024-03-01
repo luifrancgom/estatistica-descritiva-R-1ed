@@ -463,7 +463,7 @@ window.Quarto = {
 <ul>
 <li><p><span class="math inline">\(A = \{ 1, 2 \}\)</span> e <span class="math inline">\(B = \{ 2, 1 \}\)</span> são o mesmo conjunto porque conjuntos são coleções não ordenadas onde a ordem não é definida.</p></li>
 <li><p><span class="math inline">\(C = \{ 1, 1, 2, 2 \}\)</span> não está bem definido porque um conjunto contém elementos únicos, onde a especificação correta seria <span class="math inline">\(C = \{ 1, 2 \}\)</span>.</p></li>
-<li><p>Existe um conjunto, denotado por <span class="math inline">\(\emptyset = \{ \}\)</span>, chamado conjunto vazio, que não possui elementos.</p></li>
+<li><p>Existe um conjunto, denotado por <span class="math inline">\(\emptyset = \{ \}\)</span>, chamado <strong>conjunto vazio</strong>, que não possui elementos.</p></li>
 <li><p>É possível que os elementos de um conjunto sejam eles próprios conjuntos. Por exemplo, <span class="math inline">\(D = \{ \{ 1, 2\}, 3 \}\)</span> é um conjunto que contém o conjunto <span class="math inline">\(\{ 1, 2\}\)</span> e o número <span class="math inline">\(3\)</span></p></li>
 </ul>
 <p>O pacote R <code>sets</code> pode ser usado para ilustrar as ideias mencionadas acima para entender o conceito de conjunto. Primeiramente, podemos criar dois conjuntos e verificar se os dois conjuntos são iguais:</p>
@@ -486,8 +486,8 @@ window.Quarto = {
 </div>
 <p>Além disso, podemos criar um conjunto vazio:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>empty_set <span class="ot">&lt;-</span> <span class="fu">set</span>()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>empty_set</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>vazio <span class="ot">&lt;-</span> <span class="fu">set</span>()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>vazio</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Por último, podemos definir um conjunto cujos elementos podem ser conjuntos:</p>
@@ -513,9 +513,9 @@ window.Quarto = {
 </ul>
 <p>Infelizmente, o R só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como <code>sets</code> não permite representar conjuntos como <span class="math inline">\(E\)</span> ou <span class="math inline">\(F\)</span> no R.</p>
 <div id="def-subset" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição B.3 (Subconjunto)</strong></span> Um conjunto <span class="math inline">\(A\)</span> é um <strong>subconjunto</strong> de um conjunto <span class="math inline">\(B\)</span> se todos os elementos de <span class="math inline">\(A\)</span> também sejam elementos de <span class="math inline">\(B\)</span>. Essa condição pode ser expressa através da notação <span class="math inline">\(A \subseteq B\)</span>. Por outro lado, se algum elemento de <span class="math inline">\(A\)</span> não pertencer a <span class="math inline">\(B\)</span>, o que pode ser representado por <span class="math inline">\(A \nsubseteq B\)</span>. Na teoria dos conjuntos, <span class="math inline">\(\subseteq\)</span> é conhecido como a relação de <em>“inclusão”</em>.</p>
+<p><span class="theorem-title"><strong>Definição B.3 (Subconjunto)</strong></span> Um conjunto <span class="math inline">\(A\)</span> é um <strong>subconjunto</strong> de um conjunto <span class="math inline">\(B\)</span> se todos os elementos de <span class="math inline">\(A\)</span> também sejam elementos de <span class="math inline">\(B\)</span>. Essa condição pode ser expressa através da notação <span class="math inline">\(A \subseteq B\)</span>. Por outro lado, se existir um elemento que pertença a <span class="math inline">\(A\)</span>, mas não pertença a <span class="math inline">\(B\)</span>, representamos essa situação como <span class="math inline">\(A \nsubseteq B\)</span>. Na teoria dos conjuntos, <span class="math inline">\(\subseteq\)</span> é conhecido como a relação de <em>“inclusão”</em>.</p>
 </div>
-<p>Por exemplo, se <span class="math inline">\(A = \{ 1 , 2 \}\)</span> e <span class="math inline">\(G = \{ 1, 2, 3\}\)</span> então <span class="math inline">\(A \subseteq G\)</span> porém <span class="math inline">\(G \nsubseteq A\)</span> porque <span class="math inline">\(3 \in G\)</span> e <span class="math inline">\(3 \notin A\)</span>. Em R, podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador <code>&lt;=</code> do pacote <code>sets</code>, que representa a relação <span class="math inline">\(\subseteq\)</span>:</p>
+<p>Por exemplo, se <span class="math inline">\(A = \{ 1 , 2 \}\)</span> e <span class="math inline">\(G = \{ 1, 2, 3\}\)</span> então <span class="math inline">\(A \subseteq G\)</span> porque <span class="math inline">\(1 \in A\)</span>, <span class="math inline">\(1 \in G\)</span>, <span class="math inline">\(2 \in A\)</span> e <span class="math inline">\(2 \in G\)</span>. No entanto, <span class="math inline">\(G \nsubseteq A\)</span> porque <span class="math inline">\(3 \in G\)</span> e <span class="math inline">\(3 \notin A\)</span>. Em R, podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador <code>&lt;=</code> do pacote <code>sets</code>, que representa a relação <span class="math inline">\(\subseteq\)</span>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>G <span class="ot">&lt;-</span> <span class="fu">set</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>G</span>
@@ -532,7 +532,7 @@ window.Quarto = {
 <section id="operações-com-conjuntos" class="level2" data-number="B.2">
 <h2 data-number="B.2" class="anchored" data-anchor-id="operações-com-conjuntos"><span class="header-section-number">B.2</span> Operações com conjuntos</h2>
 <div id="def-union" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição B.5 (União de conjuntos)</strong></span> A união de dois conjuntos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, denotada por <span class="math inline">\(A \cup B\)</span>, é o conjunto de todos os elementos que estão em <span class="math inline">\(A\)</span> <strong>ou</strong> em <span class="math inline">\(B\)</span>. <span class="math inline">\(A \cup B\)</span> também é um conjunto e pode ser definido usando notação construtor de conjuntos como <span class="math inline">\(A \cup B = \{x: x \in A \textbf{ ou }  x \in B \}\)</span></p>
+<p><span class="theorem-title"><strong>Definição B.5 (União de conjuntos)</strong></span> A união de dois conjuntos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, denotada por <span class="math inline">\(A \cup B\)</span>, é o conjunto de todos os elementos que estão em <span class="math inline">\(A\)</span> <strong>ou</strong> em <span class="math inline">\(B\)</span>. <span class="math inline">\(A \cup B\)</span> também é um conjunto e pode ser definido usando notação construtor de conjuntos como <span class="math inline">\(A \cup B = \{x: x \in A \textbf{ ou } x \in B \}\)</span></p>
 </div>
 <p>Por exemplo, se <span class="math inline">\(A = \{ 1, 2 \}\)</span> e <span class="math inline">\(H = \{ 2, 3 \}\)</span>, então <span class="math inline">\(A \cup H = \{ 1, 2, 3 \}\)</span>. Em R, utilizando o pacote <code>sets</code>, o operador <code>|</code> é utilizado para representar a união, <span class="math inline">\(\cup\)</span>, de dois conjuntos da seguinte maneira:</p>
 <div class="cell">
@@ -574,18 +574,37 @@ window.Quarto = {
 </section>
 <section id="o-conjunto-vazio-e-o-conjunto-potência" class="level2" data-number="B.3">
 <h2 data-number="B.3" class="anchored" data-anchor-id="o-conjunto-vazio-e-o-conjunto-potência"><span class="header-section-number">B.3</span> O conjunto vazio e o conjunto potência</h2>
+<p>O conjunto vazio, <span class="math inline">\(\emptyset\)</span>, tem certas características que podem parecer contraintuitivas. Em primeiro lugar, só pode haver um conjunto vazio porque quaisquer dois conjuntos que não contenham nenhum elemento são idênticos. Conforme declarado na <a href="#def-set-equality" class="quarto-xref">Definição&nbsp;<span>B.4</span></a>, conjuntos são considerados iguais se eles têm os mesmos elementos. Como ambos os conjuntos vazios não contêm elementos, eles são considerados o mesmo conjunto.</p>
+<p>Outra propriedade aparentemente contraintuitiva é que o conjunto vazio é um subconjunto de todos os conjuntos. Se temos um conjunto <span class="math inline">\(A\)</span>, e afirmamos que o conjunto vazio não é um subconjunto de <span class="math inline">\(A\)</span>, denotado por <span class="math inline">\(\emptyset \subseteq A\)</span>, então, de acordo com a <a href="#def-subset" class="quarto-xref">Definição&nbsp;<span>B.3</span></a>, deve existir um elemento que pertença a <span class="math inline">\(\emptyset\)</span>, mas não a <span class="math inline">\(A\)</span>. No entanto, como o conjunto vazio não tem nenhum elemento, é impossível que um elemento pertença a <span class="math inline">\(\emptyset\)</span>. Portanto, a única maneira de evitar uma contradição é aceitar que o conjunto vazio é um subconjunto de todos os conjuntos, denotado por <span class="math inline">\(\emptyset \subseteq A\)</span>.</p>
+<p>Podemos resumir os resultados acima da seguinte maneira:</p>
+<div id="thm-empty-set-uniqueness" class="theorem">
+<p><span class="theorem-title"><strong>Teorema B.1 (Unicidade do conjunto vazio)</strong></span> Só existe um conjunto vazio. Em outras palavras, se <span class="math inline">\(\emptyset\)</span> e <span class="math inline">\(\emptyset^{'}\)</span> são ambos conjuntos vazios, então <span class="math inline">\(\emptyset\)</span> é igual a <span class="math inline">\(\emptyset^{'}\)</span>, <span class="math inline">\(\emptyset = \emptyset^{'}\)</span>.</p>
+</div>
+<div id="thm-empty-set-subset" class="theorem">
+<p><span class="theorem-title"><strong>Teorema B.2 (Propriedade de subconjunto do conjunto vazio)</strong></span> O conjunto vazio é um subconjunto de todos os conjuntos. Para qualquer conjunto <span class="math inline">\(A\)</span>, o conjunto vazio, <span class="math inline">\(\emptyset\)</span>, é um subconjunto de <span class="math inline">\(A\)</span>, <span class="math inline">\(\emptyset \subseteq A\)</span>.</p>
+</div>
+<p>Há também um conjunto chamado <strong>conjunto das potências</strong>. O conjunto das potências de um conjunto <span class="math inline">\(A\)</span>, denotado como <span class="math inline">\(\mathcal{P}(A)\)</span>, é um conjunto que contém todos os subconjuntos de <span class="math inline">\(A\)</span>. Podemos defini-lo como:</p>
+<div id="def-power-set" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição B.9 (Conjunto das potências)</strong></span> Se <span class="math inline">\(A\)</span> é um conjunto, então o conjunto que contém todos os subconjuntos de <span class="math inline">\(A\)</span>, denotado como <span class="math inline">\(\mathcal{P}(A)\)</span>, é definido como <span class="math inline">\(\mathcal{P}(A) = \{ B: B \subseteq A \}\)</span>.</p>
+</div>
+<p>Por exemplo, se <span class="math inline">\(A = \{ 1, 2 \}\)</span> então <span class="math inline">\(\mathcal{P}(A) = \{ \emptyset, \{ 1 \}, \{ 2 \}, A \} = \{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1,2 \} \}\)</span> porque <span class="math inline">\(\emptyset \subseteq A\)</span> pelo <a href="#thm-empty-set-subset" class="quarto-xref">Teorema&nbsp;<span>B.2</span></a>, <span class="math inline">\(\{ 1 \} \subseteq A\)</span>, <span class="math inline">\(\{ 2 \} \subseteq A\)</span> e <span class="math inline">\(A = \{ 1, 2 \} \subseteq A\)</span>. Em R, podemos construir o conjunto das potências de um conjunto <span class="math inline">\(A\)</span>, <span class="math inline">\(\mathcal{P}(A)\)</span>, como <code>2^A</code> utilizando o pacote <code>sets</code> da seguinte maneira:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>potencia_A <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">^</span>A</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>potencia_A</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; {{}, {1}, {2}, {1, 2}}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-halmos_naive_1974" class="csl-entry" role="listitem">
-Halmos, Paul R. 1974. <em>Naive <span>Set</span> <span>Theory</span></em>. Editado por S. Axler, F. W. Gehring, e K. A. Ribet. Undergraduate <span>Texts</span> em <span>Mathematics</span>. New York, NY: Springer New York. <a href="https://doi.org/10.1007/978-1-4757-1645-0">https://doi.org/10.1007/978-1-4757-1645-0</a>.
+<div id="ref-halmos_teoria_2001" class="csl-entry" role="listitem">
+Halmos, Paul R. 2001. <em>Teoria ingenua dos conjuntos</em>. Rio de Janeiro: Editora Ciencia Moderna.
 </div>
 </div>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Para uma apresentação detalhada e clara da teoria dos conjuntos usando um sistema de axiomas, você pode consultar <span class="citation" data-cites="halmos_naive_1974">(<a href="references.html#ref-halmos_naive_1974" role="doc-biblioref">Halmos 1974</a>)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Para uma apresentação detalhada e clara da teoria dos conjuntos usando um sistema de axiomas, você pode consultar <span class="citation" data-cites="halmos_teoria_2001">(<a href="references.html#ref-halmos_teoria_2001" role="doc-biblioref">Halmos 2001</a>)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
