@@ -65,7 +65,7 @@ D
 Se $a$ é um elemento de $A$, expressamos essa condição como $a \in A$. Caso contrário, expressamos que $a$ não é um elemento de $A$ com $a \notin A$. Na teoria dos conjuntos, $\in$ é conhecido como a relação *"é um elemento de"*.
 :::
 
-Por exemplo, se $A = \{ 1 , 2 \}$ então $1 \in A$ e $3 \notin A$.  Em R, podemos verificar se um elemento pertence a um conjunto usando o operador `%e%` do pacote `sets`, que representa a relação $\in$:
+Por exemplo, se $A = \{ 1 , 2 \}$ então $1 \in A$ e $3 \notin A$. Em R, podemos verificar se um elemento pertence a um conjunto usando o operador `%e%` do pacote `sets`, que representa a relação $\in$:
 
 ```{r}
 1 %e% A
@@ -74,15 +74,15 @@ Por exemplo, se $A = \{ 1 , 2 \}$ então $1 \in A$ e $3 \notin A$.  Em R, podemo
 
 Às vezes, não é possível listar os elementos de um conjunto porque os elementos são infinitos ou porque não sabemos exatamente quais são. No entanto, se sabemos a propriedade que cada elemento deve ter, podemos usar uma notação matemática conhecida como **notação construtor de conjuntos** para descrever o conjunto. Essa notação é especificada como $\{ x: P(x) \}$, onde $x$ é um elemento genérico com a propriedade $P(x)$. Por exemplo:
 
--   $E = \{ x: x \text{ é um cachorro} \}$ onde $E$ é o conjunto que contém todos os $x$que são cachorros. Nesse caso, $P(x)$ refere-se a ter a propriedade de ser um cachorro.
--   $F = \{ x: x > 5 \text{ and } x \in \mathbb{N}\}$ onde $F$ contém todos os números maiores que 5 que são números naturais. Nesse caso, $P(x)$ refere-se a todos os $x$ maiores que 5 e pertencentes aos números naturais.
+-   $E = \{ x: x \text{ é um cachorro} \}$ onde $E$ é o conjunto que contém todos os $x$ que são cachorros. Nesse caso, $P(x)$ refere-se a ter a propriedade de ser um cachorro.
+-   $F = \{ x: x > 5 \text{ and } x \in \mathbb{N}\}$ onde $F$ contém todos os números maiores que $5$ que são números naturais. Nesse caso, $P(x)$ refere-se a todos os $x$ maiores que $5$ e pertencentes aos números naturais.
 
 Infelizmente, o R só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como `sets` não permite representar conjuntos como $E$ ou $F$ no R.
 
 ::: {#def-subset}
 ## Subconjunto
 
-Um conjunto $A$ é um **subconjunto** de um conjunto $B$ se todos os elementos de $A$ também sejam elementos de $B$. Essa condição pode ser expressa através da notação $A \subseteq B$. Por outro lado, se algum elemento de $A$ não pertencer a $B$, o que pode ser representado por $A \nsubseteq B$. Na teoria dos conjuntos, $\subseteq$ é conhecido como a relação de *"inclusão"*. 
+Um conjunto $A$ é um **subconjunto** de um conjunto $B$ se todos os elementos de $A$ também sejam elementos de $B$. Essa condição pode ser expressa através da notação $A \subseteq B$. Por outro lado, se algum elemento de $A$ não pertencer a $B$, o que pode ser representado por $A \nsubseteq B$. Na teoria dos conjuntos, $\subseteq$ é conhecido como a relação de *"inclusão"*.
 :::
 
 Por exemplo, se $A = \{ 1 , 2 \}$ e $G = \{ 1, 2, 3\}$ então $A \subseteq G$ porém $G \nsubseteq A$ porque $3 \in G$ e $3 \notin A$. Em R, podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador `<=` do pacote `sets`, que representa a relação $\subseteq$:
@@ -101,3 +101,58 @@ Com base em @def-subset podemos estabelecer uma definição equivalente para a i
 :::
 
 ## Operações com conjuntos
+
+::: {#def-union}
+## União de conjuntos
+
+A união de dois conjuntos $A$ e $B$, denotada por $A \cup B$, é o conjunto de todos os elementos que estão em $A$ **ou** em $B$. $A \cup B$ também é um conjunto e pode ser definido usando notação construtor de conjuntos como $A \cup B = \{x: x \in A \textbf{ ou }  x \in B \}$
+:::
+
+Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \cup H = \{ 1, 2, 3 \}$. Em R, utilizando o pacote `sets`, o operador `|` é utilizado para representar a união, $\cup$, de dois conjuntos da seguinte maneira:
+
+```{r}
+H <- set(2, 3)
+A | H
+```
+
+::: {#def-intersection}
+## Interseção de conjuntos
+
+A interseção de dois conjuntos $A$ e $B$, denotada por $A \cap B$, é o conjunto de todos os elementos que estão em $A$ **e** em $B$. $A \cap B$ também é um conjunto e pode ser definido usando notação construtor de conjuntos como $A \cap B = \{ x: x \in A \textbf{ e } x \in B \}$.
+:::
+
+Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \cap H = \{ 2 \}$. Em R, utilizando o pacote `sets`, o operador `&` é utilizado para representar a interseção, $\cap$, de dois conjuntos da seguinte maneira:
+
+```{r}
+A & H
+```
+
+::: {#def-difference}
+## Diferença de conjuntos
+
+A diferença de dois conjuntos $A$ e $B$, denotada por $A \setminus B$, é o conjunto de todos os elementos que pertencem a $A$, mas não a $B$. $A \setminus B$ também é um conjunto e pode ser definido usando notação construtor de conjuntos como $A \setminus B = \{ x: x \in A \text{ e } x \notin B \}$.
+:::
+
+Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \setminus H = \{ 1 \}$ e $H \setminus A = \{ 3 \}$. Em R, utilizando o pacote `sets`, o operador `-` é utilizado para representar a diferença, $\setminus$, de dois conjuntos da seguinte maneira:
+
+```{r}
+A - H
+H - A
+```
+
+::: {#def-complement}
+## Complemento de um conjunto
+
+Se $A$ e $\Omega$ são conjuntos, onde $A \subseteq \Omega$, o complemento de $A$, denotado por $A^c$, é o conjunto $\Omega \setminus A$. Ou seja, $\Omega \setminus A = \{ x: x \in \Omega \text{ e } x \notin A \}$.
+:::
+
+Por exemplo, se $A = \{ 1, 2 \}$ e $\Omega = \{ 1, 2, 3, 4 \}$, então $\Omega \setminus A = \{ 3, 4 \}$. Em R, utilizando o pacote `sets`, podemos determinar $A^c$ da seguinte maneira:
+
+```{r}
+omega <- set(1, 2, 3, 4)
+omega
+A <= omega
+omega - A
+```
+
+## O conjunto vazio e o conjunto potência
