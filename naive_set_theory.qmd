@@ -75,7 +75,7 @@ Por exemplo, se $A = \{ 1 , 2 \}$ então $1 \in A$ e $3 \notin A$. Em R, podemos
 Às vezes, não é possível listar os elementos de um conjunto porque os elementos são infinitos ou porque não sabemos exatamente quais são. No entanto, se sabemos a propriedade que cada elemento deve ter, podemos usar uma notação matemática conhecida como **notação construtor de conjuntos** para descrever o conjunto. Essa notação é especificada como $\{ x: P(x) \}$, onde $x$ é um elemento genérico com a propriedade $P(x)$. Por exemplo:
 
 -   $E = \{ x: x \text{ é um cachorro} \}$ onde $E$ é o conjunto que contém todos os $x$ que são cachorros. Nesse caso, $P(x)$ refere-se a ter a propriedade de ser um cachorro.
--   $F = \{ x: x > 5 \text{ and } x \in \mathbb{N}\}$ onde $F$ contém todos os números maiores que $5$ que são números naturais. Nesse caso, $P(x)$ refere-se a todos os $x$ maiores que $5$ e pertencentes aos números naturais.
+-   $F = \{ x: x > 5 \text{ e } x \in \mathbb{N}\}$ onde $F$ contém todos os números maiores que $5$ que são números naturais. Nesse caso, $P(x)$ refere-se a todos os $x$ maiores que $5$ e pertencentes aos números naturais.
 
 Infelizmente, o R só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como `sets` não permite representar conjuntos como $E$ ou $F$ no R.
 
@@ -167,14 +167,12 @@ Podemos resumir os resultados acima da seguinte maneira:
 ## Unicidade do conjunto vazio
 
 Só existe um conjunto vazio. Em outras palavras, se $\emptyset$ e $\emptyset^{'}$ são ambos conjuntos vazios, então $\emptyset$ é igual a $\emptyset^{'}$, $\emptyset = \emptyset^{'}$.
-
 :::
 
 ::: {#thm-empty-set-subset}
 ## Propriedade de subconjunto do conjunto vazio
 
 O conjunto vazio é um subconjunto de todos os conjuntos. Para qualquer conjunto $A$, o conjunto vazio, $\emptyset$, é um subconjunto de $A$, $\emptyset \subseteq A$.
-
 :::
 
 Há também um conjunto chamado **conjunto das potências**. O conjunto das potências de um conjunto $A$, denotado como $\mathcal{P}(A)$, é um conjunto que contém todos os subconjuntos de $A$. Podemos defini-lo como:
