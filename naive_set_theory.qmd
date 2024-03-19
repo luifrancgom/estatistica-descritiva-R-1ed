@@ -5,7 +5,7 @@
 source(file = "_common.R")
 ```
 
-A teoria dos conjuntos é um ramo da matemática que lida com coleções chamadas conjuntos. Compreender a teoria dos conjuntos é essencial, pois ela forma a base fundamental da teoria da probabilidade, que por sua vez é crucial para o estudo de estatísticas. No entanto, um entendimento básico da teoria dos conjuntos é suficiente para compreender os princípios essenciais da probabilidade e estatística, evitando a necessidade de usar um formalismo excessivo [^naive_set_theory-1].
+A teoria dos conjuntos é um ramo da matemática que estuda coleções denominadas conjuntos. Compreender a teoria dos conjuntos é fundamental, pois ela serve como base para a teoria da probabilidade, que por sua vez é crucial para o estudo da estatística. No entanto, um conhecimento básico da teoria dos conjuntos é suficiente para entender os princípios fundamentais da probabilidade e da estatística, sem a necessidade de um formalismo excessivo [^naive_set_theory-1].
 
 [^naive_set_theory-1]: Para uma apresentação detalhada e clara da teoria dos conjuntos usando um sistema de axiomas, você pode consultar [@halmos_teoria_2001]
 
@@ -72,10 +72,12 @@ Por exemplo, se $A = \{ 1 , 2 \}$ então $1 \in A$ e $3 \notin A$. Em R, podemos
 3 %e% A
 ```
 
-Às vezes, não é possível listar os elementos de um conjunto porque os elementos são infinitos ou porque não sabemos exatamente quais são. No entanto, se sabemos a propriedade que cada elemento deve ter, podemos usar uma notação matemática conhecida como **notação construtor de conjuntos** para descrever o conjunto. Essa notação é especificada como $\{ x: P(x) \}$, onde $x$ é um elemento genérico com a propriedade $P(x)$. Por exemplo:
+Às vezes, não é possível listar os elementos de um conjunto porque os elementos são infinitos ou porque não sabemos exatamente quais são. No entanto, se sabemos a propriedade que cada elemento deve ter, podemos usar uma notação matemática conhecida como **notação construtor de conjuntos** para descrever o conjunto. Essa notação é especificada como $\{ x \in \Omega: P(x) \}$, onde $x$ é um elemento genérico que pertence a $\Omega$ com a propriedade $P(x)$. $\Omega$[^naive_set_theory-2] é conhecido como **universo de discurso** e se refere ao conjunto que contém todos os elementos em consideração a partir dos quais o valor de $x$ pode ser escolhido. Por exemplo:
 
--   $E = \{ x: x \text{ é um cachorro} \}$ onde $E$ é o conjunto que contém todos os $x$ que são cachorros. Nesse caso, $P(x)$ refere-se a ter a propriedade de ser um cachorro.
--   $F = \{ x: x > 5 \text{ e } x \in \mathbb{N}\}$ onde $F$ contém todos os números maiores que $5$ que são números naturais. Nesse caso, $P(x)$ refere-se a todos os $x$ maiores que $5$ e pertencentes aos números naturais.
+-   $E = \{ x \in \Omega: x \text{ é um cachorro} \}$ onde $E$ é o conjunto que contém todos os $x$ que são cachorros. Nesse caso, $P(x)$ refere-se a ter a propriedade de ser um cachorro e $\Omega$ pode ser o conjunto dos seres vivos.
+-   $F = \{ x \in \mathbb{N} : x > 5 \}$ onde $F$ contém todos os números maiores que $5$ que são números naturais. Nesse caso, $P(x)$ refere-se a todos os $x$ maiores que $5$ e $\Omega$ é o conjunto dos números naturais.
+
+[^naive_set_theory-2]: $\Omega$ é chamado Ômega
 
 Infelizmente, o R só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como `sets` não permite representar conjuntos como $E$ ou $F$ no R.
 
@@ -84,6 +86,35 @@ Infelizmente, o R só pode manipular objetos que podem ser representados como n�
 
 Um conjunto $A$ é um **subconjunto** de um conjunto $B$ se todos os elementos de $A$ também sejam elementos de $B$. Essa condição pode ser expressa através da notação $A \subseteq B$. Por outro lado, se existir um elemento que pertença a $A$, mas não pertença a $B$, representamos essa situação como $A \nsubseteq B$. Na teoria dos conjuntos, $\subseteq$ é conhecido como a relação de *"inclusão"*.
 :::
+
+A @fig-subset-venn-diagram ilustra a @def-subset usando um **diagrama de Venn**.
+
+```{tikz}
+#| echo: false
+#| label: fig-subset-venn-diagram
+#| fig-cap: $A \subseteq B$  representado por um diagrama de Venn onde $\Omega$ é o universo de discurso
+#| fig-align: center
+#| out-width: 50%
+
+\begin{tikzpicture}
+
+    % Fill
+    \fill[gray!20] (0.5,0) circle (1); % Circle B 
+    \fill[gray!50] (0.5,0) circle (0.5); % Circle A
+    
+    % Draw the circles
+    \draw (0.5,0) circle (1); % Circle B 
+    \draw (0.5,0) circle (0.5); % Circle A
+
+    % Draw the rectangle   
+    \draw (-2,-2) rectangle (3,2); % Omega
+
+    % Add labels
+    \node [anchor=north east] at (current bounding box.north east) {$\Omega$}; 
+    \node[above] at (0.5, 1)   {$B$}; % Circle B  
+    \node[above] at (0.5, 0.5) {$A$}; % Circle A
+\end{tikzpicture}
+```
 
 Por exemplo, se $A = \{ 1 , 2 \}$ e $G = \{ 1, 2, 3\}$ então $A \subseteq G$ porque $1 \in A$, $1 \in G$, $2 \in A$ e $2 \in G$. No entanto, $G \nsubseteq A$ porque $3 \in G$ e $3 \notin A$. Em R, podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador `<=` do pacote `sets`, que representa a relação $\subseteq$:
 
@@ -105,8 +136,37 @@ Com base em @def-subset podemos estabelecer uma definição equivalente para a i
 ::: {#def-union}
 ## União de conjuntos
 
-A união de dois conjuntos $A$ e $B$, denotada por $A \cup B$, é o conjunto de todos os elementos que estão em $A$ **ou** em $B$. $A \cup B$ também é um conjunto e pode ser definido usando notação construtor de conjuntos como $A \cup B = \{x: x \in A \textbf{ ou } x \in B \}$
+A união de dois conjuntos $A$ e $B$, denotada por $A \cup B$, é o conjunto de todos os elementos que estão em $A$ **ou** em $B$. $A \cup B$ também é um conjunto e pode ser definido usando notação construtor de conjuntos como $A \cup B = \{x \in \Omega : x \in A \textbf{ ou } x \in B \}$
 :::
+
+A @fig-union-venn-diagram ilustra a @def-union usando um diagrama de Venn.
+
+```{tikz}
+#| echo: false
+#| label: fig-union-venn-diagram
+#| fig-cap: $A \cup B$  representado por um diagrama de Venn onde $\Omega$ é o universo de discurso
+#| fig-align: center
+#| out-width: 50%
+
+\begin{tikzpicture}
+
+    % Fill
+    \fill[gray!20] (0,0) circle (1);
+    \fill[gray!20] (1,0) circle (1);
+    
+    % Draw the circles
+    \draw (0,0) circle (1); % Circle A 
+    \draw (1,0) circle (1); % Circle B
+
+    % Draw the rectangle   
+    \draw (-2,-2) rectangle (3,2); % Omega
+
+    % Add labels
+    \node [anchor=north east] at (current bounding box.north east) {$\Omega$}; 
+    \node[above] at (0, 1) {$A$}; % Circle A  
+    \node[above] at (1, 1) {$B$}; % Circle B
+\end{tikzpicture}
+```
 
 Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \cup H = \{ 1, 2, 3 \}$. Em R, utilizando o pacote `sets`, o operador `|` é utilizado para representar a união, $\cup$, de dois conjuntos da seguinte maneira:
 
@@ -118,8 +178,40 @@ A | H
 ::: {#def-intersection}
 ## Interseção de conjuntos
 
-A interseção de dois conjuntos $A$ e $B$, denotada por $A \cap B$, é o conjunto de todos os elementos que estão em $A$ **e** em $B$. $A \cap B$ também é um conjunto e pode ser definido usando notação construtor de conjuntos como $A \cap B = \{ x: x \in A \textbf{ e } x \in B \}$.
+A interseção de dois conjuntos $A$ e $B$, denotada por $A \cap B$, é o conjunto de todos os elementos que estão em $A$ **e** em $B$. $A \cap B$ também é um conjunto e pode ser definido usando notação construtor de conjuntos como $A \cap B = \{ x \in \Omega : x \in A \textbf{ e } x \in B \}$.
 :::
+
+A @fig-intersection-venn-diagram ilustra a @def-intersection usando um diagrama de Venn.
+
+```{tikz}
+#| echo: false
+#| label: fig-intersection-venn-diagram
+#| fig-cap: $A \cap B$  representado por um diagrama de Venn onde $\Omega$ é o universo de discurso
+#| fig-align: center
+#| out-width: 50%
+
+\begin{tikzpicture}
+
+    % Fill
+    \begin{scope}
+        \clip (0,0) circle (1);
+        \clip (1,0) circle (1);
+        \fill[gray!20] (1,0) circle (1); 
+    \end{scope}
+
+    % Draw the circles
+    \draw (0,0) circle (1); % Circle A 
+    \draw (1,0) circle (1); % Circle B
+
+    % Draw the rectangle
+    \draw (-2,-2) rectangle (3,2); 
+
+    % Add labels
+    \node [anchor=north east] at (current bounding box.north east) {$\Omega$}; 
+    \node[above] at (0, 1) {$A$}; % Circle A  
+    \node[above] at (1, 1) {$B$}; % Circle B
+\end{tikzpicture}
+```
 
 Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \cap H = \{ 2 \}$. Em R, utilizando o pacote `sets`, o operador `&` é utilizado para representar a interseção, $\cap$, de dois conjuntos da seguinte maneira:
 
@@ -130,8 +222,37 @@ A & H
 ::: {#def-difference}
 ## Diferença de conjuntos
 
-A diferença de dois conjuntos $A$ e $B$, denotada por $A \setminus B$, é o conjunto de todos os elementos que pertencem a $A$, mas não a $B$. $A \setminus B$ também é um conjunto e pode ser definido usando notação construtor de conjuntos como $A \setminus B = \{ x: x \in A \text{ e } x \notin B \}$.
+A diferença de dois conjuntos $A$ e $B$, denotada por $A \setminus B$, é o conjunto de todos os elementos que pertencem a $A$, mas não a $B$. $A \setminus B$ também é um conjunto e pode ser definido usando notação construtor de conjuntos como $A \setminus B = \{ x \in \Omega : x \in A \text{ e } x \notin B \}$.
 :::
+
+A @fig-difference-venn-diagram ilustra a @def-difference usando um diagrama de Venn.
+
+```{tikz}
+#| echo: false
+#| label: fig-difference-venn-diagram
+#| fig-cap: $A \setminus B$  representado por um diagrama de Venn onde $\Omega$ é o universo de discurso
+#| fig-align: center
+#| out-width: 50%
+
+\begin{tikzpicture}
+
+    % Fill
+    \fill[gray!20] (0,0) circle (1); 
+    \fill[white]   (1,0) circle (1);
+
+    % Draw the circles
+    \draw (0,0) circle (1); % Circle A 
+    \draw (1,0) circle (1); % Circle B
+
+    % Draw the rectangle
+    \draw (-2,-2) rectangle (3,2); 
+
+    % Add labels
+    \node [anchor=north east] at (current bounding box.north east) {$\Omega$}; 
+    \node[above] at (0, 1) {$A$}; % Circle A  
+    \node[above] at (1, 1) {$B$}; % Circle B
+\end{tikzpicture}
+```
 
 Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \setminus H = \{ 1 \}$ e $H \setminus A = \{ 3 \}$. Em R, utilizando o pacote `sets`, o operador `-` é utilizado para representar a diferença, $\setminus$, de dois conjuntos da seguinte maneira:
 
@@ -143,15 +264,42 @@ H - A
 ::: {#def-complement}
 ## Complemento de um conjunto
 
-Se $A$ e $\Omega$ são conjuntos, onde $A \subseteq \Omega$, o complemento de $A$, denotado por $A^c$, é o conjunto $\Omega \setminus A$. Ou seja, $\Omega \setminus A = \{ x: x \in \Omega \text{ e } x \notin A \}$.
+Se $A$ e $\Omega$ são conjuntos, onde e $\Omega$ é o universo de discurso, o complemento de $A$, denotado por $A^c$, é o conjunto $\Omega \setminus A$. Ou seja, $A^c = \{x \in \Omega: x \notin A \text{ e } A \subseteq \Omega \}$.
 :::
 
-Por exemplo, se $A = \{ 1, 2 \}$ e $\Omega = \{ 1, 2, 3, 4 \}$, então $\Omega \setminus A = \{ 3, 4 \}$. Em R, utilizando o pacote `sets`, podemos determinar $A^c$ da seguinte maneira:
+A @fig-complement-venn-diagram ilustra a @def-complement usando um diagrama de Venn.
+
+```{tikz}
+#| echo: false
+#| label: fig-complement-venn-diagram
+#| fig-cap: $A^c$ representado por um diagrama de Venn onde $\Omega$ é o universo de discurso
+#| fig-align: center
+#| out-width: 50%
+
+\begin{tikzpicture}
+
+    % Fill
+    \fill[gray!20] (-2,-2) rectangle (3,2); 
+    \fill[white]   (0,0) circle (1);
+
+    % Draw the circles
+    \draw (0,0) circle (1); % Circle A 
+    \draw (1,0) circle (1); % Circle B
+
+    % Draw the rectangle
+    \draw (-2,-2) rectangle (3,2); 
+
+    % Add labels
+    \node [anchor=north east] at (current bounding box.north east) {$\Omega$}; 
+    \node[above] at (0, 1) {$A$}; % Circle A  
+    \node[above] at (1, 1) {$B$}; % Circle B
+\end{tikzpicture}
+```
+
+Por exemplo, se $A = \{ 1, 2 \}$ e $\Omega = \{ 1, 2, 3, 4 \}$, então $A^c = \{ 3, 4 \}$. Em R, utilizando o pacote `sets`, podemos determinar $A^c$ da seguinte maneira:
 
 ```{r}
 omega <- set(1, 2, 3, 4)
-omega
-A <= omega
 omega - A
 ```
 
