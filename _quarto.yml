@@ -94,5 +94,10 @@ format:
     css: css/styles.css
   pdf: 
     documentclass: book
+    linkcolor: blue
+    citecolor: blue
+    link-citations: true
+    link-bibliography: true
+    colorlinks: true
 
 editor: visual
