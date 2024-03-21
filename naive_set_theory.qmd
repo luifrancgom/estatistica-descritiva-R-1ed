@@ -74,10 +74,10 @@ Por exemplo, se $A = \{ 1 , 2 \}$ então $1 \in A$ e $3 \notin A$. Em R, podemos
 
 Às vezes, não é possível listar os elementos de um conjunto porque os elementos são infinitos ou porque não sabemos exatamente quais são. No entanto, se sabemos a propriedade que cada elemento deve ter, podemos usar uma notação matemática conhecida como **notação construtor de conjuntos** para descrever o conjunto. Essa notação é especificada como $\{ x \in \Omega: P(x) \}$, onde $x$ é um elemento genérico que pertence a $\Omega$ com a propriedade $P(x)$. $\Omega$[^naive_set_theory-2] é conhecido como **universo de discurso** e se refere ao conjunto que contém todos os elementos em consideração a partir dos quais o valor de $x$ pode ser escolhido. Por exemplo:
 
+[^naive_set_theory-2]: $\Omega$ é chamado Ômega
+
 -   $E = \{ x \in \Omega: x \text{ é um cachorro} \}$ onde $E$ é o conjunto que contém todos os $x$ que são cachorros. Nesse caso, $P(x)$ refere-se a ter a propriedade de ser um cachorro e $\Omega$ pode ser o conjunto dos seres vivos.
 -   $F = \{ x \in \mathbb{N} : x > 5 \}$ onde $F$ contém todos os números maiores que $5$ que são números naturais. Nesse caso, $P(x)$ refere-se a todos os $x$ maiores que $5$ e $\Omega$ é o conjunto dos números naturais.
-
-[^naive_set_theory-2]: $\Omega$ é chamado Ômega
 
 Infelizmente, o R só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como `sets` não permite representar conjuntos como $E$ ou $F$ no R.
 
@@ -87,7 +87,9 @@ Infelizmente, o R só pode manipular objetos que podem ser representados como n�
 Um conjunto $A$ é um **subconjunto** de um conjunto $B$ se todos os elementos de $A$ também sejam elementos de $B$. Essa condição pode ser expressa através da notação $A \subseteq B$. Por outro lado, se existir um elemento que pertença a $A$, mas não pertença a $B$, representamos essa situação como $A \nsubseteq B$. Na teoria dos conjuntos, $\subseteq$ é conhecido como a relação de *"inclusão"*.
 :::
 
-A @fig-subset-venn-diagram ilustra a @def-subset usando um **diagrama de Venn**.
+A @fig-subset-venn-diagram ilustra a @def-subset usando um **diagrama de Venn**[^naive_set_theory-3].
+
+[^naive_set_theory-3]: Um diagrama de Venn é uma ferramenta visual que utiliza formas fechadas para representar conjuntos e ilustrar como seus elementos se relacionam.
 
 ```{tikz}
 #| echo: false
@@ -128,7 +130,7 @@ G <= A
 ::: {#def-set-equality}
 ## Igualdade de conjuntos
 
-Com base em @def-subset podemos estabelecer uma definição equivalente para a igualdade de conjuntos. Dois conjuntos, $A$ e $B$, são considerados iguais, $A = B$, se e somente se $A \subseteq G$ e $G \subseteq A$. Em outras palavras, ambos os conjuntos devem conter exatamente os mesmos elementos para serem considerados iguais.
+Com base em @def-subset podemos estabelecer uma definição equivalente para a igualdade de conjuntos. Dois conjuntos, $A$ e $B$, são considerados iguais, $A = B$, se e somente se $A \subseteq B$ e $B \subseteq A$. Em outras palavras, ambos os conjuntos devem conter exatamente os mesmos elementos para serem considerados iguais.
 :::
 
 ## Operações com conjuntos
