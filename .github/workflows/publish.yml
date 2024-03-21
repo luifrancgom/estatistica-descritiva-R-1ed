@@ -25,7 +25,7 @@ jobs:
       - name: Install Magick++
         run: sudo apt-get install -y libmagick++-dev
         
-      - name: Poppler C++ API
+      - name: Install Poppler C++ API
         run: sudo apt-get -y install libpoppler-cpp-dev
 
       - name: Install R Dependencies
