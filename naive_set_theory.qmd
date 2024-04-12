@@ -27,7 +27,7 @@ Podemos denotar um conjunto usando uma letra arbitrária como $A$ e descrevê-lo
 
 -   É possível que os elementos de um conjunto sejam eles próprios conjuntos. Por exemplo, $D = \{ \{ 1, 2\}, 3 \}$ é um conjunto que contém o conjunto $\{ 1, 2\}$ e o número $3$
 
-O pacote R `sets` pode ser usado para ilustrar as ideias mencionadas acima para entender o conceito de conjunto. Primeiramente, podemos criar dois conjuntos e verificar se os dois conjuntos são iguais:
+O pacote `r r_logo` `sets` pode ser usado para ilustrar as ideias mencionadas acima para entender o conceito de conjunto. Primeiramente, podemos criar dois conjuntos e verificar se os dois conjuntos são iguais:
 
 ```{r}
 library(sets)
@@ -65,7 +65,7 @@ D
 Se $a$ é um elemento de $A$, expressamos essa condição como $a \in A$. Caso contrário, expressamos que $a$ não é um elemento de $A$ com $a \notin A$. Na teoria dos conjuntos, $\in$ é conhecido como a relação *"é um elemento de"*.
 :::
 
-Por exemplo, se $A = \{ 1 , 2 \}$ então $1 \in A$ e $3 \notin A$. Em R, podemos verificar se um elemento pertence a um conjunto usando o operador `%e%` do pacote `sets`, que representa a relação $\in$:
+Por exemplo, se $A = \{ 1 , 2 \}$ então $1 \in A$ e $3 \notin A$. Em `r r_logo`, podemos verificar se um elemento pertence a um conjunto usando o operador `%e%` do pacote `sets`, que representa a relação $\in$:
 
 ```{r}
 1 %e% A
@@ -79,7 +79,7 @@ Por exemplo, se $A = \{ 1 , 2 \}$ então $1 \in A$ e $3 \notin A$. Em R, podemos
 -   $E = \{ x \in \Omega: x \text{ é um cachorro} \}$ onde $E$ é o conjunto que contém todos os $x$ que são cachorros. Nesse caso, $P(x)$ refere-se a ter a propriedade de ser um cachorro e $\Omega$ pode ser o conjunto dos seres vivos.
 -   $F = \{ x \in \mathbb{N} : x > 5 \}$ onde $F$ contém todos os números maiores que $5$ que são números naturais. Nesse caso, $P(x)$ refere-se a todos os $x$ maiores que $5$ e $\Omega$ é o conjunto dos números naturais.
 
-Infelizmente, o R só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como `sets` não permite representar conjuntos como $E$ ou $F$ no R.
+Infelizmente, o `r r_logo` só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como `sets` não permite representar conjuntos como $E$ ou $F$ no `r r_logo`.
 
 ::: {#def-subset}
 ## Subconjunto
@@ -118,7 +118,7 @@ A @fig-subset-venn-diagram ilustra a @def-subset usando um **diagrama de Venn**[
 \end{tikzpicture}
 ```
 
-Por exemplo, se $A = \{ 1 , 2 \}$ e $G = \{ 1, 2, 3\}$ então $A \subseteq G$ porque $1 \in A$, $1 \in G$, $2 \in A$ e $2 \in G$. No entanto, $G \nsubseteq A$ porque $3 \in G$ e $3 \notin A$. Em R, podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador `<=` do pacote `sets`, que representa a relação $\subseteq$:
+Por exemplo, se $A = \{ 1 , 2 \}$ e $G = \{ 1, 2, 3\}$ então $A \subseteq G$ porque $1 \in A$, $1 \in G$, $2 \in A$ e $2 \in G$. No entanto, $G \nsubseteq A$ porque $3 \in G$ e $3 \notin A$. Em `r r_logo`, podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador `<=` do pacote `sets`, que representa a relação $\subseteq$:
 
 ```{r}
 G <- set(1, 2, 3)
@@ -170,7 +170,7 @@ A @fig-union-venn-diagram ilustra a @def-union usando um diagrama de Venn.
 \end{tikzpicture}
 ```
 
-Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \cup H = \{ 1, 2, 3 \}$. Em R, utilizando o pacote `sets`, o operador `|` é utilizado para representar a união, $\cup$, de dois conjuntos da seguinte maneira:
+Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \cup H = \{ 1, 2, 3 \}$. Em `r r_logo`, utilizando o pacote `sets`, o operador `|` é utilizado para representar a união, $\cup$, de dois conjuntos da seguinte maneira:
 
 ```{r}
 H <- set(2, 3)
@@ -215,7 +215,7 @@ A @fig-intersection-venn-diagram ilustra a @def-intersection usando um diagrama 
 \end{tikzpicture}
 ```
 
-Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \cap H = \{ 2 \}$. Em R, utilizando o pacote `sets`, o operador `&` é utilizado para representar a interseção, $\cap$, de dois conjuntos da seguinte maneira:
+Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \cap H = \{ 2 \}$. Em `r r_logo`, utilizando o pacote `sets`, o operador `&` é utilizado para representar a interseção, $\cap$, de dois conjuntos da seguinte maneira:
 
 ```{r}
 A & H
@@ -256,7 +256,7 @@ A @fig-difference-venn-diagram ilustra a @def-difference usando um diagrama de V
 \end{tikzpicture}
 ```
 
-Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \setminus H = \{ 1 \}$ e $H \setminus A = \{ 3 \}$. Em R, utilizando o pacote `sets`, o operador `-` é utilizado para representar a diferença, $\setminus$, de dois conjuntos da seguinte maneira:
+Por exemplo, se $A = \{ 1, 2 \}$ e $H = \{ 2, 3 \}$, então $A \setminus H = \{ 1 \}$ e $H \setminus A = \{ 3 \}$. Em `r r_logo`, utilizando o pacote `sets`, o operador `-` é utilizado para representar a diferença, $\setminus$, de dois conjuntos da seguinte maneira:
 
 ```{r}
 A - H
@@ -298,7 +298,7 @@ A @fig-complement-venn-diagram ilustra a @def-complement usando um diagrama de V
 \end{tikzpicture}
 ```
 
-Por exemplo, se $A = \{ 1, 2 \}$ e $\Omega = \{ 1, 2, 3, 4 \}$, então $A^c = \{ 3, 4 \}$. Em R, utilizando o pacote `sets`, podemos determinar $A^c$ da seguinte maneira:
+Por exemplo, se $A = \{ 1, 2 \}$ e $\Omega = \{ 1, 2, 3, 4 \}$, então $A^c = \{ 3, 4 \}$. Em `r r_logo`, utilizando o pacote `sets`, podemos determinar $A^c$ da seguinte maneira:
 
 ```{r}
 omega <- set(1, 2, 3, 4)
@@ -333,7 +333,7 @@ Há também um conjunto chamado **conjunto das potências**. O conjunto das pot�
 Se $A$ é um conjunto, então o conjunto que contém todos os subconjuntos de $A$, denotado como $\mathcal{P}(A)$, é definido como $\mathcal{P}(A) = \{ B: B \subseteq A \}$.
 :::
 
-Por exemplo, se $A = \{ 1, 2 \}$ então $\mathcal{P}(A) = \{ \emptyset, \{ 1 \}, \{ 2 \}, A \} = \{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1,2 \} \}$ porque $\emptyset \subseteq A$ pelo @thm-empty-set-subset, $\{ 1 \} \subseteq A$, $\{ 2 \} \subseteq A$ e $A = \{ 1, 2 \} \subseteq A$. Em R, podemos construir o conjunto das potências de um conjunto $A$, $\mathcal{P}(A)$, como `2^A` utilizando o pacote `sets` da seguinte maneira:
+Por exemplo, se $A = \{ 1, 2 \}$ então $\mathcal{P}(A) = \{ \emptyset, \{ 1 \}, \{ 2 \}, A \} = \{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 1,2 \} \}$ porque $\emptyset \subseteq A$ pelo @thm-empty-set-subset, $\{ 1 \} \subseteq A$, $\{ 2 \} \subseteq A$ e $A = \{ 1, 2 \} \subseteq A$. Em `r r_logo`, podemos construir o conjunto das potências de um conjunto $A$, $\mathcal{P}(A)$, como `2^A` utilizando o pacote `sets` da seguinte maneira:
 
 ```{r}
 potencia_A <- 2^A

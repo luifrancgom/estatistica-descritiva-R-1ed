@@ -6,3 +6,6 @@ knitr::opts_chunk$set(
   comment = "#>", 
   collapse = TRUE
 )
+
+# R logo
+r_logo <- fontawesome::fa(name = "r-project", fill = "steelblue")
