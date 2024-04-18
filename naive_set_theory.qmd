@@ -27,7 +27,7 @@ Podemos denotar um conjunto usando uma letra arbitrária como $A$ e descrevê-lo
 
 -   É possível que os elementos de um conjunto sejam eles próprios conjuntos. Por exemplo, $D = \{ \{ 1, 2\}, 3 \}$ é um conjunto que contém o conjunto $\{ 1, 2\}$ e o número $3$
 
-O pacote `r r_logo` `sets` pode ser usado para ilustrar as ideias mencionadas acima para entender o conceito de conjunto. Primeiramente, podemos criar dois conjuntos e verificar se os dois conjuntos são iguais:
+O pacote `sets` do `r r_logo` pode ser usado para ilustrar as ideias mencionadas acima para entender o conceito de conjunto. Primeiramente, podemos criar dois conjuntos e verificar se os dois conjuntos são iguais:
 
 ```{r}
 library(sets)

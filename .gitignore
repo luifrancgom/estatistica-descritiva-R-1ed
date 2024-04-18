@@ -12,5 +12,8 @@
 /.quarto/
 /_book/
 
+# Fontawesome files
+/getting_started_with_r_files/
+
 # OS X
 .DS_STORE

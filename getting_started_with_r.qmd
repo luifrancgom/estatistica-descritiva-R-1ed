@@ -1,1 +1,70 @@
 # Introdução ao R
+
+```{r}
+#| echo: false
+source(file = "_common.R")
+linux_logo <- fontawesome::fa(name = "linux")
+macos_logo <- fontawesome::fa(name = "apple")
+windows_logo <- fontawesome::fa(name = "windows")
+```
+
+Para começar a usar o `r r_logo`, você precisará baixar uma cópia do `r r_logo` e também do RStudio IDE, um ambiente de desenvolvimento integrado (IDE) gratuito, que simplifica o uso do `r r_logo`. Tanto o `r r_logo` quanto o RStudio IDE são de código aberto, o que significa que não há custos de licenciamento envolvidos.
+
+Antes de descrever o processo de instalação, é importante entender como o `r r_logo` e o RStudio IDE funcionam juntos, e também como estender sua funcionalidade usando pacotes e outros softwares complementares. [@ismay_statistical_2020, cap. 1] fornecem uma excelente explicação pedagógica desses conceitos. Esta seção se baseia na abordagem deles e utiliza as mesmas analogias.
+
+## R e RStudio IDE
+
+O `r r_logo` é como o motor de um carro, enquanto o RStudio IDE funciona como o volante e o painel, conforme ilustrado na @fig-r-vs-rstudio-ide-1. Assim como um motorista interage principalmente com o volante e o painel para controlar o carro, raramente precisando interagir diretamente com o motor, o RStudio IDE também oferece uma interface amigável para trabalhar com o poderoso mecanismo do `r r_logo`. Essa interface simplifica o processo de usar o `r r_logo` para suas tarefas.
+
+::: {#fig-r-vs-rstudio-ide-1 layout="[[49, -2, 49]]"}
+![R: Motor](images/engine.png){#fig-r-1}
+
+![RStudio IDE: Painel](images/dashboard.png){#fig-rstudio-ide-1}
+
+Analogia da diferença entre `r r_logo` e RStudio
+:::
+
+## Como baixar e instalar o R
+
+Para obter uma cópia e a versão oficial mais recente do `r r_logo`, acesse [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/). O `r r_logo` é desenvolvido para as famílias de sistemas operacionais Unix, Windows e Mac. Na CRAN, você encontrará 3 links para baixar o `r r_logo` para Linux, macOS ou Windows:
+
+-   `r linux_logo`: Clique em **Download R for Linux**, escolha sua distribuição e siga as instruções de instalação específicas para sua distribuição.
+
+-   `r macos_logo`: Clique em **Download R for macOS**. Selecione o instalador que corresponda à sua versão do macOS, abra-o e siga as instruções na tela.
+
+-   `r windows_logo`: Clique em **Download R for Windows** e, em seguida, clique em **base**. Depois, clique no primeiro link no topo da nova página e execute o instalador. O instalador irá guiá-lo através do processo de instalação.
+
+## Como baixar e instalar o RStudio IDE
+
+Para obter a versão oficial mais recente do RStudio IDE, acesse [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/). Role a página para baixo, selecione seu sistema operacional e baixe o instalador apropriado. Abra o instalador e siga as instruções fornecidas.
+
+Agora que você instalou o `r r_logo` e o RStudio IDE, você está pronto para começar a trabalhar no RStudio IDE. Assim como você interage principalmente com o volante e o painel de um carro em vez do motor, você focará em usar a interface do RStudio IDE para trabalhar com o `r r_logo`.
+
+Ao abrir o RStudio IDE, você pode criar um novo script `r r_logo` selecionando **File > New File > R Script** ou usando o atalho de teclado **Ctrl + Shift + N**. Você verá quatro painéis principais na interface, como mostrado na @fig-rstudio-ide-panels:
+
+-   **Painel 1**: É onde você escreve, edita e salva seu código R.
+-   **Painel 2**: Aqui você pode digitar os comandos do R e ver os resultados.
+-   **Painel 3**: Este painel mostra os objetos do R (como variáveis ou dados) que você criou durante a sessão atual.
+-   **Painel 4**: Vários elementos de saída, incluindo arquivos, gráficos e documentos de ajuda, são exibidos aqui.
+
+![Painéis do RStudio IDE](images/panels_rstudio_ide.png){#fig-rstudio-ide-panels}
+
+###  Configurar e personalizar o RStudio IDE
+
+Para personalizar seu espaço de trabalho, acesse **Tools > Global Options**. Em seguida:
+
+-   Sempre inicie o `r r_logo` com uma sessão em branco, @fig-r-blank-slate:
+
+![](images/r_blank slate.png){#fig-r-blank-slate}
+
+-   Use o operador de pipe nativo, `|>`, @fig-native-pipe-operator:
+
+![](images/native_pipe_operator.png){#fig-native-pipe-operator}
+
+-   Ajuste o tamanho da fonte e selecione um tema escuro, @fig-font-size-dark-theme:
+
+![](images/font_size_dark_theme.png){#fig-font-size-dark-theme}
+
+A aplicação dessas mudanças personalizará sua experiência com o RStudio IDE, como mostrado na @fig-customize-rstudio-ide.
+
+![](images/customize_rstudio_ide.png){#fig-customize-rstudio-ide}

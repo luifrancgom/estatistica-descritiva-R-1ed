@@ -94,10 +94,18 @@ format:
     css: css/styles.css
   pdf: 
     documentclass: book
+    geometry:
+      - paperwidth=8.00in
+      - paperheight=10.00in
+      - left=1.25in
+      - textwidth= 5.25in
+      - top=1.00in
+      - textheight=8.25in
     linkcolor: blue
     citecolor: blue
     link-citations: true
     link-bibliography: true
     colorlinks: true
+    keep-tex: true
 
 editor: visual
