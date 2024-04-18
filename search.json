@@ -14,9 +14,53 @@
     "href": "references.html",
     "title": "Referências",
     "section": "",
-    "text": "Halmos, Paul R. 2001. Teoria Ingenua Dos Conjuntos. Rio de\nJaneiro: Editora Ciencia Moderna.",
+    "text": "Halmos, Paul R. 2001. Teoria Ingenua Dos Conjuntos. Rio de\nJaneiro: Editora Ciencia Moderna.\n\n\nIsmay, Chester, and Albert Young-Sun Kim. 2020. Statistical\nInference via Data Science: A ModernDive into\nR and the Tidyverse. Chapman &\nHall/CRC the R\nSeries. Boca Raton: CRC Press / Taylor & Francis Group.\nhttps://moderndive.com/.",
     "crumbs": [
       "Referências"
+    ]
+  },
+  {
+    "objectID": "getting_started_with_r.html",
+    "href": "getting_started_with_r.html",
+    "title": "Apêndice A — Introdução ao R",
+    "section": "",
+    "text": "A.1 R e RStudio IDE\nO  é como o motor de um carro, enquanto o RStudio IDE funciona como o volante e o painel, conforme ilustrado na Figura A.1. Assim como um motorista interage principalmente com o volante e o painel para controlar o carro, raramente precisando interagir diretamente com o motor, o RStudio IDE também oferece uma interface amigável para trabalhar com o poderoso mecanismo do . Essa interface simplifica o processo de usar o  para suas tarefas.",
+    "crumbs": [
+      "Apêndices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "getting_started_with_r.html#r-e-rstudio-ide",
+    "href": "getting_started_with_r.html#r-e-rstudio-ide",
+    "title": "Apêndice A — Introdução ao R",
+    "section": "",
+    "text": "(a) R: Motor\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n(b) RStudio IDE: Painel\n\n\n\n\n\n\n\nFigura A.1: Analogia da diferença entre  e RStudio",
+    "crumbs": [
+      "Apêndices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "getting_started_with_r.html#como-baixar-e-instalar-o-r",
+    "href": "getting_started_with_r.html#como-baixar-e-instalar-o-r",
+    "title": "Apêndice A — Introdução ao R",
+    "section": "A.2 Como baixar e instalar o R",
+    "text": "A.2 Como baixar e instalar o R\nPara obter uma cópia e a versão oficial mais recente do , acesse The Comprehensive R Archive Network (CRAN). O  é desenvolvido para as famílias de sistemas operacionais Unix, Windows e Mac. Na CRAN, você encontrará 3 links para baixar o  para Linux, macOS ou Windows:\n\n: Clique em Download R for Linux, escolha sua distribuição e siga as instruções de instalação específicas para sua distribuição.\n: Clique em Download R for macOS. Selecione o instalador que corresponda à sua versão do macOS, abra-o e siga as instruções na tela.\n: Clique em Download R for Windows e, em seguida, clique em base. Depois, clique no primeiro link no topo da nova página e execute o instalador. O instalador irá guiá-lo através do processo de instalação.",
+    "crumbs": [
+      "Apêndices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Introdução ao R</span>"
+    ]
+  },
+  {
+    "objectID": "getting_started_with_r.html#como-baixar-e-instalar-o-rstudio-ide",
+    "href": "getting_started_with_r.html#como-baixar-e-instalar-o-rstudio-ide",
+    "title": "Apêndice A — Introdução ao R",
+    "section": "A.3 Como baixar e instalar o RStudio IDE",
+    "text": "A.3 Como baixar e instalar o RStudio IDE\nPara obter a versão oficial mais recente do RStudio IDE, acesse https://posit.co/download/rstudio-desktop/. Role a página para baixo, selecione seu sistema operacional e baixe o instalador apropriado. Abra o instalador e siga as instruções fornecidas.\nAgora que você instalou o  e o RStudio IDE, você está pronto para começar a trabalhar no RStudio IDE. Assim como você interage principalmente com o volante e o painel de um carro em vez do motor, você focará em usar a interface do RStudio IDE para trabalhar com o .\nAo abrir o RStudio IDE, você pode criar um novo script  selecionando File &gt; New File &gt; R Script ou usando o atalho de teclado Ctrl + Shift + N. Você verá quatro painéis principais na interface, como mostrado na Figura A.2:\n\nPainel 1: É onde você escreve, edita e salva seu código R.\nPainel 2: Aqui você pode digitar os comandos do R e ver os resultados.\nPainel 3: Este painel mostra os objetos do R (como variáveis ou dados) que você criou durante a sessão atual.\nPainel 4: Vários elementos de saída, incluindo arquivos, gráficos e documentos de ajuda, são exibidos aqui.\n\n\n\n\n\n\n\nFigura A.2: Painéis do RStudio IDE\n\n\n\n\nA.3.1 Configurar e personalizar o RStudio IDE\nPara personalizar seu espaço de trabalho, acesse Tools &gt; Global Options. Em seguida:\n\nSempre inicie o  com uma sessão em branco, Figura A.3:\n\n\n\n\n\n\n\nFigura A.3\n\n\n\n\nUse o operador de pipe nativo, |&gt;, Figura A.4:\n\n\n\n\n\n\n\nFigura A.4\n\n\n\n\nAjuste o tamanho da fonte e selecione um tema escuro, Figura A.5:\n\n\n\n\n\n\n\nFigura A.5\n\n\n\nA aplicação dessas mudanças personalizará sua experiência com o RStudio IDE, como mostrado na Figura A.6.\n\n\n\n\n\n\nFigura A.6\n\n\n\n\n\n\n\nIsmay, Chester, e Albert Young-Sun Kim. 2020. Statistical inference via data science: a ModernDive into R and the Tidyverse. Chapman & Hall/CRC the R Series. Boca Raton: CRC Press / Taylor & Francis Group. https://moderndive.com/.",
+    "crumbs": [
+      "Apêndices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Introdução ao R</span>"
     ]
   },
   {
@@ -24,7 +68,7 @@
     "href": "naive_set_theory.html",
     "title": "Apêndice B — Teoria ingênua dos conjuntos",
     "section": "",
-    "text": "B.1 Conjuntos\nPodemos denotar um conjunto usando uma letra arbitrária como \\(A\\) e descrevê-lo listando seus elementos entre chaves. Por exemplo, \\(A = \\{ 1,2 \\}\\) é o conjunto cujos elementos são os números \\(1\\) e \\(2\\). Com base em Definição B.1 e na notação anterior, é importante fazer as seguintes observações:\nO pacote  sets pode ser usado para ilustrar as ideias mencionadas acima para entender o conceito de conjunto. Primeiramente, podemos criar dois conjuntos e verificar se os dois conjuntos são iguais:\nlibrary(sets)\nA &lt;- set(1, 2)\nA\n#&gt; {1, 2}\nB &lt;- set(2, 1)\nB\n#&gt; {1, 2}\nA == B\n#&gt; [1] TRUE\nTambém podemos verificar a propriedade de elementos únicos em um conjunto:\nC &lt;- set(1, 1, 2, 2)\nC\n#&gt; {1, 2}\nAlém disso, podemos criar um conjunto vazio:\nvazio &lt;- set()\nvazio\n#&gt; {}\nPor último, podemos definir um conjunto cujos elementos podem ser conjuntos:\nD &lt;- set(A, 3)\nD\n#&gt; {3, {1, 2}}\nPor exemplo, se \\(A = \\{ 1 , 2 \\}\\) então \\(1 \\in A\\) e \\(3 \\notin A\\). Em , podemos verificar se um elemento pertence a um conjunto usando o operador %e% do pacote sets, que representa a relação \\(\\in\\):\n1 %e% A\n#&gt; [1] TRUE\n3 %e% A\n#&gt; [1] FALSE\nÀs vezes, não é possível listar os elementos de um conjunto porque os elementos são infinitos ou porque não sabemos exatamente quais são. No entanto, se sabemos a propriedade que cada elemento deve ter, podemos usar uma notação matemática conhecida como notação construtor de conjuntos para descrever o conjunto. Essa notação é especificada como \\(\\{ x \\in \\Omega: P(x) \\}\\), onde \\(x\\) é um elemento genérico que pertence a \\(\\Omega\\) com a propriedade \\(P(x)\\). \\(\\Omega\\)2 é conhecido como universo de discurso e se refere ao conjunto que contém todos os elementos em consideração a partir dos quais o valor de \\(x\\) pode ser escolhido. Por exemplo:\nInfelizmente, o  só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como sets não permite representar conjuntos como \\(E\\) ou \\(F\\) no .\nA Figura B.1 ilustra a Definição B.3 usando um diagrama de Venn3.\nFigura B.1: \\(A \\subseteq B\\) representado por um diagrama de Venn onde \\(\\Omega\\) é o universo de discurso\nPor exemplo, se \\(A = \\{ 1 , 2 \\}\\) e \\(G = \\{ 1, 2, 3\\}\\) então \\(A \\subseteq G\\) porque \\(1 \\in A\\), \\(1 \\in G\\), \\(2 \\in A\\) e \\(2 \\in G\\). No entanto, \\(G \\nsubseteq A\\) porque \\(3 \\in G\\) e \\(3 \\notin A\\). Em , podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador &lt;= do pacote sets, que representa a relação \\(\\subseteq\\):\nG &lt;- set(1, 2, 3)\nG\n#&gt; {1, 2, 3}\nA &lt;= G\n#&gt; [1] TRUE\nG &lt;= A\n#&gt; [1] FALSE",
+    "text": "B.1 Conjuntos\nPodemos denotar um conjunto usando uma letra arbitrária como \\(A\\) e descrevê-lo listando seus elementos entre chaves. Por exemplo, \\(A = \\{ 1,2 \\}\\) é o conjunto cujos elementos são os números \\(1\\) e \\(2\\). Com base em Definição B.1 e na notação anterior, é importante fazer as seguintes observações:\nO pacote sets do  pode ser usado para ilustrar as ideias mencionadas acima para entender o conceito de conjunto. Primeiramente, podemos criar dois conjuntos e verificar se os dois conjuntos são iguais:\nlibrary(sets)\nA &lt;- set(1, 2)\nA\n#&gt; {1, 2}\nB &lt;- set(2, 1)\nB\n#&gt; {1, 2}\nA == B\n#&gt; [1] TRUE\nTambém podemos verificar a propriedade de elementos únicos em um conjunto:\nC &lt;- set(1, 1, 2, 2)\nC\n#&gt; {1, 2}\nAlém disso, podemos criar um conjunto vazio:\nvazio &lt;- set()\nvazio\n#&gt; {}\nPor último, podemos definir um conjunto cujos elementos podem ser conjuntos:\nD &lt;- set(A, 3)\nD\n#&gt; {3, {1, 2}}\nPor exemplo, se \\(A = \\{ 1 , 2 \\}\\) então \\(1 \\in A\\) e \\(3 \\notin A\\). Em , podemos verificar se um elemento pertence a um conjunto usando o operador %e% do pacote sets, que representa a relação \\(\\in\\):\n1 %e% A\n#&gt; [1] TRUE\n3 %e% A\n#&gt; [1] FALSE\nÀs vezes, não é possível listar os elementos de um conjunto porque os elementos são infinitos ou porque não sabemos exatamente quais são. No entanto, se sabemos a propriedade que cada elemento deve ter, podemos usar uma notação matemática conhecida como notação construtor de conjuntos para descrever o conjunto. Essa notação é especificada como \\(\\{ x \\in \\Omega: P(x) \\}\\), onde \\(x\\) é um elemento genérico que pertence a \\(\\Omega\\) com a propriedade \\(P(x)\\). \\(\\Omega\\)2 é conhecido como universo de discurso e se refere ao conjunto que contém todos os elementos em consideração a partir dos quais o valor de \\(x\\) pode ser escolhido. Por exemplo:\nInfelizmente, o  só pode manipular objetos que podem ser representados como números e que são finitos. Portanto, o uso de pacotes como sets não permite representar conjuntos como \\(E\\) ou \\(F\\) no .\nA Figura B.1 ilustra a Definição B.3 usando um diagrama de Venn3.\nFigura B.1: \\(A \\subseteq B\\) representado por um diagrama de Venn onde \\(\\Omega\\) é o universo de discurso\nPor exemplo, se \\(A = \\{ 1 , 2 \\}\\) e \\(G = \\{ 1, 2, 3\\}\\) então \\(A \\subseteq G\\) porque \\(1 \\in A\\), \\(1 \\in G\\), \\(2 \\in A\\) e \\(2 \\in G\\). No entanto, \\(G \\nsubseteq A\\) porque \\(3 \\in G\\) e \\(3 \\notin A\\). Em , podemos verificar se um conjunto é um subconjunto de um conjunto usando o operador &lt;= do pacote sets, que representa a relação \\(\\subseteq\\):\nG &lt;- set(1, 2, 3)\nG\n#&gt; {1, 2, 3}\nA &lt;= G\n#&gt; [1] TRUE\nG &lt;= A\n#&gt; [1] FALSE",
     "crumbs": [
       "Apêndices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Teoria ingênua dos conjuntos</span>"
