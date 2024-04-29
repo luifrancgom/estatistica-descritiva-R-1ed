@@ -98,7 +98,7 @@ format:
       - paperwidth=8.00in
       - paperheight=10.00in
       - left=1.25in
-      - textwidth= 5.25in
+      - textwidth=5.25in
       - top=1.00in
       - textheight=8.25in
     linkcolor: blue

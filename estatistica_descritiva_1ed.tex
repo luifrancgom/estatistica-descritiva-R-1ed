@@ -39,8 +39,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\usepackage[paperwidth=8.00in,paperheight=10.00in,left=1.25in,textwidth=
-5.25in,top=1.00in,textheight=8.25in]{geometry}
+\usepackage[paperwidth=8.00in,paperheight=10.00in,left=1.25in,textwidth=5.25in,top=1.00in,textheight=8.25in]{geometry}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
@@ -153,6 +152,22 @@
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
 \makeatother
 \makeatletter
@@ -190,10 +205,10 @@
 \floatname{codelisting}{Listagem}
 \newcommand*\listoflistings{\listof{codelisting}{Lista de Listagens}}
 \usepackage{amsthm}
-\theoremstyle{plain}
-\newtheorem{theorem}{Teorema}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Definição}[chapter]
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[chapter]
 \theoremstyle{remark}
 \AtBeginDocument{\renewcommand*{\proofname}{Comprovação}}
 \newtheorem*{remark}{Comentário}
@@ -330,6 +345,11 @@ contínuas}\label{distribuiuxe7uxf5es-de-probabilidade-contuxednuas}
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-chambers_object-oriented_2014}
+Chambers, John M. 2014. {``Object-{Oriented} {Programming}, {Functional}
+{Programming} and {R}''}. \emph{Statistical Science} 29 (2).
+\url{https://doi.org/10.1214/13-STS452}.
+
 \bibitem[\citeproctext]{ref-halmos_teoria_2001}
 Halmos, Paul R. 2001. \emph{Teoria ingenua dos conjuntos}. Rio de
 Janeiro: Editora Ciencia Moderna.
@@ -339,6 +359,11 @@ Ismay, Chester, e Albert Young-Sun Kim. 2020. \emph{Statistical
 inference via data science: a {ModernDive} into {R} and the
 {Tidyverse}}. Chapman \& {Hall}/{CRC} the {R} {Series}. Boca Raton: CRC
 Press / Taylor \& Francis Group. \url{https://moderndive.com/}.
+
+\bibitem[\citeproctext]{ref-wickham_advanced_2019}
+Wickham, Hadley. 2019. \emph{Advanced {R}}. Second edition. Chapman \&
+{Hall}/{CRC}: {The} {R} series. Boca Raton London New York: CRC Press,
+Taylor \& Francis Group. \url{https://adv-r.hadley.nz/}.
 
 \end{CSLReferences}
 
@@ -519,11 +544,11 @@ Para personalizar seu espaço de trabalho, acesse \textbf{Tools
 
 \centering{
 
-\captionsetup{labelsep=none}\includegraphics{images/r_blank slate.png}
+\includegraphics{images/r_blank slate.png}
 
 }
 
-\caption{\label{fig-r-blank-slate}}
+\caption{\label{fig-r-blank-slate}Configuração do espaço de trabalho}
 
 \end{figure}%
 
@@ -538,11 +563,12 @@ Para personalizar seu espaço de trabalho, acesse \textbf{Tools
 
 \centering{
 
-\captionsetup{labelsep=none}\includegraphics{images/native_pipe_operator.png}
+\includegraphics{images/native_pipe_operator.png}
 
 }
 
-\caption{\label{fig-native-pipe-operator}}
+\caption{\label{fig-native-pipe-operator}Configuração para usar o
+operador de pipe nativo}
 
 \end{figure}%
 
@@ -557,11 +583,12 @@ Para personalizar seu espaço de trabalho, acesse \textbf{Tools
 
 \centering{
 
-\captionsetup{labelsep=none}\includegraphics{images/font_size_dark_theme.png}
+\includegraphics{images/font_size_dark_theme.png}
 
 }
 
-\caption{\label{fig-font-size-dark-theme}}
+\caption{\label{fig-font-size-dark-theme}Configuração para usar um tema
+escuro}
 
 \end{figure}%
 
@@ -572,13 +599,470 @@ IDE, como mostrado na Figura~\ref{fig-customize-rstudio-ide}.
 
 \centering{
 
-\captionsetup{labelsep=none}\includegraphics{images/customize_rstudio_ide.png}
+\includegraphics{images/customize_rstudio_ide.png}
 
 }
 
-\caption{\label{fig-customize-rstudio-ide}}
+\caption{\label{fig-customize-rstudio-ide}Resultado da aplicação da
+configuração completa}
 
 \end{figure}%
+
+\section{Executar código usando o RStudio
+IDE}\label{executar-cuxf3digo-usando-o-rstudio-ide}
+
+Para nos comunicarmos com uma máquina, escrevemos instruções em uma
+linguagem especializada chamada código. Este código é então traduzido em
+um formato que a máquina entende, permitindo que ela execute as tarefas
+que definimos.
+
+Vamos começar com um exemplo simples! Digite
+\texttt{1\ +\ 2\ +\ 3\ +\ 4\ +\ 5\ +\ 6}, como mostrado na
+Figura~\ref{fig-executing-code-example}, e então aperte Enter para ver o
+que acontece!
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{images/executing_code_example.png}
+
+}
+
+\caption{\label{fig-executing-code-example}Executando código no console}
+
+\end{figure}%
+
+Se você seguiu as instruções certinho, o RStudio IDE vai mostrar o
+seguinte resultado:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{+} \DecValTok{2} \SpecialCharTok{+} \DecValTok{3} \SpecialCharTok{+} \DecValTok{4} \SpecialCharTok{+} \DecValTok{5} \SpecialCharTok{+} \DecValTok{6}
+\CommentTok{\#\textgreater{} [1] 21}
+\end{Highlighting}
+\end{Shaded}
+
+Ao executar o código, você pode encontrar mensagens , avisos ou erros.
+Não entre em pânico! Estas são maneiras do seu computador se comunicar
+com você:
+
+\begin{itemize}
+\item
+  \textbf{Mensagem (Message)}: É simplesmente uma nota informativa. Seu
+  código ainda será executado sem problemas.
+\item
+  \textbf{Aviso (Warning)}: Alerta você sobre potenciais resultados
+  inesperados, mas seu código ainda será executado.
+\item
+  \textbf{Erro (Error)}: Indica um problema fundamental que impede o seu
+  código de ser executado. Você precisará corrigir o problema para que
+  seu código possa funcionar.
+\end{itemize}
+
+Mais adiante, você usará o comando \texttt{install.packages()}, onde
+poderá encontrar mensagens. Para avisos ou erros, tente os seguintes
+comandos para ilustrar as diferenças:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{log}\NormalTok{(}\AttributeTok{x =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{)}
+\CommentTok{\#\textgreater{} Warning in log(x = {-}1): NaNs produced}
+\CommentTok{\#\textgreater{} [1] NaN}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{"Tudo bem"} \SpecialCharTok{*} \DecValTok{2}
+\CommentTok{\#\textgreater{} Error in "Tudo bem" * 2: non{-}numeric argument to binary operator}
+\end{Highlighting}
+\end{Shaded}
+
+No primeiro caso, o código será executado, mas você verá o resultado
+\texttt{NaN} (\textbf{Not a Number}, em inglês) porque o logaritmo de um
+número negativo é indefinido. No segundo caso, seu código não será
+executado porque o
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf}
+não permite a multiplicação de palavras.
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, toptitle=1mm, arc=.35mm, left=2mm, breakable, rightrule=.15mm, opacityback=0, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm]
+
+No
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf},
+uma string é uma coleção de um ou mais caracteres e são criadas usando
+aspas duplas, \texttt{""}. Por exemplo, \texttt{"Tudo\ bem"} é uma
+string.
+
+\end{tcolorbox}
+
+\section{Objetos, funções e o operador de
+atribuição}\label{objetos-funuxe7uxf5es-e-o-operador-de-atribuiuxe7uxe3o}
+
+Tudo que existe no
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf}
+é um \textbf{objeto}
+(\citeproc{ref-chambers_object-oriented_2014}{Chambers 2014, 170}). Isso
+significa que números, textos e até mesmo instruções para o computador
+são todos tratados como objetos. Você manipula esses objetos usando
+\textbf{funções}, que recebem objetos como entrada e produzem novos
+objetos como saída.
+
+Por exemplo, quando você soma os números \texttt{1,\ 2,\ 3,\ 4,\ 5} e
+\texttt{6} (que são objetos), você usa a função \texttt{+} repetidamente
+para criar um novo objeto \texttt{21}. O
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf}
+é construído sobre a ideia de que objetos e funções trabalham juntos.
+
+Para trabalhar com objetos de forma simples, você pode atribuir nomes a
+eles usando o operador \texttt{\textless{}-}. Uma vez que um objeto
+tenha um nome, você pode manipulá-lo chamando esse nome.
+
+Para entender esses conceitos de maneira prática, vamos considerar o
+processo de jogar uma moeda usando o
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf}.
+
+\subsection{Objeto moeda}\label{objeto-moeda}
+
+Vamos imaginar uma moeda padrão com dois lados: cara e coroa, como
+mostrado na Figura~\ref{fig-coin-head-tail}.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{images/coin_head_tail.png}
+
+}
+
+\caption{\label{fig-coin-head-tail}Os dois lados de uma moeda}
+
+\end{figure}%
+
+Para simular um lançamento de moeda em
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf},
+primeiro precisamos criar um objeto que represente nossa moeda com seus
+dois lados: cara e coroa. Vamos atribuir um nome a esse objeto usando
+\texttt{\textless{}-}. Veja como combinar esses elementos em R usando a
+função \texttt{c()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{moeda }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"cara"}\NormalTok{, }\StringTok{"coroa"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, toptitle=1mm, arc=.35mm, left=2mm, breakable, rightrule=.15mm, opacityback=0, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm]
+
+Para representar os dois lados da moeda, usamos duas strings:
+\texttt{"cara"} e \texttt{"coroa"}. Usar apenas \texttt{cara} e
+\texttt{coroa} sem aspas duplas poderia causar problemas, pois o
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf}
+as interpretaria como nomes associados a alguns objetos, em vez de
+valores representando os dois lados da moeda.
+
+\end{tcolorbox}
+
+Agora que associamos um nome ao nosso objeto moeda, podemos manipulá-lo
+simplesmente chamando o nome \texttt{moeda}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{moeda}
+\CommentTok{\#\textgreater{} [1] "cara"  "coroa"}
+\end{Highlighting}
+\end{Shaded}
+
+Quando um objeto tem um nome, ele aparecerá na aba Ambiente
+(\textbf{Environment}, em inglês) do painel 3 no RStudio IDE, como
+mostrado na Figura~\ref{fig-panel3-environment-tab}.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{images/panel3_environment_tab.png}
+
+}
+
+\caption{\label{fig-panel3-environment-tab}Aba de ambiente}
+
+\end{figure}%
+
+\subsection{Jogar uma moeda}\label{jogar-uma-moeda}
+
+Agora que você criou um objeto no
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf},
+é hora de simular o lançamento de uma moeda. Uma maneira de fazer isso é
+com a função \texttt{sample}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ moeda, }\AttributeTok{size =} \DecValTok{1}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] "coroa"}
+\end{Highlighting}
+\end{Shaded}
+
+Aqui, o argumento \texttt{x} informa à função qual objeto usar para
+selecionar os elementos. O argumento \texttt{size} especifica quantos
+elementos escolher, neste caso \texttt{size\ =\ 1} para representar o
+lançamento de uma única moeda.
+
+Vamos tentar jogar a moeda duas vezes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ moeda, }\AttributeTok{size =} \DecValTok{2}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] "cara"  "coroa"}
+\end{Highlighting}
+\end{Shaded}
+
+E que tal 3 vezes?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ moeda, }\AttributeTok{size =} \DecValTok{3}\NormalTok{)}
+\CommentTok{\#\textgreater{} Error in sample.int(length(x), size, replace, prob): cannot take a sample larger than the population when \textquotesingle{}replace = FALSE\textquotesingle{}}
+\end{Highlighting}
+\end{Shaded}
+
+Você encontrará um erro. Não se preocupe, os erros são úteis. A mensagem
+de erro menciona o argumento \texttt{replace}. Para aprender mais sobre
+qualquer função, use \texttt{?} seguido do nome da função, como
+\texttt{?sample}, conforme mostrado na Figura 1.
+
+\begin{figure}
+
+\centering{
+
+\captionsetup{labelsep=none}\includegraphics{images/help_sample_replace.png}
+
+}
+
+\caption{\label{fig-help-sample-replace}}
+
+\end{figure}%
+
+Quando \texttt{replace\ =\ FALSE}, cada item em \texttt{x} só pode ser
+escolhido uma vez. Para simular vários lançamentos de uma moeda, em que
+cada resultado tem a mesma probabilidade de ser selecionado a cada vez,
+\texttt{replace\ =\ TRUE}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ moeda, }\AttributeTok{size =} \DecValTok{3}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] "coroa" "coroa" "coroa"}
+\end{Highlighting}
+\end{Shaded}
+
+Agora temos todos os componentes para construir uma função na próxima
+seção. Comecemos simulando quatro lançamentos de uma moeda:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lados }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"cara"}\NormalTok{, }\StringTok{"coroa"}\NormalTok{)}
+\NormalTok{n\_lancamentos }\OtherTok{\textless{}{-}} \DecValTok{4}
+\NormalTok{com\_reposicao }\OtherTok{\textless{}{-}} \ConstantTok{TRUE}
+\NormalTok{lancamentos }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lados, }\AttributeTok{size =}\NormalTok{ n\_lancamentos, }\AttributeTok{replace =}\NormalTok{ com\_reposicao)}
+\NormalTok{lancamentos}
+\CommentTok{\#\textgreater{} [1] "coroa" "cara"  "cara"  "coroa"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, bottomrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, colback=white, toptitle=1mm, arc=.35mm, left=2mm, breakable, rightrule=.15mm, opacityback=0, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm]
+
+Para melhorar a legibilidade do código, seguiremos estas diretrizes:
+
+\begin{itemize}
+\item
+  \textbf{Nomes de objetos}: Use apenas letras minúsculas sem acentos,
+  números e sublinhados, \texttt{\_}, para nomes de objetos.
+\item
+  \textbf{Separação de palavras}: Utilize sublinhados para separar
+  palavras dentro de um nome (isso é conhecido como
+  \href{https://en.wikipedia.org/wiki/Snake_case}{snake case}).
+\item
+  \textbf{Nomes significativos}: Escolha nomes de objetos que reflitam
+  com precisão o que eles representam.
+\end{itemize}
+
+\end{tcolorbox}
+
+\subsection{Definindo novas
+funções}\label{definindo-novas-funuxe7uxf5es}
+
+No
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf},
+uma função tem três partes básicas: um nome, um corpo e um conjunto de
+argumentos\footnote{Funções possuem complexidades adicionais, mas vamos
+  manter a explicação simples por enquanto. Se você ficar curioso mais
+  tarde, confira (\citeproc{ref-wickham_advanced_2019}{Wickham 2019},
+  chap.~6) quando tiver mais experiência com o
+  \includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf}.}.
+Para criar uma, usamos a função \texttt{function}, seguindo esta
+estrutura:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nome }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(argumentos) \{}
+\NormalTok{  corpo}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Vamos construir nossa função de lançamento de uma moeda passo a passo.
+Por enquanto, começaremos sem usar argumentos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jogar\_moeda }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{() \{}
+  
+\NormalTok{  lados }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"cara"}\NormalTok{, }\StringTok{"coroa"}\NormalTok{)}
+\NormalTok{  n\_lancamentos }\OtherTok{\textless{}{-}} \DecValTok{4}
+\NormalTok{  com\_reposicao }\OtherTok{\textless{}{-}} \ConstantTok{TRUE}
+\NormalTok{  lancamentos }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lados, }
+                        \AttributeTok{size =}\NormalTok{ n\_lancamentos, }
+                        \AttributeTok{replace =}\NormalTok{ com\_reposicao)}
+  
+  \FunctionTok{return}\NormalTok{(lancamentos)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Dica}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toptitle=1mm, arc=.35mm, left=2mm, breakable, rightrule=.15mm, opacityback=0, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm]
+
+Em uma função bem estruturada, usamos a declaração \texttt{return} no
+final do corpo para especificar explicitamente o valor que queremos que
+a função retorne. Isso é considerado uma boa prática na programação em
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf}.
+
+\end{tcolorbox}
+
+Copie e cole o código acima no console, pressione \textbf{Enter} e
+verifique a aba Ambiente (Environment, em inglês) do RStudio IDE, como
+mostrado na Figura 2.
+
+\begin{figure}
+
+\centering{
+
+\captionsetup{labelsep=none}\includegraphics{images/running_toss_coin.png}
+
+}
+
+\caption{\label{fig-help-sample-replace}}
+
+\end{figure}%
+
+Agora vamos ver se a função realmente funciona:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{jogar\_moeda}\NormalTok{()}
+\CommentTok{\#\textgreater{} [1] "coroa" "coroa" "coroa" "cara"}
+\end{Highlighting}
+\end{Shaded}
+
+Você pode se perguntar: \emph{Por que não usar simplesmente
+\texttt{jogar\_moeda}?} Vamos tentar e ver o que acontece:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jogar\_moeda}
+\CommentTok{\#\textgreater{} function() \{}
+\CommentTok{\#\textgreater{}   }
+\CommentTok{\#\textgreater{}   lados \textless{}{-} c("cara", "coroa")}
+\CommentTok{\#\textgreater{}   n\_lancamentos \textless{}{-} 4}
+\CommentTok{\#\textgreater{}   com\_reposicao \textless{}{-} TRUE}
+\CommentTok{\#\textgreater{}   lancamentos \textless{}{-} sample(x = lados, }
+\CommentTok{\#\textgreater{}                         size = n\_lancamentos, }
+\CommentTok{\#\textgreater{}                         replace = com\_reposicao)}
+\CommentTok{\#\textgreater{}   }
+\CommentTok{\#\textgreater{}   return(lancamentos)}
+\CommentTok{\#\textgreater{} \}}
+\end{Highlighting}
+\end{Shaded}
+
+Nesse caso, o
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf}
+vai te mostrar o código da função em vez de executá-la como faz quando
+você digita \texttt{jogar\_moeda()}.
+
+\subsection{Argumentos}\label{argumentos}
+
+Para tornar nossa função mais flexível, vamos permitir que o usuário
+especifique o número de lançamentos de moeda. Podemos fazer isso
+transformando n\_lancamentos em um argumento da função:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jogar\_moeda }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n\_lancamentos) \{}
+  
+\NormalTok{  lados }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"cara"}\NormalTok{, }\StringTok{"coroa"}\NormalTok{)}
+\NormalTok{  com\_reposicao }\OtherTok{\textless{}{-}} \ConstantTok{TRUE}
+\NormalTok{  lancamentos }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lados, }
+                        \AttributeTok{size =}\NormalTok{ n\_lancamentos, }
+                        \AttributeTok{replace =}\NormalTok{ com\_reposicao)}
+  
+  \FunctionTok{return}\NormalTok{(lancamentos)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Agora, o usuário pode personalizar o número de lançamentos,
+especificando um valor maior ou igual a um. Vamos tentar com sete
+lançamentos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{jogar\_moeda}\NormalTok{(}\AttributeTok{n\_lancamentos =} \DecValTok{7}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] "coroa" "cara"  "coroa" "coroa" "cara"  "coroa" "coroa"}
+\end{Highlighting}
+\end{Shaded}
+
+Também podemos definir valores padrão para os argumentos de uma função.
+Esses valores serão usados se o usuário não fornecer um valor,
+oferecendo flexibilidade e permitindo personalização se necessário.
+Vamos ilustrar essa opção definindo um valor padrão para o argumento
+lados:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jogar\_moeda }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n\_lancamentos, }
+                        \AttributeTok{lados =} \FunctionTok{c}\NormalTok{(}\StringTok{"cara"}\NormalTok{, }\StringTok{"coroa"}\NormalTok{)) \{}
+  
+\NormalTok{  com\_reposicao }\OtherTok{\textless{}{-}} \ConstantTok{TRUE}
+\NormalTok{  lancamentos }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lados, }
+                        \AttributeTok{size =}\NormalTok{ n\_lancamentos, }
+                        \AttributeTok{replace =}\NormalTok{ com\_reposicao)}
+  
+  \FunctionTok{return}\NormalTok{(lancamentos)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Se o usuário estiver satisfeito com as etiquetas ``cara'' e ``coroa''
+para os lados da moeda, então podemos jogar uma moeda nove vezes da
+seguinte forma:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{jogar\_moeda}\NormalTok{(}\AttributeTok{n\_lancamentos =} \DecValTok{9}\NormalTok{)}
+\CommentTok{\#\textgreater{} [1] "cara"  "coroa" "coroa" "cara"  "coroa" "coroa" "coroa" "coroa" "coroa"}
+\end{Highlighting}
+\end{Shaded}
+
+No entanto, se o usuário quiser alterar o valor do argumento lados,
+mudando seus valores para refletir os lados da moeda mostrados na
+Figura~\ref{fig-coin-head-tail}, podemos proceder da seguinte maneira:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{jogar\_moeda}\NormalTok{(}\AttributeTok{n\_lancamentos =} \DecValTok{9}\NormalTok{, }\AttributeTok{lados =} \FunctionTok{c}\NormalTok{(}\StringTok{"cabeca"}\NormalTok{, }\StringTok{"navio"}\NormalTok{))}
+\CommentTok{\#\textgreater{} [1] "cabeca" "cabeca" "navio"  "cabeca" "navio"  "navio"  "navio"  "cabeca"}
+\CommentTok{\#\textgreater{} [9] "navio"}
+\end{Highlighting}
+\end{Shaded}
 
 \chapter{Teoria ingênua dos
 conjuntos}\label{teoria-inguxeanua-dos-conjuntos}

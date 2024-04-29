@@ -36,11 +36,11 @@ Para obter uma cópia e a versão oficial mais recente do `r r_logo`, acesse [Th
 
 ## Como baixar e instalar o RStudio IDE
 
-Para obter a versão oficial mais recente do RStudio IDE, acesse [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/). Role a página para baixo, selecione seu sistema operacional e baixe o instalador apropriado. Abra o instalador e siga as instruções fornecidas.
+Para obter a versão oficial mais recente do RStudio IDE, acesse <https://posit.co/download/rstudio-desktop/>. Role a página para baixo, selecione seu sistema operacional e baixe o instalador apropriado. Abra o instalador e siga as instruções fornecidas.
 
 Agora que você instalou o `r r_logo` e o RStudio IDE, você está pronto para começar a trabalhar no RStudio IDE. Assim como você interage principalmente com o volante e o painel de um carro em vez do motor, você focará em usar a interface do RStudio IDE para trabalhar com o `r r_logo`.
 
-Ao abrir o RStudio IDE, você pode criar um novo script `r r_logo` selecionando **File > New File > R Script** ou usando o atalho de teclado **Ctrl + Shift + N**. Você verá quatro painéis principais na interface, como mostrado na @fig-rstudio-ide-panels:
+Ao abrir o RStudio IDE, você pode criar um novo script `r r_logo` selecionando **File \> New File \> R Script** ou usando o atalho de teclado **Ctrl + Shift + N**. Você verá quatro painéis principais na interface, como mostrado na @fig-rstudio-ide-panels:
 
 -   **Painel 1**: É onde você escreve, edita e salva seu código R.
 -   **Painel 2**: Aqui você pode digitar os comandos do R e ver os resultados.
@@ -49,22 +49,256 @@ Ao abrir o RStudio IDE, você pode criar um novo script `r r_logo` selecionando 
 
 ![Painéis do RStudio IDE](images/panels_rstudio_ide.png){#fig-rstudio-ide-panels}
 
-###  Configurar e personalizar o RStudio IDE
+### Configurar e personalizar o RStudio IDE
 
-Para personalizar seu espaço de trabalho, acesse **Tools > Global Options**. Em seguida:
+Para personalizar seu espaço de trabalho, acesse **Tools \> Global Options**. Em seguida:
 
 -   Sempre inicie o `r r_logo` com uma sessão em branco, @fig-r-blank-slate:
 
-![](images/r_blank slate.png){#fig-r-blank-slate}
+![Configuração do espaço de trabalho](images/r_blank slate.png){#fig-r-blank-slate}
 
 -   Use o operador de pipe nativo, `|>`, @fig-native-pipe-operator:
 
-![](images/native_pipe_operator.png){#fig-native-pipe-operator}
+![Configuração para usar o operador de pipe nativo](images/native_pipe_operator.png){#fig-native-pipe-operator}
 
 -   Ajuste o tamanho da fonte e selecione um tema escuro, @fig-font-size-dark-theme:
 
-![](images/font_size_dark_theme.png){#fig-font-size-dark-theme}
+![Configuração para usar um tema escuro](images/font_size_dark_theme.png){#fig-font-size-dark-theme}
 
 A aplicação dessas mudanças personalizará sua experiência com o RStudio IDE, como mostrado na @fig-customize-rstudio-ide.
 
-![](images/customize_rstudio_ide.png){#fig-customize-rstudio-ide}
+![Resultado da aplicação da configuração completa](images/customize_rstudio_ide.png){#fig-customize-rstudio-ide}
+
+## Executar código usando o RStudio IDE
+
+Para nos comunicarmos com uma máquina, escrevemos instruções em uma linguagem especializada chamada código. Este código é então traduzido em um formato que a máquina entende, permitindo que ela execute as tarefas que definimos.
+
+Vamos começar com um exemplo simples! Digite `1 + 2 + 3 + 4 + 5 + 6`, como mostrado na @fig-executing-code-example, e então aperte Enter para ver o que acontece!
+
+![Executando código no console](images/executing_code_example.png){#fig-executing-code-example}
+
+Se você seguiu as instruções certinho, o RStudio IDE vai mostrar o seguinte resultado:
+
+```{r}
+1 + 2 + 3 + 4 + 5 + 6
+```
+
+Ao executar o código, você pode encontrar mensagens , avisos ou erros. Não entre em pânico! Estas são maneiras do seu computador se comunicar com você:
+
+-   **Mensagem (Message)**: É simplesmente uma nota informativa. Seu código ainda será executado sem problemas.
+
+-   **Aviso (Warning)**: Alerta você sobre potenciais resultados inesperados, mas seu código ainda será executado.
+
+-   **Erro (Error)**: Indica um problema fundamental que impede o seu código de ser executado. Você precisará corrigir o problema para que seu código possa funcionar.
+
+Mais adiante, você usará o comando `install.packages()`, onde poderá encontrar mensagens. Para avisos ou erros, tente os seguintes comandos para ilustrar as diferenças:
+
+```{r}
+log(x = -1)
+```
+
+```{r}
+#| error: true
+"Tudo bem" * 2
+```
+
+No primeiro caso, o código será executado, mas você verá o resultado `NaN` (**Not a Number**, em inglês) porque o logaritmo de um número negativo é indefinido. No segundo caso, seu código não será executado porque o `r r_logo` não permite a multiplicação de palavras.
+
+::: {.callout-note}
+No `r r_logo`, uma string é uma coleção de um ou mais caracteres e são criadas usando aspas duplas, `""`. Por exemplo, `"Tudo bem"` é uma string.
+:::
+
+## Objetos, funções e o operador de atribuição
+
+Tudo que existe no `r r_logo` é um **objeto** [@chambers_object-oriented_2014, p. 170]. Isso significa que números, textos e até mesmo instruções para o computador são todos tratados como objetos. Você manipula esses objetos usando **funções**, que recebem objetos como entrada e produzem novos objetos como saída.
+
+Por exemplo, quando você soma os números `1, 2, 3, 4, 5` e `6` (que são objetos), você usa a função `+` repetidamente para criar um novo objeto `21`. O `r r_logo` é construído sobre a ideia de que objetos e funções trabalham juntos.
+
+Para trabalhar com objetos de forma simples, você pode atribuir nomes a eles usando o operador `<-`. Uma vez que um objeto tenha um nome, você pode manipulá-lo chamando esse nome.
+
+Para entender esses conceitos de maneira prática, vamos considerar o processo de jogar uma moeda usando o `r r_logo`.
+
+### Objeto moeda
+
+Vamos imaginar uma moeda padrão com dois lados: cara e coroa, como mostrado na @fig-coin-head-tail.
+
+![Os dois lados de uma moeda](images/coin_head_tail.png){#fig-coin-head-tail}
+
+Para simular um lançamento de moeda em `r r_logo`, primeiro precisamos criar um objeto que represente nossa moeda com seus dois lados: cara e coroa. Vamos atribuir um nome a esse objeto usando `<-`. Veja como combinar esses elementos em R usando a função `c()`:
+
+```{r}
+moeda <- c("cara", "coroa")
+```
+
+::: {.callout-note}
+Para representar os dois lados da moeda, usamos duas strings: `"cara"` e `"coroa"`. Usar apenas `cara` e `coroa` sem aspas duplas poderia causar problemas, pois o `r r_logo` as interpretaria como nomes associados a alguns objetos, em vez de valores representando os dois lados da moeda.
+:::
+
+Agora que associamos um nome ao nosso objeto moeda, podemos manipulá-lo simplesmente chamando o nome `moeda`:
+
+```{r}
+moeda
+```
+
+Quando um objeto tem um nome, ele aparecerá na aba Ambiente (**Environment**, em inglês) do painel 3 no RStudio IDE, como mostrado na @fig-panel3-environment-tab.
+
+![Aba de ambiente](images/panel3_environment_tab.png){#fig-panel3-environment-tab}
+
+### Jogar uma moeda
+
+Agora que você criou um objeto no `r r_logo`, é hora de simular o lançamento de uma moeda. Uma maneira de fazer isso é com a função `sample`:
+
+```{r}
+sample(x = moeda, size = 1)
+```
+
+Aqui, o argumento `x` informa à função qual objeto usar para selecionar os elementos. O argumento `size` especifica quantos elementos escolher, neste caso `size = 1` para representar o lançamento de uma única moeda.
+
+Vamos tentar jogar a moeda duas vezes:
+
+```{r}
+sample(x = moeda, size = 2)
+```
+
+E que tal 3 vezes?
+
+```{r}
+#| error: true
+#| code-overflow: wrap
+sample(x = moeda, size = 3)
+```
+
+Você encontrará um erro. Não se preocupe, os erros são úteis. A mensagem de erro menciona o argumento `replace`. Para aprender mais sobre qualquer função, use `?` seguido do nome da função, como `?sample`, conforme mostrado na Figura 1.
+
+![](images/help_sample_replace.png){#fig-help-sample-replace}
+
+Quando `replace = FALSE`, cada item em `x` só pode ser escolhido uma vez. Para simular vários lançamentos de uma moeda, em que cada resultado tem a mesma probabilidade de ser selecionado a cada vez, `replace = TRUE`:
+
+
+```{r}
+sample(x = moeda, size = 3, replace = TRUE)
+```
+
+Agora temos todos os componentes para construir uma função na próxima seção. Comecemos simulando quatro lançamentos de uma moeda:
+
+```{r}
+lados <- c("cara", "coroa")
+n_lancamentos <- 4
+com_reposicao <- TRUE
+lancamentos <- sample(x = lados, size = n_lancamentos, replace = com_reposicao)
+lancamentos
+```
+
+::: {.callout-important}
+
+Para melhorar a legibilidade do código, seguiremos estas diretrizes:
+
+-   **Nomes de objetos**: Use apenas letras minúsculas sem acentos, números e sublinhados, `_`, para nomes de objetos.
+
+-   **Separação de palavras**: Utilize sublinhados para separar palavras dentro de um nome (isso é conhecido como [snake case](https://en.wikipedia.org/wiki/Snake_case)).
+
+-   **Nomes significativos**: Escolha nomes de objetos que reflitam com precisão o que eles representam.
+
+:::
+
+### Definindo novas funções
+
+No `r r_logo`, uma função tem três partes básicas: um nome, um corpo e um conjunto de argumentos[^getting_started_with_r-1]. Para criar uma, usamos a função `function`, seguindo esta estrutura:
+
+```{r}
+nome <- function(argumentos) {
+  corpo
+}
+```
+
+[^getting_started_with_r-1]: Funções possuem complexidades adicionais, mas vamos manter a explicação simples por enquanto. Se você ficar curioso mais tarde, confira [@wickham_advanced_2019, chap. 6] quando tiver mais experiência com o `r r_logo`.
+
+Vamos construir nossa função de lançamento de uma moeda passo a passo. Por enquanto, começaremos sem usar argumentos:
+
+```{r}
+jogar_moeda <- function() {
+  
+  lados <- c("cara", "coroa")
+  n_lancamentos <- 4
+  com_reposicao <- TRUE
+  lancamentos <- sample(x = lados, 
+                        size = n_lancamentos, 
+                        replace = com_reposicao)
+  
+  return(lancamentos)
+}
+```
+
+::: {.callout-tip}
+
+Em uma função bem estruturada, usamos a declaração `return` no final do corpo para especificar explicitamente o valor que queremos que a função retorne. Isso é considerado uma boa prática na programação em `r r_logo`.
+
+:::
+
+Copie e cole o código acima no console, pressione **Enter** e verifique a aba Ambiente (Environment, em inglês) do RStudio IDE, como mostrado na Figura 2.
+
+![](images/running_toss_coin.png){#fig-help-sample-replace}
+
+Agora vamos ver se a função realmente funciona:
+
+```{r}
+jogar_moeda()
+```
+
+Você pode se perguntar: *Por que não usar simplesmente `jogar_moeda`?* Vamos tentar e ver o que acontece:
+
+```{r}
+jogar_moeda
+```
+
+Nesse caso, o `r r_logo` vai te mostrar o código da função em vez de executá-la como faz quando você digita `jogar_moeda()`.
+
+### Argumentos
+
+Para tornar nossa função mais flexível, vamos permitir que o usuário especifique o número de lançamentos de moeda. Podemos fazer isso transformando n_lancamentos em um argumento da função:
+
+```{r}
+jogar_moeda <- function(n_lancamentos) {
+  
+  lados <- c("cara", "coroa")
+  com_reposicao <- TRUE
+  lancamentos <- sample(x = lados, 
+                        size = n_lancamentos, 
+                        replace = com_reposicao)
+  
+  return(lancamentos)
+}
+```
+
+Agora, o usuário pode personalizar o número de lançamentos, especificando um valor maior ou igual a um. Vamos tentar com sete lançamentos:
+
+```{r}
+jogar_moeda(n_lancamentos = 7)
+```
+
+Também podemos definir valores padrão para os argumentos de uma função. Esses valores serão usados se o usuário não fornecer um valor, oferecendo flexibilidade e permitindo personalização se necessário. Vamos ilustrar essa opção definindo um valor padrão para o argumento lados:
+
+```{r}
+jogar_moeda <- function(n_lancamentos, 
+                        lados = c("cara", "coroa")) {
+  
+  com_reposicao <- TRUE
+  lancamentos <- sample(x = lados, 
+                        size = n_lancamentos, 
+                        replace = com_reposicao)
+  
+  return(lancamentos)
+}
+```
+
+Se o usuário estiver satisfeito com as etiquetas "cara" e "coroa" para os lados da moeda, então podemos jogar uma moeda nove vezes da seguinte forma:
+
+```{r}
+jogar_moeda(n_lancamentos = 9)
+```
+
+No entanto, se o usuário quiser alterar o valor do argumento lados, mudando seus valores para refletir os lados da moeda mostrados na @fig-coin-head-tail, podemos proceder da seguinte maneira:
+
+```{r}
+jogar_moeda(n_lancamentos = 9, lados = c("cabeca", "navio"))
+```
