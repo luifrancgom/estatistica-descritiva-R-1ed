@@ -411,6 +411,14 @@ div.csl-indent {
   <li><a href="#definindo-novas-funções" id="toc-definindo-novas-funções" class="nav-link" data-scroll-target="#definindo-novas-funções"><span class="header-section-number">A.5.3</span> Definindo novas funções</a></li>
   <li><a href="#argumentos" id="toc-argumentos" class="nav-link" data-scroll-target="#argumentos"><span class="header-section-number">A.5.4</span> Argumentos</a></li>
   </ul></li>
+  <li><a href="#projetos-no-rstudio" id="toc-projetos-no-rstudio" class="nav-link" data-scroll-target="#projetos-no-rstudio"><span class="header-section-number">A.6</span> Projetos no RStudio</a>
+  <ul class="collapse">
+  <li><a href="#por-que-usar-projetos" id="toc-por-que-usar-projetos" class="nav-link" data-scroll-target="#por-que-usar-projetos"><span class="header-section-number">A.6.1</span> Por que usar projetos?</a></li>
+  <li><a href="#como-criar-um-projeto-no-rstudio" id="toc-como-criar-um-projeto-no-rstudio" class="nav-link" data-scroll-target="#como-criar-um-projeto-no-rstudio"><span class="header-section-number">A.6.2</span> Como criar um projeto no RStudio</a></li>
+  <li><a href="#trabalhando-com-projetos" id="toc-trabalhando-com-projetos" class="nav-link" data-scroll-target="#trabalhando-com-projetos"><span class="header-section-number">A.6.3</span> Trabalhando com projetos</a></li>
+  </ul></li>
+  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts"><span class="header-section-number">A.7</span> Scripts</a></li>
+  <li><a href="#pacotes" id="toc-pacotes" class="nav-link" data-scroll-target="#pacotes"><span class="header-section-number">A.8</span> Pacotes</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/blob/main/getting_started_with_r.qmd" class="toc-action"><i class="bi bi-github"></i>Ver o código fonte</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/edit/main/getting_started_with_r.qmd" class="toc-action"><i class="bi empty"></i>Editar essa página</a></li></ul></div></nav>
     </div>
@@ -475,7 +483,7 @@ div.csl-indent {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-vs-rstudio-ide-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;A.1: Analogia da diferença entre <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> e RStudio
+Figura&nbsp;A.1: Analogia da diferença entre <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> e RStudio IDE
 </figcaption>
 </figure>
 </div>
@@ -686,14 +694,14 @@ Figura&nbsp;A.9: Aba de ambiente
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> moeda, <span class="at">size =</span> <span class="dv">3</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error in sample.int(length(x), size, replace, prob): cannot take a sample larger than the population when 'replace = FALSE'</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Você encontrará um erro. Não se preocupe, os erros são úteis. A mensagem de erro menciona o argumento <code>replace</code>. Para aprender mais sobre qualquer função, use <code>?</code> seguido do nome da função, como <code>?sample</code>, conforme mostrado na Figura 1.</p>
+<p>Você encontrará um erro. Não se preocupe, os erros são úteis. A mensagem de erro menciona o argumento <code>replace</code>. Para aprender mais sobre qualquer função, use <code>?</code> seguido do nome da função, como <code>?sample</code>, conforme mostrado na <a href="#fig-help-sample-replace" class="quarto-xref">Figura&nbsp;<span>A.10</span></a>.</p>
 <div id="fig-help-sample-replace" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-help-sample-replace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/help_sample_replace.png" id="fig-help-sample-replace" class="img-fluid figure-img">
+<img src="images/help_sample_replace.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-help-sample-replace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;A.10
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-help-sample-replace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;A.10: Como obter ajuda no <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg>
 </figcaption>
 </figure>
 </div>
@@ -707,9 +715,11 @@ Figura&nbsp;A.10
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lados <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"cara"</span>, <span class="st">"coroa"</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>n_lancamentos <span class="ot">&lt;-</span> <span class="dv">4</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>com_reposicao <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>lancamentos <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> lados, <span class="at">size =</span> n_lancamentos, <span class="at">replace =</span> com_reposicao)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>lancamentos</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "coroa" "cara"  "cara"  "coroa"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>lancamentos <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> lados, </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">size =</span> n_lancamentos, </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">replace =</span> com_reposicao)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>lancamentos</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "coroa" "cara"  "cara"  "coroa"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -765,14 +775,14 @@ Dica
 <p>Em uma função bem estruturada, usamos a declaração <code>return</code> no final do corpo para especificar explicitamente o valor que queremos que a função retorne. Isso é considerado uma boa prática na programação em <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg>.</p>
 </div>
 </div>
-<p>Copie e cole o código acima no console, pressione <strong>Enter</strong> e verifique a aba Ambiente (Environment, em inglês) do RStudio IDE, como mostrado na Figura 2.</p>
-<div id="fig-help-sample-replace" class="quarto-figure quarto-figure-center quarto-float anchored">
+<p>Copie e cole o código acima no console, pressione <strong>Enter</strong> e verifique a aba Ambiente (<strong>Environment</strong>, em inglês) do RStudio IDE, como mostrado na <a href="#fig-running-toss-coin" class="quarto-xref">Figura&nbsp;<span>A.11</span></a>.</p>
+<div id="fig-running-toss-coin" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-help-sample-replace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/running_toss_coin.png" id="fig-help-sample-replace" class="img-fluid figure-img">
+<div aria-describedby="fig-running-toss-coin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/running_toss_coin.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-help-sample-replace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;A.11
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-running-toss-coin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;A.11: Funções e aba Ambiente
 </figcaption>
 </figure>
 </div>
@@ -842,11 +852,156 @@ Figura&nbsp;A.11
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "cabeca" "cabeca" "navio"  "cabeca" "navio"  "navio"  "navio"  "cabeca"</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [9] "navio"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>A <a href="#fig-function-components" class="quarto-xref">Figura&nbsp;<span>A.12</span></a>, inspirada em <span class="citation" data-cites="grolemund_hands-programming_2015">(<a href="references.html#ref-grolemund_hands-programming_2015" role="doc-biblioref">Grolemund e Wickham 2015</a>, chap.&nbsp;1)</span>, ilustra os componentes de uma função usando como exemplo <code>jogar_moeda</code>.</p>
+<div id="fig-function-components" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-function-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/function_components.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-function-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;A.12: Componentes de uma função
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="projetos-no-rstudio" class="level2" data-number="A.6">
+<h2 data-number="A.6" class="anchored" data-anchor-id="projetos-no-rstudio"><span class="header-section-number">A.6</span> Projetos no RStudio</h2>
+<section id="por-que-usar-projetos" class="level3" data-number="A.6.1">
+<h3 data-number="A.6.1" class="anchored" data-anchor-id="por-que-usar-projetos"><span class="header-section-number">A.6.1</span> Por que usar projetos?</h3>
+<p>Quando você trabalha com dados (sejam reais ou simulados) ou aprende novos conceitos de estatística usando <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg>, manter seus arquivos organizados é fundamental. Os Projetos do RStudio oferecem uma ótima maneira de fazer isso! Veja o que significa organizar seu trabalho em projetos:</p>
+<ul>
+<li><p><strong>Pasta de projeto dedicada</strong>: Pense nela como um container especial para cada tópico. Todos os seus arquivos relacionados (anotações, código, dados) ficam nesta pasta.</p></li>
+<li><p><strong>Nomenclatura clara</strong>: Dê aos seus arquivos nomes descritivos para que você possa encontrar facilmente o que precisa depois.</p></li>
+<li><p><strong>Seu ponto de partida</strong>: Esta pasta se torna seu local de referência para qualquer coisa relacionada a esse projeto.</p></li>
+</ul>
+<p>Os projetos do RStudio ajudam a manter seu trabalho organizado e fácil de encontrar. Além disso, você pode mover ou compartilhar facilmente um projeto inteiro, já que tudo fica junto.</p>
+<p>Vamos começar criando um projeto chamado <strong>estatistica_descritiva</strong> onde organizaremos nosso trabalho sobre a função <code>jogar_moeda</code>.</p>
+</section>
+<section id="como-criar-um-projeto-no-rstudio" class="level3" data-number="A.6.2">
+<h3 data-number="A.6.2" class="anchored" data-anchor-id="como-criar-um-projeto-no-rstudio"><span class="header-section-number">A.6.2</span> Como criar um projeto no RStudio</h3>
+<p>Projetos no RStudio podem ser criados de três formas diferentes:</p>
+<ul>
+<li>Em um novo diretório</li>
+<li>Em um diretório existente.</li>
+<li>Clonando um repositório de controle de versão.</li>
+</ul>
+<p>Vamos focar na criação de um projeto totalmente novo, então você não precisa se preocupar com as outras opções.</p>
+<p>Para criar um novo projeto de RStudio:</p>
+<ul>
+<li>Selecione <strong>File &gt; New Project</strong></li>
+<li>Escolha a opção <strong>New Directory</strong> (Veja <a href="#fig-create-project" class="quarto-xref">Figura&nbsp;<span>A.13</span></a>)</li>
+<li>Selecione <strong>New Project</strong>, escolha onde salvar o seu projeto e nomeie-o como <strong>estatistica_descritiva</strong> (Veja <a href="#fig-project-type-directory-name" class="quarto-xref">Figura&nbsp;<span>A.14</span></a>)</li>
+</ul>
+<div id="fig-create-project" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-create-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/create_project.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-create-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;A.13: Criação de um projeto
+</figcaption>
+</figure>
+</div>
+<div id="fig-project-type-directory-name" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-project-type-directory-name-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/project_type_directory_name.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-project-type-directory-name-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;A.14: Nome e localização do projeto
+</figcaption>
+</figure>
+</div>
+<p>Se você seguir esses passos, uma pasta chamada <strong>estatistica_descritiva</strong> será criada com um arquivo <strong>estatistica_descritiva.Rproj</strong> dentro dela. Para manter tudo organizado, crie uma nova pasta chamada <strong>000_scripts</strong> dentro da pasta do projeto. A estrutura do seu projeto agora deve se parecer com a <a href="#fig-initial-project-structure" class="quarto-xref">Figura&nbsp;<span>A.15</span></a>.</p>
+<div id="fig-initial-project-structure" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-initial-project-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/initial_project_structure.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-initial-project-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;A.15: Estrutura inicial do projeto
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="trabalhando-com-projetos" class="level3" data-number="A.6.3">
+<h3 data-number="A.6.3" class="anchored" data-anchor-id="trabalhando-com-projetos"><span class="header-section-number">A.6.3</span> Trabalhando com projetos</h3>
+<p>Se fechar o RStudio IDE, para abrir o projeto e começar a trabalhar nele, é sempre necessário seguir os passos abaixo:</p>
+<ul>
+<li>Abra a pasta <strong>estatistica_descritiva</strong></li>
+<li>Clique duas vezes no arquivo <strong>estatistica_descritiva.Rproj</strong></li>
+</ul>
+<p>Sempre siga estes passos para começar a trabalhar em seu projeto!</p>
+</section>
+</section>
+<section id="scripts" class="level2" data-number="A.7">
+<h2 data-number="A.7" class="anchored" data-anchor-id="scripts"><span class="header-section-number">A.7</span> Scripts</h2>
+<p>Escrever código diretamente no console é bom para testes rápidos, mas não permite salvar seu trabalho facilmente. Scripts são essenciais porque eles:</p>
+<ul>
+<li><strong>Preservam o progresso</strong>: Salve seu código para usá-lo novamente mais tarde sem ter que reescrever tudo.</li>
+<li><strong>Documentam o processo</strong>: Adicione anotações e explicações para ajudar você (e outros!) a entender seu código no futuro.</li>
+</ul>
+<p>Vamos começar criando um script para a nossa função <code>jogar_moeda</code>:</p>
+<ul>
+<li>Selecione <strong>File &gt; New File &gt; R Script</strong>.</li>
+<li>Copie e cole o código da função <code>jogar_moeda</code> neste script.</li>
+<li>Salve o arquivo na sua pasta <strong>000_scripts</strong> e nomeie-o como <strong>jogar_moeda.R</strong>.</li>
+</ul>
+<p>A estrutura do seu projeto agora deve se parecer com algo assim:</p>
+<pre><code>📦estadistica_descritiva
+  |-📂000_scripts
+  |  |-📜jogar_moeda.R
+  |-📜estadistica_descritiva.Rproj</code></pre>
+<p>Além disso, <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> e o RStudio IDE tornam fácil adicionar comentários aos seus scripts das seguintes maneiras:</p>
+<ul>
+<li><strong>Comentários</strong>: Comece uma linha com <code>#</code> e adicione seu comentário.</li>
+<li><strong>Seções de código</strong>: Use quatro traços seguidos, <code>----</code>, para criar uma seção.</li>
+</ul>
+<p>Vamos documentar seu script <strong>jogar_moeda.R</strong> apontando o propósito e o valor de saída da função <code>jogar_moeda</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função jogar_moeda ----</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Propósito ----</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Simular uma série de lançamentos de uma moeda</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Saída ----</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Um vetor contendo os resultados de cada </span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># lançamento de uma moeda</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>jogar_moeda <span class="ot">&lt;-</span> <span class="cf">function</span>(n_lancamentos, </span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">lados =</span> <span class="fu">c</span>(<span class="st">"cara"</span>, <span class="st">"coroa"</span>)) {</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  com_reposicao <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  lancamentos <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> lados, </span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                        <span class="at">size =</span> n_lancamentos, </span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                        <span class="at">replace =</span> com_reposicao)</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(lancamentos)</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Agora, seu script está bem documentado e fácil de entender. Este processo é mostrado na <a href="#fig-documented-script" class="quarto-xref">Figura&nbsp;<span>A.16</span></a> usando o RStudio IDE.</p>
+<div id="fig-documented-script" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-documented-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/documented_script.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-documented-script-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;A.16: Script documentado
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="pacotes" class="level2" data-number="A.8">
+<h2 data-number="A.8" class="anchored" data-anchor-id="pacotes"><span class="header-section-number">A.8</span> Pacotes</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-chambers_object-oriented_2014" class="csl-entry" role="listitem">
 Chambers, John M. 2014. <span>“Object-<span>Oriented</span> <span>Programming</span>, <span>Functional</span> <span>Programming</span> and <span>R</span>”</span>. <em>Statistical Science</em> 29 (2). <a href="https://doi.org/10.1214/13-STS452">https://doi.org/10.1214/13-STS452</a>.
+</div>
+<div id="ref-grolemund_hands-programming_2015" class="csl-entry" role="listitem">
+Grolemund, Garrett, e Hadley Wickham. 2015. <em>Hands-on programming with <span>R</span></em>. First edition, second release. Data analysis/statistical software. Beijing Cambridge Farnham Köln Sebastopol Tokyo: O’Reilly.
 </div>
 <div id="ref-ismay_statistical_2020" class="csl-entry" role="listitem">
 Ismay, Chester, e Albert Young-Sun Kim. 2020. <em>Statistical inference via data science: a <span>ModernDive</span> into <span>R</span> and the <span>Tidyverse</span></em>. Chapman &amp; <span>Hall</span>/<span>CRC</span> the <span>R</span> <span>Series</span>. Boca Raton: CRC Press / Taylor &amp; Francis Group. <a href="https://moderndive.com/">https://moderndive.com/</a>.
@@ -855,7 +1010,6 @@ Ismay, Chester, e Albert Young-Sun Kim. 2020. <em>Statistical inference via data
 Wickham, Hadley. 2019. <em>Advanced <span>R</span></em>. Second edition. Chapman &amp; <span>Hall</span>/<span>CRC</span>: <span>The</span> <span>R</span> series. Boca Raton London New York: CRC Press, Taylor &amp; Francis Group. <a href="https://adv-r.hadley.nz/">https://adv-r.hadley.nz/</a>.
 </div>
 </div>
-</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
