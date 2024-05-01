@@ -350,6 +350,11 @@ Chambers, John M. 2014. {``Object-{Oriented} {Programming}, {Functional}
 {Programming} and {R}''}. \emph{Statistical Science} 29 (2).
 \url{https://doi.org/10.1214/13-STS452}.
 
+\bibitem[\citeproctext]{ref-grolemund_hands-programming_2015}
+Grolemund, Garrett, e Hadley Wickham. 2015. \emph{Hands-on programming
+with {R}}. First edition, second release. Data analysis/statistical
+software. Beijing Cambridge Farnham Köln Sebastopol Tokyo: O'Reilly.
+
 \bibitem[\citeproctext]{ref-halmos_teoria_2001}
 Halmos, Paul R. 2001. \emph{Teoria ingenua dos conjuntos}. Rio de
 Janeiro: Editora Ciencia Moderna.
@@ -442,7 +447,7 @@ para suas tarefas.
 
 \caption{\label{fig-r-vs-rstudio-ide-1}Analogia da diferença entre
 \includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf}
-e RStudio}
+e RStudio IDE}
 
 \end{figure}%
 
@@ -686,7 +691,7 @@ executado porque o
 \includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf}
 não permite a multiplicação de palavras.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, toptitle=1mm, arc=.35mm, left=2mm, breakable, rightrule=.15mm, opacityback=0, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacityback=0, toptitle=1mm, arc=.35mm, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, breakable, left=2mm]
 
 No
 \includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf},
@@ -752,7 +757,7 @@ função \texttt{c()}:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, bottomrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, toptitle=1mm, arc=.35mm, left=2mm, breakable, rightrule=.15mm, opacityback=0, colframe=quarto-callout-note-color-frame, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacityback=0, toptitle=1mm, arc=.35mm, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, colbacktitle=quarto-callout-note-color!10!white, coltitle=black, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, breakable, left=2mm]
 
 Para representar os dois lados da moeda, usamos duas strings:
 \texttt{"cara"} e \texttt{"coroa"}. Usar apenas \texttt{cara} e
@@ -829,17 +834,19 @@ E que tal 3 vezes?
 Você encontrará um erro. Não se preocupe, os erros são úteis. A mensagem
 de erro menciona o argumento \texttt{replace}. Para aprender mais sobre
 qualquer função, use \texttt{?} seguido do nome da função, como
-\texttt{?sample}, conforme mostrado na Figura 1.
+\texttt{?sample}, conforme mostrado na
+Figura~\ref{fig-help-sample-replace}.
 
 \begin{figure}
 
 \centering{
 
-\captionsetup{labelsep=none}\includegraphics{images/help_sample_replace.png}
+\includegraphics{images/help_sample_replace.png}
 
 }
 
-\caption{\label{fig-help-sample-replace}}
+\caption{\label{fig-help-sample-replace}Como obter ajuda no
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf}}
 
 \end{figure}%
 
@@ -863,13 +870,15 @@ seção. Comecemos simulando quatro lançamentos de uma moeda:
 \NormalTok{lados }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"cara"}\NormalTok{, }\StringTok{"coroa"}\NormalTok{)}
 \NormalTok{n\_lancamentos }\OtherTok{\textless{}{-}} \DecValTok{4}
 \NormalTok{com\_reposicao }\OtherTok{\textless{}{-}} \ConstantTok{TRUE}
-\NormalTok{lancamentos }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lados, }\AttributeTok{size =}\NormalTok{ n\_lancamentos, }\AttributeTok{replace =}\NormalTok{ com\_reposicao)}
+\NormalTok{lancamentos }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ lados, }
+                      \AttributeTok{size =}\NormalTok{ n\_lancamentos, }
+                      \AttributeTok{replace =}\NormalTok{ com\_reposicao)}
 \NormalTok{lancamentos}
 \CommentTok{\#\textgreater{} [1] "coroa" "cara"  "cara"  "coroa"}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, bottomrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, colback=white, toptitle=1mm, arc=.35mm, left=2mm, breakable, rightrule=.15mm, opacityback=0, colframe=quarto-callout-important-color-frame, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, colframe=quarto-callout-important-color-frame, rightrule=.15mm, opacityback=0, toptitle=1mm, arc=.35mm, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, coltitle=black, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, breakable, left=2mm]
 
 Para melhorar a legibilidade do código, seguiremos estas diretrizes:
 
@@ -929,7 +938,7 @@ Por enquanto, começaremos sem usar argumentos:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, titlerule=0mm, opacitybacktitle=0.6, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Dica}, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toptitle=1mm, arc=.35mm, left=2mm, breakable, rightrule=.15mm, opacityback=0, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, opacityback=0, toptitle=1mm, arc=.35mm, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacitybacktitle=0.6, leftrule=.75mm, colbacktitle=quarto-callout-tip-color!10!white, coltitle=black, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Dica}, breakable, left=2mm]
 
 Em uma função bem estruturada, usamos a declaração \texttt{return} no
 final do corpo para especificar explicitamente o valor que queremos que
@@ -939,18 +948,18 @@ a função retorne. Isso é considerado uma boa prática na programação em
 \end{tcolorbox}
 
 Copie e cole o código acima no console, pressione \textbf{Enter} e
-verifique a aba Ambiente (Environment, em inglês) do RStudio IDE, como
-mostrado na Figura 2.
+verifique a aba Ambiente (\textbf{Environment}, em inglês) do RStudio
+IDE, como mostrado na Figura~\ref{fig-running-toss-coin}.
 
 \begin{figure}
 
 \centering{
 
-\captionsetup{labelsep=none}\includegraphics{images/running_toss_coin.png}
+\includegraphics{images/running_toss_coin.png}
 
 }
 
-\caption{\label{fig-help-sample-replace}}
+\caption{\label{fig-running-toss-coin}Funções e aba Ambiente}
 
 \end{figure}%
 
@@ -1063,6 +1072,159 @@ Figura~\ref{fig-coin-head-tail}, podemos proceder da seguinte maneira:
 \CommentTok{\#\textgreater{} [9] "navio"}
 \end{Highlighting}
 \end{Shaded}
+
+A Figura~\ref{fig-function-components}, inspirada em
+(\citeproc{ref-grolemund_hands-programming_2015}{Grolemund e Wickham
+2015}, chap.~1), ilustra os componentes de uma função usando como
+exemplo \texttt{jogar\_moeda}.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{images/function_components.png}
+
+}
+
+\caption{\label{fig-function-components}Componentes de uma função}
+
+\end{figure}%
+
+\section{Projetos no RStudio}\label{projetos-no-rstudio}
+
+\subsection{Por que usar projetos?}\label{por-que-usar-projetos}
+
+Quando você trabalha com dados (sejam reais ou simulados) ou aprende
+novos conceitos de estatística usando
+\includegraphics[width=1.13em,height=1em]{getting_started_with_r_files/figure-pdf/fa-icon-9b00320707d42527dde67262afb33ded.pdf},
+manter seus arquivos organizados é fundamental. Os Projetos do RStudio
+oferecem uma ótima maneira de fazer isso! Veja o que significa organizar
+seu trabalho em projetos:
+
+\begin{itemize}
+\item
+  \textbf{Pasta de projeto dedicada}: Pense nela como um container
+  especial para cada tópico. Todos os seus arquivos relacionados
+  (anotações, código, dados) ficam nesta pasta.
+\item
+  \textbf{Nomenclatura clara}: Dê aos seus arquivos nomes descritivos
+  para que você possa encontrar facilmente o que precisa depois.
+\item
+  \textbf{Seu ponto de partida}: Esta pasta se torna seu local de
+  referência para qualquer coisa relacionada a esse projeto.
+\end{itemize}
+
+Os projetos do RStudio ajudam a manter seu trabalho organizado e fácil
+de encontrar. Além disso, você pode mover ou compartilhar facilmente um
+projeto inteiro, já que tudo fica junto.
+
+Vamos começar criando um projeto chamado
+\textbf{estatistica\_descritiva} onde organizaremos nosso trabalho sobre
+a função \texttt{jogar\_moeda}.
+
+\subsection{Como criar um projeto no
+RStudio}\label{como-criar-um-projeto-no-rstudio}
+
+Projetos no RStudio podem ser criados de três formas diferentes:
+
+\begin{itemize}
+\tightlist
+\item
+  Em um novo diretório
+\item
+  Em um diretório existente.
+\item
+  Clonando um repositório de controle de versão.
+\end{itemize}
+
+Vamos focar na criação de um projeto totalmente novo, então você não
+precisa se preocupar com as outras opções.
+
+Para criar um novo projeto de RStudio:
+
+\begin{itemize}
+\tightlist
+\item
+  Selecione \textbf{File \textgreater{} New Project}
+\item
+  Escolha a opção \textbf{New Directory} (Veja
+  Figura~\ref{fig-create-project})
+\item
+  Selecione \textbf{New Project}, escolha onde salvar o seu projeto e
+  nomeie-o como \textbf{estatistica\_descritiva} (Veja
+  Figura~\ref{fig-project-type-directory-name})
+\end{itemize}
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{images/create_project.png}
+
+}
+
+\caption{\label{fig-create-project}Criação de um projeto}
+
+\end{figure}%
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{images/project_type_directory_name.png}
+
+}
+
+\caption{\label{fig-project-type-directory-name}Nome e localização do
+projeto}
+
+\end{figure}%
+
+Se você seguir esses passos, uma pasta chamada
+\textbf{estatistica\_descritiva} será criada com um arquivo
+\textbf{estatistica\_descritiva.Rproj} dentro dela. Para manter tudo
+organizado, crie uma nova pasta chamada \textbf{000\_scripts} dentro da
+pasta do projeto. A estrutura do seu projeto agora deve se parecer com a
+Figura~\ref{fig-initial-project-structure}.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics{images/initial_project_structure.png}
+
+}
+
+\caption{\label{fig-initial-project-structure}Estrutura inicial do
+projeto}
+
+\end{figure}%
+
+\subsection{Trabalhando com projetos}\label{trabalhando-com-projetos}
+
+Se fechar o RStudio IDE, para abrir o projeto e começar a trabalhar
+nele, é sempre necessário seguir os passos abaixo:
+
+\begin{itemize}
+\tightlist
+\item
+  Abra a pasta \textbf{estatistica\_descritiva}
+\item
+  Clique duas vezes no arquivo \textbf{estatistica\_descritiva.Rproj}
+\end{itemize}
+
+Sempre siga estes passos para começar a trabalhar em seu projeto!
+
+\section{Scripts}\label{scripts}
+
+\begin{verbatim}
+📦estadistica_descritiva
+  |-📂000_scripts
+  |  |-📜jogar_moeda.R
+  |-📜estadistica_descritiva.Rproj
+\end{verbatim}
+
+\section{Pacotes}\label{pacotes}
 
 \chapter{Teoria ingênua dos
 conjuntos}\label{teoria-inguxeanua-dos-conjuntos}

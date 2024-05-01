@@ -21,7 +21,7 @@ O `r r_logo` é como o motor de um carro, enquanto o RStudio IDE funciona como o
 
 ![RStudio IDE: Painel](images/dashboard.png){#fig-rstudio-ide-1}
 
-Analogia da diferença entre `r r_logo` e RStudio
+Analogia da diferença entre `r r_logo` e RStudio IDE
 :::
 
 ## Como baixar e instalar o R
@@ -104,7 +104,7 @@ log(x = -1)
 
 No primeiro caso, o código será executado, mas você verá o resultado `NaN` (**Not a Number**, em inglês) porque o logaritmo de um número negativo é indefinido. No segundo caso, seu código não será executado porque o `r r_logo` não permite a multiplicação de palavras.
 
-::: {.callout-note}
+::: callout-note
 No `r r_logo`, uma string é uma coleção de um ou mais caracteres e são criadas usando aspas duplas, `""`. Por exemplo, `"Tudo bem"` é uma string.
 :::
 
@@ -130,7 +130,7 @@ Para simular um lançamento de moeda em `r r_logo`, primeiro precisamos criar um
 moeda <- c("cara", "coroa")
 ```
 
-::: {.callout-note}
+::: callout-note
 Para representar os dois lados da moeda, usamos duas strings: `"cara"` e `"coroa"`. Usar apenas `cara` e `coroa` sem aspas duplas poderia causar problemas, pois o `r r_logo` as interpretaria como nomes associados a alguns objetos, em vez de valores representando os dois lados da moeda.
 :::
 
@@ -168,12 +168,11 @@ E que tal 3 vezes?
 sample(x = moeda, size = 3)
 ```
 
-Você encontrará um erro. Não se preocupe, os erros são úteis. A mensagem de erro menciona o argumento `replace`. Para aprender mais sobre qualquer função, use `?` seguido do nome da função, como `?sample`, conforme mostrado na Figura 1.
+Você encontrará um erro. Não se preocupe, os erros são úteis. A mensagem de erro menciona o argumento `replace`. Para aprender mais sobre qualquer função, use `?` seguido do nome da função, como `?sample`, conforme mostrado na @fig-help-sample-replace.
 
-![](images/help_sample_replace.png){#fig-help-sample-replace}
+![Como obter ajuda no `r r_logo`](images/help_sample_replace.png){#fig-help-sample-replace}
 
 Quando `replace = FALSE`, cada item em `x` só pode ser escolhido uma vez. Para simular vários lançamentos de uma moeda, em que cada resultado tem a mesma probabilidade de ser selecionado a cada vez, `replace = TRUE`:
-
 
 ```{r}
 sample(x = moeda, size = 3, replace = TRUE)
@@ -185,12 +184,13 @@ Agora temos todos os componentes para construir uma função na próxima seção
 lados <- c("cara", "coroa")
 n_lancamentos <- 4
 com_reposicao <- TRUE
-lancamentos <- sample(x = lados, size = n_lancamentos, replace = com_reposicao)
+lancamentos <- sample(x = lados, 
+                      size = n_lancamentos, 
+                      replace = com_reposicao)
 lancamentos
 ```
 
-::: {.callout-important}
-
+::: callout-important
 Para melhorar a legibilidade do código, seguiremos estas diretrizes:
 
 -   **Nomes de objetos**: Use apenas letras minúsculas sem acentos, números e sublinhados, `_`, para nomes de objetos.
@@ -198,20 +198,19 @@ Para melhorar a legibilidade do código, seguiremos estas diretrizes:
 -   **Separação de palavras**: Utilize sublinhados para separar palavras dentro de um nome (isso é conhecido como [snake case](https://en.wikipedia.org/wiki/Snake_case)).
 
 -   **Nomes significativos**: Escolha nomes de objetos que reflitam com precisão o que eles representam.
-
 :::
 
 ### Definindo novas funções
 
 No `r r_logo`, uma função tem três partes básicas: um nome, um corpo e um conjunto de argumentos[^getting_started_with_r-1]. Para criar uma, usamos a função `function`, seguindo esta estrutura:
 
+[^getting_started_with_r-1]: Funções possuem complexidades adicionais, mas vamos manter a explicação simples por enquanto. Se você ficar curioso mais tarde, confira [@wickham_advanced_2019, chap. 6] quando tiver mais experiência com o `r r_logo`.
+
 ```{r}
 nome <- function(argumentos) {
   corpo
 }
 ```
-
-[^getting_started_with_r-1]: Funções possuem complexidades adicionais, mas vamos manter a explicação simples por enquanto. Se você ficar curioso mais tarde, confira [@wickham_advanced_2019, chap. 6] quando tiver mais experiência com o `r r_logo`.
 
 Vamos construir nossa função de lançamento de uma moeda passo a passo. Por enquanto, começaremos sem usar argumentos:
 
@@ -229,15 +228,13 @@ jogar_moeda <- function() {
 }
 ```
 
-::: {.callout-tip}
-
+::: callout-tip
 Em uma função bem estruturada, usamos a declaração `return` no final do corpo para especificar explicitamente o valor que queremos que a função retorne. Isso é considerado uma boa prática na programação em `r r_logo`.
-
 :::
 
-Copie e cole o código acima no console, pressione **Enter** e verifique a aba Ambiente (Environment, em inglês) do RStudio IDE, como mostrado na Figura 2.
+Copie e cole o código acima no console, pressione **Enter** e verifique a aba Ambiente (**Environment**, em inglês) do RStudio IDE, como mostrado na @fig-running-toss-coin.
 
-![](images/running_toss_coin.png){#fig-help-sample-replace}
+![Funções e aba Ambiente](images/running_toss_coin.png){#fig-running-toss-coin}
 
 Agora vamos ver se a função realmente funciona:
 
@@ -302,3 +299,116 @@ No entanto, se o usuário quiser alterar o valor do argumento lados, mudando seu
 ```{r}
 jogar_moeda(n_lancamentos = 9, lados = c("cabeca", "navio"))
 ```
+
+A @fig-function-components, inspirada em [@grolemund_hands-programming_2015, chap. 1], ilustra os componentes de uma função usando como exemplo `jogar_moeda`.
+
+![Componentes de uma função](images/function_components.png){#fig-function-components}
+
+## Projetos no RStudio
+
+### Por que usar projetos?
+
+Quando você trabalha com dados (sejam reais ou simulados) ou aprende novos conceitos de estatística usando `r r_logo`, manter seus arquivos organizados é fundamental. Os Projetos do RStudio oferecem uma ótima maneira de fazer isso! Veja o que significa organizar seu trabalho em projetos:
+
+-   **Pasta de projeto dedicada**: Pense nela como um container especial para cada tópico. Todos os seus arquivos relacionados (anotações, código, dados) ficam nesta pasta.
+
+-   **Nomenclatura clara**: Dê aos seus arquivos nomes descritivos para que você possa encontrar facilmente o que precisa depois.
+
+-   **Seu ponto de partida**: Esta pasta se torna seu local de referência para qualquer coisa relacionada a esse projeto.
+
+Os projetos do RStudio ajudam a manter seu trabalho organizado e fácil de encontrar. Além disso, você pode mover ou compartilhar facilmente um projeto inteiro, já que tudo fica junto.
+
+Vamos começar criando um projeto chamado **estatistica_descritiva** onde organizaremos nosso trabalho sobre a função `jogar_moeda`.
+
+### Como criar um projeto no RStudio
+
+Projetos no RStudio podem ser criados de três formas diferentes:
+
+-   Em um novo diretório
+-   Em um diretório existente.
+-   Clonando um repositório de controle de versão.
+
+Vamos focar na criação de um projeto totalmente novo, então você não precisa se preocupar com as outras opções.
+
+Para criar um novo projeto de RStudio:
+
+-   Selecione **File > New Project**
+-   Escolha a opção **New Directory** (Veja @fig-create-project)
+-   Selecione **New Project**, escolha onde salvar o seu projeto e nomeie-o como **estatistica_descritiva** (Veja @fig-project-type-directory-name)
+
+![Criação de um projeto](images/create_project.png){#fig-create-project}
+
+![Nome e localização do projeto](images/project_type_directory_name.png){#fig-project-type-directory-name}
+
+Se você seguir esses passos, uma pasta chamada **estatistica_descritiva** será criada com um arquivo **estatistica_descritiva.Rproj** dentro dela. Para manter tudo organizado, crie uma nova pasta chamada **000_scripts** dentro da pasta do projeto. A estrutura do seu projeto agora deve se parecer com a @fig-initial-project-structure.
+
+![Estrutura inicial do projeto](images/initial_project_structure.png){#fig-initial-project-structure}
+
+### Trabalhando com projetos
+
+Se fechar o RStudio IDE, para abrir o projeto e começar a trabalhar nele, é sempre necessário seguir os passos abaixo:
+
+-   Abra a pasta **estatistica_descritiva**
+-   Clique duas vezes no arquivo **estatistica_descritiva.Rproj**
+
+Sempre siga estes passos para começar a trabalhar em seu projeto!
+
+## Scripts
+
+Escrever código diretamente no console é bom para testes rápidos, mas não permite salvar seu trabalho facilmente. Scripts são essenciais porque eles:
+
+-   **Preservam o progresso**: Salve seu código para usá-lo novamente mais tarde sem ter que reescrever tudo.
+-   **Documentam o processo**: Adicione anotações e explicações para ajudar você (e outros!) a entender seu código no futuro.
+
+Vamos começar criando um script para a nossa função `jogar_moeda`:
+
+-   Selecione **File > New File > R Script**.
+-   Copie e cole o código da função `jogar_moeda` neste script.
+-   Salve o arquivo na sua pasta **000_scripts** e nomeie-o como **jogar_moeda.R**.
+
+A estrutura do seu projeto agora deve se parecer com algo assim:
+
+```
+📦estadistica_descritiva
+  |-📂000_scripts
+  |  |-📜jogar_moeda.R
+  |-📜estadistica_descritiva.Rproj
+```
+
+Além disso, `r r_logo` e o RStudio IDE tornam fácil adicionar comentários aos seus scripts das seguintes maneiras:
+
+-   **Comentários**: Comece uma linha com `#` e adicione seu comentário.
+-   **Seções de código**: Use quatro traços seguidos, `----`, para criar uma seção.
+
+Vamos documentar seu script **jogar_moeda.R** apontando o propósito e o valor de saída da função `jogar_moeda`:
+
+```{r}
+#| eval: false
+
+# Função jogar_moeda ----
+
+# Propósito ----
+# Simular uma série de lançamentos de uma moeda
+
+# Saída ----
+# Um vetor contendo os resultados de cada 
+# lançamento de uma moeda
+
+jogar_moeda <- function(n_lancamentos, 
+                        lados = c("cara", "coroa")) {
+  
+  com_reposicao <- TRUE
+  lancamentos <- sample(x = lados, 
+                        size = n_lancamentos, 
+                        replace = com_reposicao)
+  
+  return(lancamentos)
+}
+```
+
+Agora, seu script está bem documentado e fácil de entender. Este processo é mostrado na @fig-documented-script usando o RStudio IDE.
+
+![Script documentado](images/documented_script.png){#fig-documented-script}
+
+## Pacotes
+
