@@ -114,7 +114,7 @@ Tudo que existe no `r r_logo` é um **objeto** [@chambers_object-oriented_2014, 
 
 Por exemplo, quando você soma os números `1, 2, 3, 4, 5` e `6` (que são objetos), você usa a função `+` repetidamente para criar um novo objeto `21`. O `r r_logo` é construído sobre a ideia de que objetos e funções trabalham juntos.
 
-Para trabalhar com objetos de forma simples, você pode atribuir nomes a eles usando o operador `<-`. Uma vez que um objeto tenha um nome, você pode manipulá-lo chamando esse nome.
+Para trabalhar com objetos de forma simples, você pode atribuir nomes a eles usando o operador `<-`. Uma vez que um objeto tenha um nome, você pode manipulá-lo chamando-o por  este nome.
 
 Para entender esses conceitos de maneira prática, vamos considerar o processo de jogar uma moeda usando o `r r_logo`.
 
@@ -252,7 +252,7 @@ Nesse caso, o `r r_logo` vai te mostrar o código da função em vez de executá
 
 ### Argumentos
 
-Para tornar nossa função mais flexível, vamos permitir que o usuário especifique o número de lançamentos de moeda. Podemos fazer isso transformando n_lancamentos em um argumento da função:
+Para tornar nossa função mais flexível, vamos permitir que o usuário especifique o número de lançamentos de moeda. Podemos fazer isso transformando `n_lancamentos` em um argumento da função:
 
 ```{r}
 jogar_moeda <- function(n_lancamentos) {
@@ -276,6 +276,9 @@ jogar_moeda(n_lancamentos = 7)
 Também podemos definir valores padrão para os argumentos de uma função. Esses valores serão usados se o usuário não fornecer um valor, oferecendo flexibilidade e permitindo personalização se necessário. Vamos ilustrar essa opção definindo um valor padrão para o argumento lados:
 
 ```{r}
+#| lst-label: lst-jogar-moeda
+#| lst-cap: Função `jogar_moeda`
+
 jogar_moeda <- function(n_lancamentos, 
                         lados = c("cara", "coroa")) {
   
@@ -363,7 +366,7 @@ Escrever código diretamente no console é bom para testes rápidos, mas não pe
 Vamos começar criando um script para a nossa função `jogar_moeda`:
 
 -   Selecione **File \> New File \> R Script**.
--   Copie e cole o código da função `jogar_moeda` neste script.
+-   Copie e cole o código da função `jogar_moeda`, @lst-jogar-moeda, neste script.
 -   Salve o arquivo na sua pasta **000_scripts** e nomeie-o como **jogar_moeda.R**.
 
 A estrutura do seu projeto agora deve se parecer com algo assim:
@@ -431,8 +434,8 @@ install.packages("tidyverse")
 
 Depois de instalar o pacote `tidyverse`, vamos utilizá-lo junto com a função `jogar_moeda`. Antes de fazer isso, vamos organizar o projeto da seguinte forma:
 
--   Crie uma pasta chamada **000_introdução_r**.
--   Dentro dessa pasta, crie um script chamado **001_introdução_r_script.R**.
+-   Crie uma pasta chamada **000_introducao_r**.
+-   Dentro dessa pasta, crie um script chamado **001_introducao_r_script.R**.
 
 A estrutura do seu projeto agora deve se parecer com algo assim:
 
@@ -445,7 +448,7 @@ A estrutura do seu projeto agora deve se parecer com algo assim:
   |-📜estadistica_descritiva.Rproj
 ```
 
-Pense em um pacote como um aplicativo no seu celular, você precisa abri-lo antes de usá-lo. No `r r_logo`, usamos a função `library` para isso. Adicione este código ao seu arquivo **001_introdução_r_script.R** para usar o pacote `tidyverse`:
+Pense em um pacote como um aplicativo no seu celular, você precisa abri-lo antes de usá-lo. No `r r_logo`, usamos a função `library` para isso. Adicione este código ao seu arquivo **001_introducao_r_script.R** para usar o pacote `tidyverse`:
 
 ```{r}
 #| eval: false
