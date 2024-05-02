@@ -26,7 +26,7 @@ Analogia da diferença entre `r r_logo` e RStudio IDE
 
 ## Como baixar e instalar o R
 
-Para obter uma cópia e a versão oficial mais recente do `r r_logo`, acesse [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/). O `r r_logo` é desenvolvido para as famílias de sistemas operacionais Unix, Windows e Mac. Na CRAN, você encontrará 3 links para baixar o `r r_logo` para Linux, macOS ou Windows:
+Para obter uma cópia e a versão oficial mais recente do `r r_logo`, acesse [The Comprehensive R Archive Network (CRAN)]({{< var url.cran >}}). O `r r_logo` é desenvolvido para as famílias de sistemas operacionais Unix, Windows e Mac. Na CRAN, você encontrará 3 links para baixar o `r r_logo` para Linux, macOS ou Windows:
 
 -   `r linux_logo`: Clique em **Download R for Linux**, escolha sua distribuição e siga as instruções de instalação específicas para sua distribuição.
 
@@ -73,7 +73,7 @@ A aplicação dessas mudanças personalizará sua experiência com o RStudio IDE
 
 Para nos comunicarmos com uma máquina, escrevemos instruções em uma linguagem especializada chamada código. Este código é então traduzido em um formato que a máquina entende, permitindo que ela execute as tarefas que definimos.
 
-Vamos começar com um exemplo simples! Digite `1 + 2 + 3 + 4 + 5 + 6`, como mostrado na @fig-executing-code-example, e então aperte Enter para ver o que acontece!
+Vamos começar com um exemplo simples! Digite `1 + 2 + 3 + 4 + 5 + 6`, como mostrado na @fig-executing-code-example, e então aperte **Enter** or **Return** para ver o que acontece!
 
 ![Executando código no console](images/executing_code_example.png){#fig-executing-code-example}
 
@@ -232,7 +232,7 @@ jogar_moeda <- function() {
 Em uma função bem estruturada, usamos a declaração `return` no final do corpo para especificar explicitamente o valor que queremos que a função retorne. Isso é considerado uma boa prática na programação em `r r_logo`.
 :::
 
-Copie e cole o código acima no console, pressione **Enter** e verifique a aba Ambiente (**Environment**, em inglês) do RStudio IDE, como mostrado na @fig-running-toss-coin.
+Copie e cole o código acima no console, pressione **Enter** or **Return** e verifique a aba Ambiente (**Environment**, em inglês) do RStudio IDE, como mostrado na @fig-running-toss-coin.
 
 ![Funções e aba Ambiente](images/running_toss_coin.png){#fig-running-toss-coin}
 
@@ -412,3 +412,72 @@ Agora, seu script está bem documentado e fácil de entender. Este processo é m
 
 ## Pacotes
 
+Em `r r_logo`, funções, conjuntos de dados e documentação são organizados em pacotes. Alguns deles, conhecidos como pacotes **base** vêm pré-instalados com `r r_logo`. No entanto, existe um vasto conjunto de pacotes criados pela comunidade `r r_logo` que adicionam todo tipo de ferramentas adicionais.
+
+Para usar esses pacotes criados pela comunidade, você precisará instalá-los. Esses pacotes são armazenados em repositórios, sendo o [CRAN]({{< var url.cran >}}) a principal fonte de pacotes `r r_logo` de propósito geral. Embora existam repositórios especializados como o [Bioconductor]({{< var url.bioconductor >}}), vamos nos concentrar apenas naqueles encontrados no [CRAN]({{< var url.cran >}}).
+
+[@ismay_statistical_2020, cap. 1] têm uma analogia útil: pense em `r r_logo` como um smartphone novinho. Ele tem alguns aplicativos essenciais pré-instalados, mas você pode instalar uma vasta gama de novos aplicativos para realizar todos os tipos de tarefas específicas. Nesta analogia, os pacotes são como aplicativos, e os repositórios são como lojas de aplicativos.
+
+### Instalando pacotes do CRAN
+
+Instalar pacotes no `r r_logo` é semelhante a instalar aplicativos no seu celular. Você instala uma única vez e faz atualizações ocasionais. Para instalar um pacote do [CRAN]({{< var url.cran >}}), use a função `install.packages`, especificando o nome do pacote entre aspas duplas. Por exemplo, para instalar o pacote `tidyverse`, um conjunto popular de ferramentas para ciência de dados, você só precisa executar o seguinte código:
+
+```{r}
+#| eval: false
+install.packages("tidyverse")
+```
+
+### Usando um pacote
+
+Depois de instalar o pacote `tidyverse`, vamos utilizá-lo junto com a função `jogar_moeda`. Antes de fazer isso, vamos organizar o projeto da seguinte forma:
+
+- Crie uma pasta chamada **000_introdução_r**.
+- Dentro dessa pasta, crie um script chamado **001_introdução_r_script.R**.
+
+A estrutura do seu projeto agora deve se parecer com algo assim:
+
+```
+📦estadistica_descritiva
+  |-📂000_introducao_r
+  |  |-📜001_introducao_r_script.R
+  |-📂000_scripts
+  |  |-📜jogar_moeda.R
+  |-📜estadistica_descritiva.Rproj
+```
+
+Pense em um pacote como um aplicativo no seu celular, você precisa abri-lo antes de usá-lo. No `r r_logo`, usamos a função `library` para isso. Adicione este código ao seu arquivo **001_introdução_r_script.R** para usar o pacote `tidyverse`:
+
+```{r}
+#| eval: false
+
+# Pacotes ----
+library(tidyverse)
+```
+
+Para executar o código em seu script, clique dentro da janela do script e escolha como rodar o código:
+
+- Linha por linha: pressione **Ctrl+Enter** (ou **Cmd+Return** no Mac).
+- Tudo de uma vez: pressione **Ctrl+Shift+Enter** (ou **Cmd+Shift+Return** no Mac).
+
+Como `jogar_moeda` não é parte de um pacote, vamos usar a função `source` para carregá-la diretamente do seu projeto:
+
+```{r}
+#| eval: false
+
+# Funções ----
+source(file = "000_scripts/jogar_moeda.R")
+```
+
+Execute essa linha e cheque a aba Ambiente (**Environment**, em inglês), você deve ver a função `jogar_moeda listada`. Agora, vamos usar o `tidyverse` para um pouco de diversão com visualização. Não se preocupe em entender os detalhes do código, você aprenderá mais na @sec-data-visualization . Apenas foque nos resultados:
+
+```{r}
+#| eval: false
+
+# Gráfico ----
+ggplot() +
+  geom_bar(aes(x = jogar_moeda(n_lancamentos = 1000)))
+```
+
+Execute esse código e você deve ver um gráfico como mostrado na @fig-using-tidyverse-package
+
+![Usando o pacote `tidyverse`](images/using_tidyverse_package.png){#fig-using-tidyverse-package}

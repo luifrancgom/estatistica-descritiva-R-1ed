@@ -1,1 +1,1 @@
-# Gráficos 2D
+# Gráficos 2D {#sec-two-dimensional-plots}

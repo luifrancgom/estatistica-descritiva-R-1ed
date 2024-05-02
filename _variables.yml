@@ -4,3 +4,5 @@ url:
   issue: https://github.com/luifrancgom/estatistica-descritiva-R-1ed/issues
   license: https://creativecommons.org/licenses/by/4.0/legalcode.pt
   quarto: https://quarto.org/
+  cran: https://cran.r-project.org/
+  bioconductor: https://bioconductor.org/
