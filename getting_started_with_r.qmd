@@ -40,7 +40,7 @@ Para obter a versão oficial mais recente do RStudio IDE, acesse <https://posit.
 
 Agora que você instalou o `r r_logo` e o RStudio IDE, você está pronto para começar a trabalhar no RStudio IDE. Assim como você interage principalmente com o volante e o painel de um carro em vez do motor, você focará em usar a interface do RStudio IDE para trabalhar com o `r r_logo`.
 
-Ao abrir o RStudio IDE, você pode criar um novo script `r r_logo` selecionando **File \> New File \> R Script** ou usando o atalho de teclado **Ctrl + Shift + N**. Você verá quatro painéis principais na interface, como mostrado na @fig-rstudio-ide-panels:
+Ao abrir o RStudio IDE, você pode criar um novo script `r r_logo` selecionando **File \> New File \> R Script** ou usando o atalho de teclado **Ctrl + Shift + N** or **Cmd+Shift+N**. Você verá quatro painéis principais na interface, como mostrado na @fig-rstudio-ide-panels:
 
 -   **Painel 1**: É onde você escreve, edita e salva seu código R.
 -   **Painel 2**: Aqui você pode digitar os comandos do R e ver os resultados.
