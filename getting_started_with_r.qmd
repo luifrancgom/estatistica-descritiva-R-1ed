@@ -55,7 +55,7 @@ Para personalizar seu espaço de trabalho, acesse **Tools \> Global Options**. E
 
 -   Sempre inicie o `r r_logo` com uma sessão em branco, @fig-r-blank-slate:
 
-![Configuração do espaço de trabalho](images/r_blank slate.png){#fig-r-blank-slate}
+![Configuração do espaço de trabalho](images/r_blank%20slate.png){#fig-r-blank-slate}
 
 -   Use o operador de pipe nativo, `|>`, @fig-native-pipe-operator:
 
@@ -332,7 +332,7 @@ Vamos focar na criação de um projeto totalmente novo, então você não precis
 
 Para criar um novo projeto de RStudio:
 
--   Selecione **File > New Project**
+-   Selecione **File \> New Project**
 -   Escolha a opção **New Directory** (Veja @fig-create-project)
 -   Selecione **New Project**, escolha onde salvar o seu projeto e nomeie-o como **estatistica_descritiva** (Veja @fig-project-type-directory-name)
 
@@ -362,13 +362,13 @@ Escrever código diretamente no console é bom para testes rápidos, mas não pe
 
 Vamos começar criando um script para a nossa função `jogar_moeda`:
 
--   Selecione **File > New File > R Script**.
+-   Selecione **File \> New File \> R Script**.
 -   Copie e cole o código da função `jogar_moeda` neste script.
 -   Salve o arquivo na sua pasta **000_scripts** e nomeie-o como **jogar_moeda.R**.
 
 A estrutura do seu projeto agora deve se parecer com algo assim:
 
-```
+```         
 📦estadistica_descritiva
   |-📂000_scripts
   |  |-📜jogar_moeda.R
@@ -431,12 +431,12 @@ install.packages("tidyverse")
 
 Depois de instalar o pacote `tidyverse`, vamos utilizá-lo junto com a função `jogar_moeda`. Antes de fazer isso, vamos organizar o projeto da seguinte forma:
 
-- Crie uma pasta chamada **000_introdução_r**.
-- Dentro dessa pasta, crie um script chamado **001_introdução_r_script.R**.
+-   Crie uma pasta chamada **000_introdução_r**.
+-   Dentro dessa pasta, crie um script chamado **001_introdução_r_script.R**.
 
 A estrutura do seu projeto agora deve se parecer com algo assim:
 
-```
+```         
 📦estadistica_descritiva
   |-📂000_introducao_r
   |  |-📜001_introducao_r_script.R
@@ -456,8 +456,8 @@ library(tidyverse)
 
 Para executar o código em seu script, clique dentro da janela do script e escolha como rodar o código:
 
-- Linha por linha: pressione **Ctrl+Enter** (ou **Cmd+Return** no Mac).
-- Tudo de uma vez: pressione **Ctrl+Shift+Enter** (ou **Cmd+Shift+Return** no Mac).
+-   Linha por linha: pressione **Ctrl+Enter** (ou **Cmd+Return** no Mac).
+-   Tudo de uma vez: pressione **Ctrl+Shift+Enter** (ou **Cmd+Shift+Return** no Mac).
 
 Como `jogar_moeda` não é parte de um pacote, vamos usar a função `source` para carregá-la diretamente do seu projeto:
 
@@ -468,7 +468,7 @@ Como `jogar_moeda` não é parte de um pacote, vamos usar a função `source` pa
 source(file = "000_scripts/jogar_moeda.R")
 ```
 
-Execute essa linha e cheque a aba Ambiente (**Environment**, em inglês), você deve ver a função `jogar_moeda listada`. Agora, vamos usar o `tidyverse` para um pouco de diversão com visualização. Não se preocupe em entender os detalhes do código, você aprenderá mais na @sec-data-visualization . Apenas foque nos resultados:
+Execute essa linha e cheque a aba Ambiente (**Environment**, em inglês), você deve ver a função `jogar_moeda` listada. Agora, vamos usar o `tidyverse` para um pouco de diversão com visualização. Não se preocupe em entender os detalhes do código, você aprenderá mais na @sec-data-visualization . Apenas foque nos resultados:
 
 ```{r}
 #| eval: false
