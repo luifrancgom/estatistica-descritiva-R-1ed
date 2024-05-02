@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -418,7 +418,11 @@ div.csl-indent {
   <li><a href="#trabalhando-com-projetos" id="toc-trabalhando-com-projetos" class="nav-link" data-scroll-target="#trabalhando-com-projetos"><span class="header-section-number">A.6.3</span> Trabalhando com projetos</a></li>
   </ul></li>
   <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts"><span class="header-section-number">A.7</span> Scripts</a></li>
-  <li><a href="#pacotes" id="toc-pacotes" class="nav-link" data-scroll-target="#pacotes"><span class="header-section-number">A.8</span> Pacotes</a></li>
+  <li><a href="#pacotes" id="toc-pacotes" class="nav-link" data-scroll-target="#pacotes"><span class="header-section-number">A.8</span> Pacotes</a>
+  <ul class="collapse">
+  <li><a href="#instalando-pacotes-do-cran" id="toc-instalando-pacotes-do-cran" class="nav-link" data-scroll-target="#instalando-pacotes-do-cran"><span class="header-section-number">A.8.1</span> Instalando pacotes do CRAN</a></li>
+  <li><a href="#usando-um-pacote" id="toc-usando-um-pacote" class="nav-link" data-scroll-target="#usando-um-pacote"><span class="header-section-number">A.8.2</span> Usando um pacote</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/blob/main/getting_started_with_r.qmd" class="toc-action"><i class="bi bi-github"></i>Ver o código fonte</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/issues" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li><li><a href="https://github.com/luifrancgom/estatistica-descritiva-R-1ed/edit/main/getting_started_with_r.qmd" class="toc-action"><i class="bi empty"></i>Editar essa página</a></li></ul></div></nav>
     </div>
@@ -576,7 +580,7 @@ Figura&nbsp;A.6: Resultado da aplicação da configuração completa
 <section id="executar-código-usando-o-rstudio-ide" class="level2" data-number="A.4">
 <h2 data-number="A.4" class="anchored" data-anchor-id="executar-código-usando-o-rstudio-ide"><span class="header-section-number">A.4</span> Executar código usando o RStudio IDE</h2>
 <p>Para nos comunicarmos com uma máquina, escrevemos instruções em uma linguagem especializada chamada código. Este código é então traduzido em um formato que a máquina entende, permitindo que ela execute as tarefas que definimos.</p>
-<p>Vamos começar com um exemplo simples! Digite <code>1 + 2 + 3 + 4 + 5 + 6</code>, como mostrado na <a href="#fig-executing-code-example" class="quarto-xref">Figura&nbsp;<span>A.7</span></a>, e então aperte Enter para ver o que acontece!</p>
+<p>Vamos começar com um exemplo simples! Digite <code>1 + 2 + 3 + 4 + 5 + 6</code>, como mostrado na <a href="#fig-executing-code-example" class="quarto-xref">Figura&nbsp;<span>A.7</span></a>, e então aperte <strong>Enter</strong> or <strong>Return</strong> para ver o que acontece!</p>
 <div id="fig-executing-code-example" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-executing-code-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -775,7 +779,7 @@ Dica
 <p>Em uma função bem estruturada, usamos a declaração <code>return</code> no final do corpo para especificar explicitamente o valor que queremos que a função retorne. Isso é considerado uma boa prática na programação em <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg>.</p>
 </div>
 </div>
-<p>Copie e cole o código acima no console, pressione <strong>Enter</strong> e verifique a aba Ambiente (<strong>Environment</strong>, em inglês) do RStudio IDE, como mostrado na <a href="#fig-running-toss-coin" class="quarto-xref">Figura&nbsp;<span>A.11</span></a>.</p>
+<p>Copie e cole o código acima no console, pressione <strong>Enter</strong> or <strong>Return</strong> e verifique a aba Ambiente (<strong>Environment</strong>, em inglês) do RStudio IDE, como mostrado na <a href="#fig-running-toss-coin" class="quarto-xref">Figura&nbsp;<span>A.11</span></a>.</p>
 <div id="fig-running-toss-coin" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-running-toss-coin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -994,6 +998,62 @@ Figura&nbsp;A.16: Script documentado
 </section>
 <section id="pacotes" class="level2" data-number="A.8">
 <h2 data-number="A.8" class="anchored" data-anchor-id="pacotes"><span class="header-section-number">A.8</span> Pacotes</h2>
+<p>Em <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg>, funções, conjuntos de dados e documentação são organizados em pacotes. Alguns deles, conhecidos como pacotes <strong>base</strong> vêm pré-instalados com <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg>. No entanto, existe um vasto conjunto de pacotes criados pela comunidade <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> que adicionam todo tipo de ferramentas adicionais.</p>
+<p>Para usar esses pacotes criados pela comunidade, você precisará instalá-los. Esses pacotes são armazenados em repositórios, sendo o <a href="https://cran.r-project.org/">CRAN</a> a principal fonte de pacotes <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> de propósito geral. Embora existam repositórios especializados como o <a href="https://bioconductor.org/">Bioconductor</a>, vamos nos concentrar apenas naqueles encontrados no <a href="https://cran.r-project.org/">CRAN</a>.</p>
+<p><span class="citation" data-cites="ismay_statistical_2020">(<a href="references.html#ref-ismay_statistical_2020" role="doc-biblioref">Ismay e Kim 2020, cap. 1</a>)</span> têm uma analogia útil: pense em <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> como um smartphone novinho. Ele tem alguns aplicativos essenciais pré-instalados, mas você pode instalar uma vasta gama de novos aplicativos para realizar todos os tipos de tarefas específicas. Nesta analogia, os pacotes são como aplicativos, e os repositórios são como lojas de aplicativos.</p>
+<section id="instalando-pacotes-do-cran" class="level3" data-number="A.8.1">
+<h3 data-number="A.8.1" class="anchored" data-anchor-id="instalando-pacotes-do-cran"><span class="header-section-number">A.8.1</span> Instalando pacotes do CRAN</h3>
+<p>Instalar pacotes no <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg> é semelhante a instalar aplicativos no seu celular. Você instala uma única vez e faz atualizações ocasionais. Para instalar um pacote do <a href="https://cran.r-project.org/">CRAN</a>, use a função <code>install.packages</code>, especificando o nome do pacote entre aspas duplas. Por exemplo, para instalar o pacote <code>tidyverse</code>, um conjunto popular de ferramentas para ciência de dados, você só precisa executar o seguinte código:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="usando-um-pacote" class="level3" data-number="A.8.2">
+<h3 data-number="A.8.2" class="anchored" data-anchor-id="usando-um-pacote"><span class="header-section-number">A.8.2</span> Usando um pacote</h3>
+<p>Depois de instalar o pacote <code>tidyverse</code>, vamos utilizá-lo junto com a função <code>jogar_moeda</code>. Antes de fazer isso, vamos organizar o projeto da seguinte forma:</p>
+<ul>
+<li>Crie uma pasta chamada <strong>000_introdução_r</strong>.</li>
+<li>Dentro dessa pasta, crie um script chamado <strong>001_introdução_r_script.R</strong>.</li>
+</ul>
+<p>A estrutura do seu projeto agora deve se parecer com algo assim:</p>
+<pre><code>📦estadistica_descritiva
+  |-📂000_introducao_r
+  |  |-📜001_introducao_r_script.R
+  |-📂000_scripts
+  |  |-📜jogar_moeda.R
+  |-📜estadistica_descritiva.Rproj</code></pre>
+<p>Pense em um pacote como um aplicativo no seu celular, você precisa abri-lo antes de usá-lo. No <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg>, usamos a função <code>library</code> para isso. Adicione este código ao seu arquivo <strong>001_introdução_r_script.R</strong> para usar o pacote <code>tidyverse</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pacotes ----</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para executar o código em seu script, clique dentro da janela do script e escolha como rodar o código:</p>
+<ul>
+<li>Linha por linha: pressione <strong>Ctrl+Enter</strong> (ou <strong>Cmd+Return</strong> no Mac).</li>
+<li>Tudo de uma vez: pressione <strong>Ctrl+Shift+Enter</strong> (ou <strong>Cmd+Shift+Return</strong> no Mac).</li>
+</ul>
+<p>Como <code>jogar_moeda</code> não é parte de um pacote, vamos usar a função <code>source</code> para carregá-la diretamente do seu projeto:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Funções ----</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">"000_scripts/jogar_moeda.R"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Execute essa linha e cheque a aba Ambiente (<strong>Environment</strong>, em inglês), você deve ver a função <code>jogar_moeda listada</code>. Agora, vamos usar o <code>tidyverse</code> para um pouco de diversão com visualização. Não se preocupe em entender os detalhes do código, você aprenderá mais na <span class="quarto-unresolved-ref">?sec-data-visualization</span> . Apenas foque nos resultados:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico ----</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">jogar_moeda</span>(<span class="at">n_lancamentos =</span> <span class="dv">1000</span>)))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Execute esse código e você deve ver um gráfico como mostrado na <a href="#fig-using-tidyverse-package" class="quarto-xref">Figura&nbsp;<span>A.17</span></a></p>
+<div id="fig-using-tidyverse-package" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-using-tidyverse-package-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/using_tidyverse_package.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-using-tidyverse-package-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;A.17: Usando o pacote <code>tidyverse</code>
+</figcaption>
+</figure>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -1010,6 +1070,7 @@ Ismay, Chester, e Albert Young-Sun Kim. 2020. <em>Statistical inference via data
 Wickham, Hadley. 2019. <em>Advanced <span>R</span></em>. Second edition. Chapman &amp; <span>Hall</span>/<span>CRC</span>: <span>The</span> <span>R</span> series. Boca Raton London New York: CRC Press, Taylor &amp; Francis Group. <a href="https://adv-r.hadley.nz/">https://adv-r.hadley.nz/</a>.
 </div>
 </div>
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
